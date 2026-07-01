@@ -4,10 +4,35 @@
   "generatedAt": "2026-07-01T00:00:00Z",
   "packages": [
     {
+      "id": "srp1-sterownik-2.1.0-dev14",
+      "target": "sterownik",
+      "version": "2.1.0-dev14",
+      "publishedAt": "2026-07-01",
+      "fileName": "ster.bin",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev14/ster.bin",
+      "size": 1334144,
+      "sha256": "c16ee545b5be73370ba7c005c13b1c5033e939d3e5774604d8a16fe19b592af3",
+      "notes": "Szybszy upload OTA po Wi-Fi, VIN w informacjach i porzadek na ekranie aktualizacji.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": "s3/n16r8///P1/K1/SD1/RTC1",
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
       "id": "srp1-sterownik-2.1.0-dev13",
       "target": "sterownik",
       "version": "2.1.0-dev13",
-      "publishedAt": "2026-07-01",
+      "publishedAt": "2026-06-30",
       "fileName": "ster.bin",
       "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev13/ster.bin",
       "size": 1332592,
@@ -32,7 +57,7 @@
       "id": "srp1-sterownik-2.1.0-dev12",
       "target": "sterownik",
       "version": "2.1.0-dev12",
-      "publishedAt": "2026-06-30",
+      "publishedAt": "2026-06-29",
       "fileName": "ster.bin",
       "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev12/ster.bin",
       "size": 1328304,
