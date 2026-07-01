@@ -4,15 +4,40 @@
   "generatedAt": "2026-07-01T00:00:00Z",
   "packages": [
     {
+      "id": "srp1-sterownik-2.1.0-dev13",
+      "target": "sterownik",
+      "version": "2.1.0-dev13",
+      "publishedAt": "2026-07-01",
+      "fileName": "ster.bin",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev13/ster.bin",
+      "size": 1332592,
+      "sha256": "4d53496679e260e2916db2b3349e81cee27f49cf03d15499465a2b5003fa458f",
+      "notes": "Obsluga wielu plikow OTA na karcie SD i wybor paczki przed zastosowaniem.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": "s3/n16r8///P1/K1/SD1/RTC1",
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
       "id": "srp1-sterownik-2.1.0-dev12",
       "target": "sterownik",
       "version": "2.1.0-dev12",
-      "publishedAt": "2026-07-01",
+      "publishedAt": "2026-06-30",
       "fileName": "ster.bin",
       "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev12/ster.bin",
       "size": 1328304,
       "sha256": "6aed1c704fbdd2712abe8df411d7e4cbb8f6135e7f9d89d50ca66ba26a5eaf89",
-      "notes": "Pierwsza paczka pobierana przez aplikacje z GitHub.",
+      "notes": "Poprzednia stabilna paczka testowa OTA.",
       "api": {
         "app": 1,
         "sterConsole": 1,
