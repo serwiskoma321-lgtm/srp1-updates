@@ -1,8 +1,33 @@
 {
     "schema":  1,
     "product":  "SRP-1",
-    "generatedAt":  "2026-07-02T00:00:00Z",
+    "generatedAt":  "2026-07-02T08:05:00Z",
     "packages":  [
+                     {
+                         "id":  "srp1-sterownik-2.1.0-dev17",
+                         "target":  "sterownik",
+                         "version":  "2.1.0-dev17",
+                         "publishedAt":  "2026-07-02",
+                         "fileName":  "ster.bin",
+                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev17/ster.bin",
+                         "size":  1335968,
+                         "sha256":  "8f74f8937d8081eba54c4df596e6146d97a80efda5b209e5248767b0085cdb15",
+                         "notes":  "Wolniejszy i stabilniejszy odbior pliku OTA na SD: mniejszy bufor Wi-Fi, dluzsze timeouty i lagodniejsze tempo zapisu.",
+                         "api":  {
+                                     "app":  1,
+                                     "sterConsole":  1,
+                                     "sterMeasure":  1,
+                                     "otaPackage":  1
+                                 },
+                         "compat":  {
+                                        "product":  "SRP-1",
+                                        "target":  "sterownik",
+                                        "vin":  "s3/n16r8///P1/K1/SD1/RTC1/RS1",
+                                        "mac":  [
+                                                    "84:FC:E6:6A:BE:8C"
+                                                ]
+                                    }
+                     },
                      {
                          "id":  "srp1-sterownik-2.1.0-dev16",
                          "target":  "sterownik",
