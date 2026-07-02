@@ -1,107 +1,57 @@
-{
-  "schema": 1,
-  "product": "SRP-1",
-  "generatedAt": "2026-07-01T00:00:00Z",
-  "packages": [
-    {
-      "id": "srp1-sterownik-2.1.0-dev15",
-      "target": "sterownik",
-      "version": "2.1.0-dev15",
-      "publishedAt": "2026-07-01",
-      "fileName": "ster.bin",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev15/ster.bin",
-      "size": 1334800,
-      "sha256": "4f413f58934b3e207b7b948962052032f15b36e217b7ab289d5784f8da98402c",
-      "notes": "Stabilniejsza sciezka OTA: po potwierdzeniu Wi-Fi status, verify, apply i reboot ida po HTTP. Dodano logi HTTP oraz zamykanie Wi-Fi OTA przez /ota/stop.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": "s3/n16r8///P1/K1/SD1/RTC1",
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.1.0-dev14",
-      "target": "sterownik",
-      "version": "2.1.0-dev14",
-      "publishedAt": "2026-07-01",
-      "fileName": "ster.bin",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev14/ster.bin",
-      "size": 1334144,
-      "sha256": "c16ee545b5be73370ba7c005c13b1c5033e939d3e5774604d8a16fe19b592af3",
-      "notes": "Szybszy upload OTA po Wi-Fi, VIN w informacjach i porzadek na ekranie aktualizacji.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": "s3/n16r8///P1/K1/SD1/RTC1",
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.1.0-dev13",
-      "target": "sterownik",
-      "version": "2.1.0-dev13",
-      "publishedAt": "2026-06-30",
-      "fileName": "ster.bin",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev13/ster.bin",
-      "size": 1332592,
-      "sha256": "4d53496679e260e2916db2b3349e81cee27f49cf03d15499465a2b5003fa458f",
-      "notes": "Obsluga wielu plikow OTA na karcie SD i wybor paczki przed zastosowaniem.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": "s3/n16r8///P1/K1/SD1/RTC1",
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.1.0-dev12",
-      "target": "sterownik",
-      "version": "2.1.0-dev12",
-      "publishedAt": "2026-06-29",
-      "fileName": "ster.bin",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev12/ster.bin",
-      "size": 1328304,
-      "sha256": "6aed1c704fbdd2712abe8df411d7e4cbb8f6135e7f9d89d50ca66ba26a5eaf89",
-      "notes": "Poprzednia stabilna paczka testowa OTA.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": "s3/n16r8///P1/K1/SD1/RTC1",
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    }
-  ]
+﻿{
+    "schema":  1,
+    "product":  "SRP-1",
+    "generatedAt":  "2026-07-02T00:00:00Z",
+    "packages":  [
+                     {
+                         "id":  "srp1-sterownik-2.1.0-dev16",
+                         "target":  "sterownik",
+                         "version":  "2.1.0-dev16",
+                         "publishedAt":  "2026-07-02",
+                         "fileName":  "ster.bin",
+                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev16/ster.bin",
+                         "size":  1338720,
+                         "sha256":  "9105c7b296b831d6f062f6d25b3dc32277e7220d0d30a7e6d40a39313d4c5802",
+                         "notes":  "Dodano podglad i kasowanie plikow firmware z folderu /OTA na karcie SD. Lista OTA pokazuje do 16 paczek.",
+                         "api":  {
+                                     "app":  1,
+                                     "sterConsole":  1,
+                                     "sterMeasure":  1,
+                                     "otaPackage":  1
+                                 },
+                         "compat":  {
+                                        "product":  "SRP-1",
+                                        "target":  "sterownik",
+                                        "vin":  "s3/n16r8///P1/K1/SD1/RTC1/RS1",
+                                        "mac":  [
+                                                    "84:FC:E6:6A:BE:8C"
+                                                ]
+                                    }
+                     },
+                     {
+                         "id":  "srp1-sterownik-2.1.0-dev15",
+                         "target":  "sterownik",
+                         "version":  "2.1.0-dev15",
+                         "publishedAt":  "2026-07-01",
+                         "fileName":  "ster.bin",
+                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev15/ster.bin",
+                         "size":  1334800,
+                         "sha256":  "4f413f58934b3e207b7b948962052032f15b36e217b7ab289d5784f8da98402c",
+                         "notes":  "Stabilniejsza sciezka OTA: po potwierdzeniu Wi-Fi status, verify, apply i reboot ida po HTTP. Dodano logi HTTP oraz zamykanie Wi-Fi OTA przez /ota/stop.",
+                         "api":  {
+                                     "app":  1,
+                                     "sterConsole":  1,
+                                     "sterMeasure":  1,
+                                     "otaPackage":  1
+                                 },
+                         "compat":  {
+                                        "product":  "SRP-1",
+                                        "target":  "sterownik",
+                                        "vin":  "s3/n16r8///P1/K1/SD1/RTC1/RS1",
+                                        "mac":  [
+                                                    "84:FC:E6:6A:BE:8C"
+                                                ]
+                                    }
+                     }
+                 ]
 }
