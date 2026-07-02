@@ -1,8 +1,33 @@
 {
     "schema":  1,
     "product":  "SRP-1",
-    "generatedAt":  "2026-07-02T08:30:00Z",
+    "generatedAt":  "2026-07-02T09:45:00Z",
     "packages":  [
+                     {
+                         "id":  "srp1-sterownik-2.1.0-dev20",
+                         "target":  "sterownik",
+                         "version":  "2.1.0-dev20",
+                         "publishedAt":  "2026-07-02",
+                         "fileName":  "ster.bin",
+                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev20/ster.bin",
+                         "size":  1338080,
+                         "sha256":  "10b2fc7807a42e4e9f1d636e84a14484f5600f0827c471369c9930af81cdb8d1",
+                         "notes":  "Dodaje wybor pliku OTA z karty SD przez BLE oraz auto-wybor jedynej paczki firmware na SD przed zastosowaniem.",
+                         "api":  {
+                                     "app":  1,
+                                     "sterConsole":  1,
+                                     "sterMeasure":  1,
+                                     "otaPackage":  1
+                                 },
+                         "compat":  {
+                                        "product":  "SRP-1",
+                                        "target":  "sterownik",
+                                        "vin":  "s3/n16r8///P1/K1/SD1/RTC1/RS1",
+                                        "mac":  [
+                                                    "84:FC:E6:6A:BE:8C"
+                                                ]
+                                    }
+                     },
                      {
                          "id":  "srp1-sterownik-2.1.0-dev18",
                          "target":  "sterownik",
