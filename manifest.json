@@ -1,8 +1,33 @@
 {
     "schema":  1,
     "product":  "SRP-1",
-    "generatedAt":  "2026-07-02T09:45:00Z",
+    "generatedAt":  "2026-07-02T10:25:00Z",
     "packages":  [
+                     {
+                         "id":  "srp1-sterownik-2.1.0-dev21",
+                         "target":  "sterownik",
+                         "version":  "2.1.0-dev21",
+                         "publishedAt":  "2026-07-02",
+                         "fileName":  "ster.bin",
+                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev21/ster.bin",
+                         "size":  1339712,
+                         "sha256":  "01de6d6422702b692cb530fdf0166e4096c73a4a21838c0ed4ffb397963020c0",
+                         "notes":  "Porzadkuje procedure OTA w aplikacji, wymaga potwierdzonego wyboru pliku z SD oraz dodaje przelaczanie boot slotu na druga poprawna partycje.",
+                         "api":  {
+                                     "app":  1,
+                                     "sterConsole":  1,
+                                     "sterMeasure":  1,
+                                     "otaPackage":  1
+                                 },
+                         "compat":  {
+                                        "product":  "SRP-1",
+                                        "target":  "sterownik",
+                                        "vin":  "s3/n16r8///P1/K1/SD1/RTC1/RS1",
+                                        "mac":  [
+                                                    "84:FC:E6:6A:BE:8C"
+                                                ]
+                                    }
+                     },
                      {
                          "id":  "srp1-sterownik-2.1.0-dev20",
                          "target":  "sterownik",
