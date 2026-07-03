@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-03T15:30:00Z",
+  "generatedAt": "2026-07-03T16:00:00Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.9-async-ota-apply",
+      "target": "sterownik",
+      "version": "2.2.9",
+      "publishedAt": "2026-07-03",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.9/ster.kfw",
+      "size": 1355316,
+      "sha256": "d3d7c9e024ff806744824690cbd45bb64b5919c67a39661fb5f3f99158a52c1e",
+      "notes": "Naprawia etap Zastosuj: zapis firmware z SD do partycji OTA startuje jako osobne zadanie, a komenda BLE/HTTP wraca od razu ze statusem QUEUED/RUNNING. Wi-Fi zostaje tylko do uploadu pliku na SD; apply moze byc monitorowany przez OTA_INFO.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.8-kfw2-aes-apply-fix",
       "target": "sterownik",
