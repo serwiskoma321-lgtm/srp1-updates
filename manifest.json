@@ -1,18 +1,18 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-03T15:00:00Z",
+  "generatedAt": "2026-07-03T15:30:00Z",
   "packages": [
     {
-      "id": "srp1-sterownik-2.2.7-kfw2-aes-ctr",
+      "id": "srp1-sterownik-2.2.8-kfw2-aes-apply-fix",
       "target": "sterownik",
-      "version": "2.2.7",
+      "version": "2.2.8",
       "publishedAt": "2026-07-03",
       "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.7/ster.kfw",
-      "size": 1355816,
-      "sha256": "589619b11db047e6f73c2bdbf8125adcbe309374fe3a596b4b2fbea7068a8da5",
-      "notes": "Pierwsza testowa paczka KFW2 z zaszyfrowanym payloadem firmware: payload_enc=aes-ctr, podpis ECDSA P-256 oraz SHA-256 szyfrogramu i czystego obrazu.",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.8/ster.kfw",
+      "size": 1355346,
+      "sha256": "83debd7075449f2087963fc980da06967dcedb972d751ce9b403b27074f4802b",
+      "notes": "Wersja naprawcza po tescie 2.2.7: usuwa dodatkowy pelny przebieg odszyfrowania przed OTA i liczy SHA-256 czystego firmware w trakcie zapisu. Paczka przejsciowo nie jest szyfrowana, zeby dalo sie ja pewnie wgrac z 2.2.6/2.2.7.",
       "api": {
         "app": 1,
         "sterConsole": 1,
