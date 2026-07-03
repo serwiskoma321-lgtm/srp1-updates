@@ -1,8 +1,36 @@
 {
     "schema":  1,
     "product":  "SRP-1",
-    "generatedAt":  "2026-07-03T00:00:00Z",
+    "generatedAt":  "2026-07-03T12:00:00Z",
     "packages":  [
+                     {
+                         "id":  "srp1-sterownik-2.2.2",
+                         "target":  "sterownik",
+                         "version":  "2.2.2",
+                         "publishedAt":  "2026-07-03",
+                         "fileName":  "ster.bin",
+                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.2/ster.bin",
+                         "size":  1348064,
+                         "sha256":  "2b3cd8159a67560b28b070647a6afae659d1a9a774f47eb55a29fc04cb8309ec",
+                         "notes":  "Etap przejsciowy: zwykly bin, ktory dodaje w sterowniku obsluge paczek KFW2 z naglowkiem KOMA, zgodnoscia VIN/MAC i SHA-256 payloadu.",
+                         "api":  {
+                                     "app":  1,
+                                     "sterConsole":  1,
+                                     "sterMeasure":  1,
+                                     "otaPackage":  1
+                                 },
+                         "compat":  {
+                                        "product":  "SRP-1",
+                                        "target":  "sterownik",
+                                        "vin":  [
+                                                    "s3/n16r8///1/1/1/1/1//",
+                                                    "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+                                                ],
+                                        "mac":  [
+                                                    "84:FC:E6:6A:BE:8C"
+                                                ]
+                                    }
+                     },
                      {
                          "id":  "srp1-sterownik-2.2.1",
                          "target":  "sterownik",
