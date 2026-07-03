@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-03T14:30:00Z",
+  "generatedAt": "2026-07-03T15:00:00Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.7-kfw2-aes-ctr",
+      "target": "sterownik",
+      "version": "2.2.7",
+      "publishedAt": "2026-07-03",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.7/ster.kfw",
+      "size": 1355816,
+      "sha256": "589619b11db047e6f73c2bdbf8125adcbe309374fe3a596b4b2fbea7068a8da5",
+      "notes": "Pierwsza testowa paczka KFW2 z zaszyfrowanym payloadem firmware: payload_enc=aes-ctr, podpis ECDSA P-256 oraz SHA-256 szyfrogramu i czystego obrazu.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.6-kfw2-aes-ready",
       "target": "sterownik",
