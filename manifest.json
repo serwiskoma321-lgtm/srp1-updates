@@ -1,8 +1,36 @@
 {
     "schema":  1,
     "product":  "SRP-1",
-    "generatedAt":  "2026-07-02T10:25:00Z",
+    "generatedAt":  "2026-07-03T00:00:00Z",
     "packages":  [
+                     {
+                         "id":  "srp1-sterownik-2.2.1",
+                         "target":  "sterownik",
+                         "version":  "2.2.1",
+                         "publishedAt":  "2026-07-03",
+                         "fileName":  "ster.bin",
+                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.1/ster.bin",
+                         "size":  1341392,
+                         "sha256":  "1e9ec8147994d0d0463029189ffab72d69d4f98ade66fefe9153e3d599c1a7bd",
+                         "notes":  "Upraszcza VIN sterownika do stalego formatu sekcji s3/n16r8/1/2607/1/1/1/1/1// i przygotowuje manifest pod nowy sposob filtrowania firmware.",
+                         "api":  {
+                                     "app":  1,
+                                     "sterConsole":  1,
+                                     "sterMeasure":  1,
+                                     "otaPackage":  1
+                                 },
+                         "compat":  {
+                                        "product":  "SRP-1",
+                                        "target":  "sterownik",
+                                        "vin":  [
+                                                    "s3/n16r8///1/1/1/1/1//",
+                                                    "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+                                                ],
+                                        "mac":  [
+                                                    "84:FC:E6:6A:BE:8C"
+                                                ]
+                                    }
+                     },
                      {
                          "id":  "srp1-sterownik-2.1.0-dev21",
                          "target":  "sterownik",
