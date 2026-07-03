@@ -1,191 +1,219 @@
 {
-    "schema":  1,
-    "product":  "SRP-1",
-    "generatedAt":  "2026-07-03T13:00:00Z",
-    "packages":  [
-                     {
-                         "id":  "srp1-sterownik-2.2.3-kfw2",
-                         "target":  "sterownik",
-                         "version":  "2.2.3",
-                         "publishedAt":  "2026-07-03",
-                         "fileName":  "ster.kfw",
-                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.3/ster.kfw",
-                         "size":  1348298,
-                         "sha256":  "8dc20ab9b371f8c267ccc2d3dad3ed5f996d0530adf9ffbecbd6e91a8b55769c",
-                         "notes":  "Pierwsza testowa paczka KFW2: naglowek KOMA plus payload ESP32 2.2.3. Sterownik 2.2.2 powinien sprawdzic VIN/MAC i SHA-256 payloadu przed zapisem OTA.",
-                         "api":  {
-                                     "app":  1,
-                                     "sterConsole":  1,
-                                     "sterMeasure":  1,
-                                     "otaPackage":  1
-                                 },
-                         "compat":  {
-                                        "product":  "SRP-1",
-                                        "target":  "sterownik",
-                                        "vin":  [
-                                                    "s3/n16r8///1/1/1/1/1//",
-                                                    "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-                                                ],
-                                        "mac":  [
-                                                    "84:FC:E6:6A:BE:8C"
-                                                ]
-                                    }
-                     },
-                     {
-                         "id":  "srp1-sterownik-2.2.2",
-                         "target":  "sterownik",
-                         "version":  "2.2.2",
-                         "publishedAt":  "2026-07-03",
-                         "fileName":  "ster.bin",
-                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.2/ster.bin",
-                         "size":  1348064,
-                         "sha256":  "2b3cd8159a67560b28b070647a6afae659d1a9a774f47eb55a29fc04cb8309ec",
-                         "notes":  "Etap przejsciowy: zwykly bin, ktory dodaje w sterowniku obsluge paczek KFW2 z naglowkiem KOMA, zgodnoscia VIN/MAC i SHA-256 payloadu.",
-                         "api":  {
-                                     "app":  1,
-                                     "sterConsole":  1,
-                                     "sterMeasure":  1,
-                                     "otaPackage":  1
-                                 },
-                         "compat":  {
-                                        "product":  "SRP-1",
-                                        "target":  "sterownik",
-                                        "vin":  [
-                                                    "s3/n16r8///1/1/1/1/1//",
-                                                    "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-                                                ],
-                                        "mac":  [
-                                                    "84:FC:E6:6A:BE:8C"
-                                                ]
-                                    }
-                     },
-                     {
-                         "id":  "srp1-sterownik-2.2.1",
-                         "target":  "sterownik",
-                         "version":  "2.2.1",
-                         "publishedAt":  "2026-07-03",
-                         "fileName":  "ster.bin",
-                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.1/ster.bin",
-                         "size":  1341392,
-                         "sha256":  "1e9ec8147994d0d0463029189ffab72d69d4f98ade66fefe9153e3d599c1a7bd",
-                         "notes":  "Upraszcza VIN sterownika do stalego formatu sekcji s3/n16r8/1/2607/1/1/1/1/1// i przygotowuje manifest pod nowy sposob filtrowania firmware.",
-                         "api":  {
-                                     "app":  1,
-                                     "sterConsole":  1,
-                                     "sterMeasure":  1,
-                                     "otaPackage":  1
-                                 },
-                         "compat":  {
-                                        "product":  "SRP-1",
-                                        "target":  "sterownik",
-                                        "vin":  [
-                                                    "s3/n16r8///1/1/1/1/1//",
-                                                    "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-                                                ],
-                                        "mac":  [
-                                                    "84:FC:E6:6A:BE:8C"
-                                                ]
-                                    }
-                     },
-                     {
-                         "id":  "srp1-sterownik-2.1.0-dev21",
-                         "target":  "sterownik",
-                         "version":  "2.1.0-dev21",
-                         "publishedAt":  "2026-07-02",
-                         "fileName":  "ster.bin",
-                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev21/ster.bin",
-                         "size":  1339712,
-                         "sha256":  "01de6d6422702b692cb530fdf0166e4096c73a4a21838c0ed4ffb397963020c0",
-                         "notes":  "Porzadkuje procedure OTA w aplikacji, wymaga potwierdzonego wyboru pliku z SD oraz dodaje przelaczanie boot slotu na druga poprawna partycje.",
-                         "api":  {
-                                     "app":  1,
-                                     "sterConsole":  1,
-                                     "sterMeasure":  1,
-                                     "otaPackage":  1
-                                 },
-                         "compat":  {
-                                        "product":  "SRP-1",
-                                        "target":  "sterownik",
-                                        "vin":  "s3/n16r8///P1/K1/SD1/RTC1/RS1",
-                                        "mac":  [
-                                                    "84:FC:E6:6A:BE:8C"
-                                                ]
-                                    }
-                     },
-                     {
-                         "id":  "srp1-sterownik-2.1.0-dev20",
-                         "target":  "sterownik",
-                         "version":  "2.1.0-dev20",
-                         "publishedAt":  "2026-07-02",
-                         "fileName":  "ster.bin",
-                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev20/ster.bin",
-                         "size":  1338080,
-                         "sha256":  "10b2fc7807a42e4e9f1d636e84a14484f5600f0827c471369c9930af81cdb8d1",
-                         "notes":  "Dodaje wybor pliku OTA z karty SD przez BLE oraz auto-wybor jedynej paczki firmware na SD przed zastosowaniem.",
-                         "api":  {
-                                     "app":  1,
-                                     "sterConsole":  1,
-                                     "sterMeasure":  1,
-                                     "otaPackage":  1
-                                 },
-                         "compat":  {
-                                        "product":  "SRP-1",
-                                        "target":  "sterownik",
-                                        "vin":  "s3/n16r8///P1/K1/SD1/RTC1/RS1",
-                                        "mac":  [
-                                                    "84:FC:E6:6A:BE:8C"
-                                                ]
-                                    }
-                     },
-                     {
-                         "id":  "srp1-sterownik-2.1.0-dev18",
-                         "target":  "sterownik",
-                         "version":  "2.1.0-dev18",
-                         "publishedAt":  "2026-07-02",
-                         "fileName":  "ster.bin",
-                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev18/ster.bin",
-                         "size":  1335968,
-                         "sha256":  "336e5176f43281c631305455c64a59a6b8a2348db9ea37742dfb267d92694a25",
-                         "notes":  "Testowa paczka OTA po dev17. Ten sam stabilniejszy odbior OTA, nowy numer wersji do sprawdzenia aktualizacji z telefonu.",
-                         "api":  {
-                                     "app":  1,
-                                     "sterConsole":  1,
-                                     "sterMeasure":  1,
-                                     "otaPackage":  1
-                                 },
-                         "compat":  {
-                                        "product":  "SRP-1",
-                                        "target":  "sterownik",
-                                        "vin":  "s3/n16r8///P1/K1/SD1/RTC1/RS1",
-                                        "mac":  [
-                                                    "84:FC:E6:6A:BE:8C"
-                                                ]
-                                    }
-                     },
-                     {
-                         "id":  "srp1-sterownik-2.1.0-dev17",
-                         "target":  "sterownik",
-                         "version":  "2.1.0-dev17",
-                         "publishedAt":  "2026-07-02",
-                         "fileName":  "ster.bin",
-                         "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev17/ster.bin",
-                         "size":  1335968,
-                         "sha256":  "8f74f8937d8081eba54c4df596e6146d97a80efda5b209e5248767b0085cdb15",
-                         "notes":  "Wolniejszy i stabilniejszy odbior pliku OTA na SD: mniejszy bufor Wi-Fi, dluzsze timeouty i lagodniejsze tempo zapisu.",
-                         "api":  {
-                                     "app":  1,
-                                     "sterConsole":  1,
-                                     "sterMeasure":  1,
-                                     "otaPackage":  1
-                                 },
-                         "compat":  {
-                                        "product":  "SRP-1",
-                                        "target":  "sterownik",
-                                        "vin":  "s3/n16r8///P1/K1/SD1/RTC1/RS1",
-                                        "mac":  [
-                                                    "84:FC:E6:6A:BE:8C"
-                                                ]
-                                    }
-                     }
-                 ]
+  "schema": 1,
+  "product": "SRP-1",
+  "generatedAt": "2026-07-03T13:30:00Z",
+  "packages": [
+    {
+      "id": "srp1-sterownik-2.2.4-kfw2-signed",
+      "target": "sterownik",
+      "version": "2.2.4",
+      "publishedAt": "2026-07-03",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.4/ster.kfw",
+      "size": 1350098,
+      "sha256": "ede08b708963ce5f05d79888005b680bd1604861c1578beac3f581a09d18ef2c",
+      "notes": "Wprowadza podpis ECDSA P-256 paczek KFW2 po stronie sterownika. Ta paczka jest podpisana, a od wersji 2.2.4 sterownik odrzuca przyszle paczki bez prawidlowego podpisu.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.2.3-kfw2",
+      "target": "sterownik",
+      "version": "2.2.3",
+      "publishedAt": "2026-07-03",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.3/ster.kfw",
+      "size": 1348298,
+      "sha256": "8dc20ab9b371f8c267ccc2d3dad3ed5f996d0530adf9ffbecbd6e91a8b55769c",
+      "notes": "Pierwsza testowa paczka KFW2: naglowek KOMA plus payload ESP32 2.2.3. Sterownik 2.2.2 powinien sprawdzic VIN/MAC i SHA-256 payloadu przed zapisem OTA.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.2.2",
+      "target": "sterownik",
+      "version": "2.2.2",
+      "publishedAt": "2026-07-03",
+      "fileName": "ster.bin",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.2/ster.bin",
+      "size": 1348064,
+      "sha256": "2b3cd8159a67560b28b070647a6afae659d1a9a774f47eb55a29fc04cb8309ec",
+      "notes": "Etap przejsciowy: zwykly bin, ktory dodaje w sterowniku obsluge paczek KFW2 z naglowkiem KOMA, zgodnoscia VIN/MAC i SHA-256 payloadu.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.2.1",
+      "target": "sterownik",
+      "version": "2.2.1",
+      "publishedAt": "2026-07-03",
+      "fileName": "ster.bin",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.1/ster.bin",
+      "size": 1341392,
+      "sha256": "1e9ec8147994d0d0463029189ffab72d69d4f98ade66fefe9153e3d599c1a7bd",
+      "notes": "Upraszcza VIN sterownika do stalego formatu sekcji s3/n16r8/1/2607/1/1/1/1/1// i przygotowuje manifest pod nowy sposob filtrowania firmware.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.1.0-dev21",
+      "target": "sterownik",
+      "version": "2.1.0-dev21",
+      "publishedAt": "2026-07-02",
+      "fileName": "ster.bin",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev21/ster.bin",
+      "size": 1339712,
+      "sha256": "01de6d6422702b692cb530fdf0166e4096c73a4a21838c0ed4ffb397963020c0",
+      "notes": "Porzadkuje procedure OTA w aplikacji, wymaga potwierdzonego wyboru pliku z SD oraz dodaje przelaczanie boot slotu na druga poprawna partycje.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": "s3/n16r8///P1/K1/SD1/RTC1/RS1",
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.1.0-dev20",
+      "target": "sterownik",
+      "version": "2.1.0-dev20",
+      "publishedAt": "2026-07-02",
+      "fileName": "ster.bin",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev20/ster.bin",
+      "size": 1338080,
+      "sha256": "10b2fc7807a42e4e9f1d636e84a14484f5600f0827c471369c9930af81cdb8d1",
+      "notes": "Dodaje wybor pliku OTA z karty SD przez BLE oraz auto-wybor jedynej paczki firmware na SD przed zastosowaniem.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": "s3/n16r8///P1/K1/SD1/RTC1/RS1",
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.1.0-dev18",
+      "target": "sterownik",
+      "version": "2.1.0-dev18",
+      "publishedAt": "2026-07-02",
+      "fileName": "ster.bin",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev18/ster.bin",
+      "size": 1335968,
+      "sha256": "336e5176f43281c631305455c64a59a6b8a2348db9ea37742dfb267d92694a25",
+      "notes": "Testowa paczka OTA po dev17. Ten sam stabilniejszy odbior OTA, nowy numer wersji do sprawdzenia aktualizacji z telefonu.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": "s3/n16r8///P1/K1/SD1/RTC1/RS1",
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.1.0-dev17",
+      "target": "sterownik",
+      "version": "2.1.0-dev17",
+      "publishedAt": "2026-07-02",
+      "fileName": "ster.bin",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev17/ster.bin",
+      "size": 1335968,
+      "sha256": "8f74f8937d8081eba54c4df596e6146d97a80efda5b209e5248767b0085cdb15",
+      "notes": "Wolniejszy i stabilniejszy odbior pliku OTA na SD: mniejszy bufor Wi-Fi, dluzsze timeouty i lagodniejsze tempo zapisu.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": "s3/n16r8///P1/K1/SD1/RTC1/RS1",
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    }
+  ]
 }
