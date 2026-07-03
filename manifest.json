@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-03T13:30:00Z",
+  "generatedAt": "2026-07-03T14:00:00Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.5-kfw2-signed",
+      "target": "sterownik",
+      "version": "2.2.5",
+      "publishedAt": "2026-07-03",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.5/ster.kfw",
+      "size": 1350098,
+      "sha256": "56ee12ea44e4e46b6ed4a37d719edc07df53c6efd6989ee90c837fa47115110f",
+      "notes": "Test lancucha podpisu po aktualizacji do 2.2.4: paczka KFW2 podpisana ECDSA P-256, bez zmian funkcjonalnych poza numerem wersji.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.4-kfw2-signed",
       "target": "sterownik",
