@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-06T10:00:00Z",
+  "generatedAt": "2026-07-06T11:00:00Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.11-ota-partition-verify",
+      "target": "sterownik",
+      "version": "2.2.11",
+      "publishedAt": "2026-07-06",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.11/ster.kfw",
+      "size": 1355317,
+      "sha256": "a7828ce5d1f9ecd3c0f01f2d3df589f303d78d67f261028f518727be06fbf52f",
+      "notes": "Dodaje twarda weryfikacje SHA-256 zapisanej partycji OTA przed przelaczeniem boot slotu oraz wysyla koncowy wynik APP:OTA_APPLY po BLE. Aplikacja 1.1.6 traktuje QUEUED jako stan roboczy, nie blad.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.10-ota-service-pause",
       "target": "sterownik",
