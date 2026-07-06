@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-06T11:32:00Z",
+  "generatedAt": "2026-07-06T10:11:41Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.13-publish-pipeline",
+      "target": "sterownik",
+      "version": "2.2.13",
+      "publishedAt": "2026-07-06",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.13/ster.kfw",
+      "size": 1358741,
+      "sha256": "d5ff02bb90632070c1ce7f4fee9feb761a7a7b9681fb94b35671885469902866",
+      "notes": "Wersja testowa pipeline publikacji OTA: paczka zostala zbudowana przez tools/publish_sterownik_ota.ps1 ze swiezego builda, z kontrola wersji payloadu przed podpisem.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.12-slot-version-report",
       "target": "sterownik",
