@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-03T16:00:00Z",
+  "generatedAt": "2026-07-06T10:00:00Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.10-ota-service-pause",
+      "target": "sterownik",
+      "version": "2.2.10",
+      "publishedAt": "2026-07-06",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.10/ster.kfw",
+      "size": 1355317,
+      "sha256": "4a711efa02e9877e393b92a7019ccf2b8e953b08a2398484f608d4a7ddbe9f76",
+      "notes": "Dodaje pauze serwisowa podczas zapisu firmware z SD do partycji OTA: CPU1 wstrzymuje pomiary, SPI, PZEM, INA, rejestr SD i live telemetrie; pozostaje BLE/status OTA/reboot. Dodaje pola otaApplyRunning i otaServiceMode do OTA_INFO.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.9-async-ota-apply",
       "target": "sterownik",
