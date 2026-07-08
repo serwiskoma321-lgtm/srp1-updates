@@ -29,7 +29,8 @@
         "mac": [
           "84:FC:E6:6A:BE:8C"
         ]
-      }
+      },
+      "emergencyUsb": true
     },
     {
       "id": "srp1-sterownik-2.2.13-publish-pipeline",
