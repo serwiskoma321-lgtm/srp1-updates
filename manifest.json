@@ -1,8 +1,37 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-06T11:44:40Z",
+  "generatedAt": "2026-07-08T11:06:04Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.17-emergency-usb",
+      "target": "sterownik",
+      "version": "2.2.17",
+      "publishedAt": "2026-07-08",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.17/ster.kfw",
+      "size": 1363627,
+      "sha256": "4ced89015de1bdffa247482fe002888e5a8e91fea3be81159361d21d82479b53",
+      "notes": "Paczka testowa awaryjnego wgrywania USB po poprawce parsera MD5 w aplikacji 1.1.26. Firmware podbity z 2.2.16 do 2.2.17, zeby latwo potwierdzic udany flash.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      },
+      "emergencyUsb": true
+    },
     {
       "id": "srp1-sterownik-2.2.14-encrypted-kfw",
       "target": "sterownik",
@@ -29,8 +58,7 @@
         "mac": [
           "84:FC:E6:6A:BE:8C"
         ]
-      },
-      "emergencyUsb": true
+      }
     },
     {
       "id": "srp1-sterownik-2.2.13-publish-pipeline",
