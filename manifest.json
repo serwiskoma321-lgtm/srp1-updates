@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-09T05:30:38Z",
+  "generatedAt": "2026-07-09T06:46:24Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.20-measure-ota-package-verify",
+      "target": "sterownik",
+      "version": "2.2.20",
+      "publishedAt": "2026-07-09",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.20/ster.kfw",
+      "size": 1366411,
+      "sha256": "acf0f3a2bf83ea1235d5105656d205000638213f2a79ac4c4a94a46eddf11d7d",
+      "notes": "Dodaje pierwszy etap aktualizacji pomiarowego przez sterownik: APP:MEAS_OTA_INFO/SELECT/VERIFY wybiera paczke z SD sterownika i weryfikuje KFW2 dla target=pomiarowy, MAC pomiarowego po SPI, podpis oraz SHA payloadu. Nie wykonuje jeszcze transferu chunkami do pomiarowego.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-pomiarowy-3.1.1-ota-diagnostics-usb-test",
       "target": "pomiarowy",
