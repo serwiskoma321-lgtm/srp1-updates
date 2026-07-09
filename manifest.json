@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-09T08:30:06Z",
+  "generatedAt": "2026-07-09T08:58:26Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.22-ota-wifi-ap-stability",
+      "target": "sterownik",
+      "version": "2.2.22",
+      "publishedAt": "2026-07-09",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.22/ster.kfw",
+      "size": 1367195,
+      "sha256": "19598b635a742b258e7fe679c4fbcf6c85cb89b7d120b5d23969c2f77f4984a1",
+      "notes": "Poprawia stabilnosc sieci Wi-Fi OTA: przed startem AP czyści poprzedni softAP, dodaje krotka pauze i zwieksza limit klientow AP z 1 do 4, zeby Android nie zrywal polaczenia podczas przelaczania sieci.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.21-compact-ota-ble",
       "target": "sterownik",
