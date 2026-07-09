@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-09T09:31:12Z",
+  "generatedAt": "2026-07-09T11:28:26Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.24-ota-upload-buffer-drain",
+      "target": "sterownik",
+      "version": "2.2.24",
+      "publishedAt": "2026-07-09",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.24/ster.kfw",
+      "size": 1374923,
+      "sha256": "aeaf53bdf0b62792303df66a2e6245e5bed5d6e89da005e7af191906d9157165",
+      "notes": "Poprawia zapis firmware na SD przez Wi-Fi OTA: serwer czyta pozostale dane z bufora klienta nawet po zamknieciu socketu przez telefon, aby uniknac czesciowego pliku i braku finalnego rename. Aplikacja 1.1.37 dodaje raport TXT procedury OTA i wykonuje jedna jawna probe uploadu zamiast trzech automatycznych powtorek.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.23-ota-wifi-captive-dns",
       "target": "sterownik",
