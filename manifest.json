@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-09T08:58:26Z",
+  "generatedAt": "2026-07-09T09:31:12Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.23-ota-wifi-captive-dns",
+      "target": "sterownik",
+      "version": "2.2.23",
+      "publishedAt": "2026-07-09",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.23/ster.kfw",
+      "size": 1374907,
+      "sha256": "1789992ebac56a8b12728519b5ce1e51a5e35b7fd0f14104d3ff7a6617378712",
+      "notes": "Poprawia utrzymywanie polaczenia telefonu z Wi-Fi OTA: dodaje lokalny DNS wildcard w trybie AP oraz odpowiedzi na typowe testy lacznosci Android/iOS/Windows. Aplikacja 1.1.36 sprawdza Wi-Fi przez lekki endpoint /ota/info zamiast /ota/status.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.22-ota-wifi-ap-stability",
       "target": "sterownik",
