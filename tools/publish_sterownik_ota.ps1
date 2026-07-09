@@ -23,6 +23,7 @@ param(
   [string[]]$CompatMac = @("84:FC:E6:6A:BE:8C"),
   [string]$Notes = "",
   [string]$PackageId = "",
+  [string]$FileName = "",
 
   [string]$PrivateKeyPath = "C:\Users\SRynkiewicz\.koma\ota-signing\srp1_ota_p256_private_blob.b64",
   [string]$PublicKeyPath = "C:\Users\SRynkiewicz\.koma\ota-signing\srp1_ota_p256_public_blob.b64",
@@ -365,7 +366,11 @@ if ($EncryptPayload) {
 }
 
 $payloadSha256 = Get-Sha256Hex -Bytes $payload
-$fileName = "ster.kfw"
+if ([string]::IsNullOrWhiteSpace($FileName)) {
+  $fileName = if ($Target -eq "sterownik") { "ster.kfw" } else { "$Target.kfw" }
+} else {
+  $fileName = $FileName
+}
 $outDir = Join-Path $RepoPath "firmware\$Target\$Version"
 $outFile = Join-Path $outDir $fileName
 New-Item -ItemType Directory -Force -Path $outDir | Out-Null

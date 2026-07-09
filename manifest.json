@@ -1,8 +1,65 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-08T11:54:58Z",
+  "generatedAt": "2026-07-09T05:30:38Z",
   "packages": [
+    {
+      "id": "srp1-pomiarowy-3.1.1-ota-diagnostics-usb-test",
+      "target": "pomiarowy",
+      "version": "3.1.1",
+      "publishedAt": "2026-07-09",
+      "fileName": "pomiarowy.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/pomiarowy/3.1.1/pomiarowy.kfw",
+      "size": 377609,
+      "sha256": "412e71462b1605006159db4b18c6cf09d56f6ffe18f771863690d645a745750a",
+      "notes": "Pierwsza paczka awaryjnego USB dla procesora pomiarowego. Dodaje raport gotowosci przyszlej aktualizacji OTA przez sterownik, bez zapisu firmware po SPI.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "pomiarowy",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "E4:B3:23:F7:E8:B8"
+        ]
+      },
+      "emergencyUsb": true
+    },
+    {
+      "id": "srp1-sterownik-2.2.19-pomiarowy-ota-diagnostics",
+      "target": "sterownik",
+      "version": "2.2.19",
+      "publishedAt": "2026-07-09",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.19/ster.kfw",
+      "size": 1362427,
+      "sha256": "4ecbfe040deb5eaa637e7381c7b51f151393f4b19cb7ca7aecdc36030a902b77",
+      "notes": "Dodaje przekazywanie przez sterownik rozszerzonej diagnostyki OTA procesora pomiarowego: wersje slotow, wolny slot, maksymalny rozmiar obrazu i status gotowosci update.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      },
+      "emergencyUsb": true
+    },
     {
       "id": "srp1-sterownik-2.2.18-remove-ble-rescue",
       "target": "sterownik",
@@ -29,8 +86,7 @@
         "mac": [
           "84:FC:E6:6A:BE:8C"
         ]
-      },
-      "emergencyUsb": true
+      }
     },
     {
       "id": "srp1-sterownik-2.2.17-emergency-usb",
