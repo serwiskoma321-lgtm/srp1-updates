@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-09T11:28:26Z",
+  "generatedAt": "2026-07-09T11:50:30Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.25-ota-http-content-length-timeout",
+      "target": "sterownik",
+      "version": "2.2.25",
+      "publishedAt": "2026-07-09",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.25/ster.kfw",
+      "size": 1375131,
+      "sha256": "b100a8ecc3d7c4fdafe6dd1de96822d093e738cf83e48d3580bc725e423c440e",
+      "notes": "Poprawia upload firmware na SD przez Wi-Fi OTA po bledzie SIZE_MISMATCH: aplikacja wysyla jawny contentLength bez chunked transfer, a sterownik czeka dluzej na kolejne dane i raportuje idleMs przy niepelnym pliku.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.24-ota-upload-buffer-drain",
       "target": "sterownik",
