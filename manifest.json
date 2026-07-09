@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-09T06:46:24Z",
+  "generatedAt": "2026-07-09T08:30:06Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.21-compact-ota-ble",
+      "target": "sterownik",
+      "version": "2.2.21",
+      "publishedAt": "2026-07-09",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.21/ster.kfw",
+      "size": 1367163,
+      "sha256": "bc065d6d373c6f3abf062a20dcd19e618a1e079b551c5a503853daf37b1e1bce",
+      "notes": "Zmniejsza odpowiedzi BLE dla OTA_SELECT, OTA_VERIFY i OTA_APPLY, aby nie wysylac pelnej listy plikow SD podczas krytycznych etapow aktualizacji. Aplikacja 1.1.35 nie wymusza juz automatycznej weryfikacji po wyborze pliku sterownika.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.20-measure-ota-package-verify",
       "target": "sterownik",
