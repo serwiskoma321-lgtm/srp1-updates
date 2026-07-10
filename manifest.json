@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-09T11:50:30Z",
+  "generatedAt": "2026-07-10T06:08:02Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.26-ota-chunk-upload",
+      "target": "sterownik",
+      "version": "2.2.26",
+      "publishedAt": "2026-07-10",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.26/ster.kfw",
+      "size": 1382715,
+      "sha256": "1785b5a1b2d025fabf4ad32fd5cbe6fe3b3e590b3d8e68f42c97ea6eb453f5e7",
+      "notes": "Zmienia upload firmware na SD przez Wi-Fi OTA z jednego duzego POST na begin/chunk/finish. Aplikacja 1.1.39 wysyla porcje 16 KB i liczy postep dopiero po potwierdzeniu zapisu przez sterownik.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.25-ota-http-content-length-timeout",
       "target": "sterownik",
