@@ -31,6 +31,7 @@ param(
   [string[]]$RejectPayloadVersions = @("2.2.8", "2.2.11"),
   [string]$BuildPath = "",
   [switch]$EncryptPayload,
+  [switch]$EmergencyUsb,
   [switch]$NoManifestUpdate
 )
 
@@ -214,6 +215,7 @@ function New-PackageJsonBlock {
   $macLines = Format-JsonStringArray -Values $CompatMac -Indent "          "
   $url = "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/$Target/$Version/$FileName"
   $publishedAt = Get-Date -Format "yyyy-MM-dd"
+  $emergencyUsbLine = if ($EmergencyUsb) { "      `"emergencyUsb`": true,`n" } else { "" }
 
   return @"
     {
@@ -226,7 +228,7 @@ function New-PackageJsonBlock {
       "size": $Size,
       "sha256": $(ConvertTo-JsonString $Sha256),
       "notes": $(ConvertTo-JsonString $Notes),
-      "api": {
+$emergencyUsbLine      "api": {
         "app": 1,
         "sterConsole": 1,
         "sterMeasure": 1,

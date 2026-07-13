@@ -1,8 +1,65 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-10T06:08:02Z",
+  "generatedAt": "2026-07-13T08:40:08Z",
   "packages": [
+    {
+      "id": "srp1-pomiarowy-3.1.2-spi-ota-receiver",
+      "target": "pomiarowy",
+      "version": "3.1.2",
+      "publishedAt": "2026-07-13",
+      "fileName": "pomiarowy.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/pomiarowy/3.1.2/pomiarowy.kfw",
+      "size": 381508,
+      "sha256": "f29f6f7bd0f4292808f331420caba8c60986683539a6bf3bfd8264b44c58ca87",
+      "notes": "Dodaje odbiornik aktualizacji pomiarowego po SPI: zapis do nieaktywnego slotu OTA, kontrola kolejnosci, rozmiaru i CRC32, ustawienie partycji boot oraz pauza analizy podczas transferu. Pierwsze wdrozenie tej wersji wymaga wgrania po USB.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "pomiarowy",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "E4:B3:23:F7:E8:B8"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.2.27-measure-ota-spi-bridge",
+      "target": "sterownik",
+      "version": "2.2.27",
+      "publishedAt": "2026-07-13",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.27/ster.kfw",
+      "size": 1388843,
+      "sha256": "6c4235ea196c1705afc684a444fdcfa9298ea9d353eb5a74d7ea14870439baea",
+      "notes": "Dodaje pelny most aktualizacji pomiarowego: weryfikacja podpisanej paczki KFW2 na SD, odszyfrowanie AES-CTR, transfer po SPI z CRC i pauza serwisowa sterownika. Po zapisie umozliwia restart pomiarowego i potwierdza uruchomiona wersje.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.26-ota-chunk-upload",
       "target": "sterownik",
