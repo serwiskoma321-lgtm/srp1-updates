@@ -1,8 +1,37 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-13T12:29:08Z",
+  "generatedAt": "2026-07-13T12:50:12Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.31-auto-publish",
+      "target": "sterownik",
+      "version": "2.2.31",
+      "publishedAt": "2026-07-13",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.31/ster.kfw",
+      "size": 1391403,
+      "sha256": "29c04bc81d2073f5e99a25aa56982597a1d67c5f1daf5f66daac0349337c42de",
+      "notes": "Obsluga zapisu flash co 1 KB i ponawianie ramki gdy pomiarowy nie uzbroil jeszcze SPI slave.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.30-auto-publish",
       "target": "sterownik",
