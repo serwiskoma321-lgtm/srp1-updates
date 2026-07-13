@@ -1,8 +1,37 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-13T10:47:55Z",
+  "generatedAt": "2026-07-13T11:25:45Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.29-auto-publish",
+      "target": "sterownik",
+      "version": "2.2.29",
+      "publishedAt": "2026-07-13",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.29/ster.kfw",
+      "size": 1390459,
+      "sha256": "4752126492461bdaa53570b4347e1d4909add10478a9856f365cac9f719ae6c0",
+      "notes": "Synchronizacja SPI i stan serwisowy podczas aktualizacji procesora pomiarowego.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.28-fix-measure-ota-queue",
       "target": "sterownik",
