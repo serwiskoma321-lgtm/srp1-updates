@@ -1,8 +1,37 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-13T08:40:08Z",
+  "generatedAt": "2026-07-13T10:47:55Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.2.28-fix-measure-ota-queue",
+      "target": "sterownik",
+      "version": "2.2.28",
+      "publishedAt": "2026-07-13",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.28/ster.kfw",
+      "size": 1389136,
+      "sha256": "ac89349520f9055282e965e99d22fa5274410c6f2eb26be8e6134af221dcff78",
+      "notes": "Naprawia start aktualizacji pomiarowego po SPI, zachowuje stan READY_ON_SD przy przejsciu do QUEUED oraz raportuje postep bez rownoleglego przegladania karty SD.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-pomiarowy-3.1.2-spi-ota-receiver",
       "target": "pomiarowy",
