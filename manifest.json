@@ -1,8 +1,65 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-13T12:50:12Z",
+  "generatedAt": "2026-07-14T11:41:02Z",
   "packages": [
+    {
+      "id": "srp1-pomiarowy-3.1.3-spi-ota-test",
+      "target": "pomiarowy",
+      "version": "3.1.3",
+      "publishedAt": "2026-07-14",
+      "fileName": "pomiarowy.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/pomiarowy/3.1.3/pomiarowy.kfw",
+      "size": 381508,
+      "sha256": "c4634a0f93abae186777e72b1addf68f91521e8bb26c00b52cfbbd835ec6a798",
+      "notes": "Wersja testowa potwierdzajaca pelna aktualizacje pomiarowego przez sterownik i zmiane slotu OTA.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "pomiarowy",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "E4:B3:23:F7:E8:B8"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.2.32-auto-publish",
+      "target": "sterownik",
+      "version": "2.2.32",
+      "publishedAt": "2026-07-14",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.32/ster.kfw",
+      "size": 1392011,
+      "sha256": "43317cf2f424e934b4aa0331bde1504e1eeb544583bc72b32075a4d6914e9125",
+      "notes": "Oczekiwanie na esp_ota_end pomiarowego i brak ABORT po dostarczeniu komendy END.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.2.31-auto-publish",
       "target": "sterownik",
