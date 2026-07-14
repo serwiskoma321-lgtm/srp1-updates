@@ -1,8 +1,64 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-14T11:41:02Z",
+  "generatedAt": "2026-07-14T12:54:43Z",
   "packages": [
+    {
+      "id": "srp1-pomiarowy-3.1.4-spi-recovery",
+      "target": "pomiarowy",
+      "version": "3.1.4",
+      "publishedAt": "2026-07-14",
+      "fileName": "pomiarowy.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/pomiarowy/3.1.4/pomiarowy.kfw",
+      "size": 381620,
+      "sha256": "2c21289c7c7977b2a24aede462897990da5a09e7832430bbde12b518274b9a97",
+      "notes": "Dodaje raportowanie nastepnego offsetu OTA po SPI, nieprzerywajace odrzucenie ramki poza kolejnoscia i idempotentne potwierdzenie duplikatu ostatniej ramki.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "pomiarowy",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "E4:B3:23:F7:E8:B8"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.2.33-measure-ota-recovery",
+      "target": "sterownik",
+      "version": "2.2.33",
+      "publishedAt": "2026-07-14",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.33/ster.kfw",
+      "size": 1394880,
+      "sha256": "008d9143f849f476f2948532112274c054d6342512b97c399b7a5d9479d79249",
+      "notes": "Dodaje odczyt offsetu odbiornika i bezpieczne wznawianie OTA pomiarowego po uszkodzonej odpowiedzi SPI. Zgodny wstecznie z pomiarowym 3.1.3.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-pomiarowy-3.1.3-spi-ota-test",
       "target": "pomiarowy",
