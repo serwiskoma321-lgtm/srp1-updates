@@ -3,7 +3,7 @@ param(
   [Parameter(Mandatory = $true)]
   [string]$Version,
 
-  [string]$SketchPath = "C:\Users\SRynkiewicz\Documents\Arduino\Moje apki\Konsolka\Ster_v2_2",
+  [string]$SketchPath = "C:\Users\SRynkiewicz\Documents\Arduino\Moje apki\Konsolka\Ster_v2_3",
   [string]$RepoPath = (Split-Path -Parent $PSScriptRoot),
   [string]$ArduinoCliPath = "C:\Program Files\Arduino IDE\resources\app\lib\backend\resources\arduino-cli.exe",
   [string[]]$Libraries = @(
