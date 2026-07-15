@@ -1,8 +1,64 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-14T12:54:43Z",
+  "generatedAt": "2026-07-15T08:20:41Z",
   "packages": [
+    {
+      "id": "srp1-pomiarowy-3.2.1-fast-ota-receiver",
+      "target": "pomiarowy",
+      "version": "3.2.1",
+      "publishedAt": "2026-07-15",
+      "fileName": "pomiarowy.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/pomiarowy/3.2.1/pomiarowy.kfw",
+      "size": 386100,
+      "sha256": "ce1ec2b0c249deebcb8ebd64ad3810b79a9a95486029a4867e60d7660e5269dc",
+      "notes": "Dodaje odbiornik OTA SPI v2 z DMA, blokami 512 B, CRC32 i buforem zapisu flash 4 KB. Zachowuje zgodnosc z protokolem v1.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "pomiarowy",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "E4:B3:23:F7:E8:B8"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.3.1-fast-measure-ota",
+      "target": "sterownik",
+      "version": "2.3.1",
+      "publishedAt": "2026-07-15",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.1/ster.kfw",
+      "size": 1403071,
+      "sha256": "a1fb56677f723ac3f00178a6a3abae413ba04101c19cb7d805d3cd1cebd43d93",
+      "notes": "Dodaje negocjowany szybki protokol OTA pomiarowego v2: bloki 512 B, CRC32, potwierdzanie offsetu, pomiar czasu i automatyczny fallback do protokolu v1.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-pomiarowy-3.1.4-spi-recovery",
       "target": "pomiarowy",
