@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-16T08:26:15Z",
+  "generatedAt": "2026-07-16T11:48:48Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.5-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.5",
+      "publishedAt": "2026-07-16",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.5/ster.kfw",
+      "size": 1403370,
+      "sha256": "ca6b35a3e3fe979dbc15d2d6275cd90fda481cfb4e881f56106b8123690e4fbf",
+      "notes": "Stabilny upload na SD przy wielu plikach OTA: jeden otwarty plik tymczasowy, mniej operacji FAT i kompaktowy start Wi-Fi.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.4-auto-publish",
       "target": "sterownik",
