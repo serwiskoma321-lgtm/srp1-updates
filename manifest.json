@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-16T05:34:19Z",
+  "generatedAt": "2026-07-16T08:26:15Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.4-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.4",
+      "publishedAt": "2026-07-16",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.4/ster.kfw",
+      "size": 1403114,
+      "sha256": "17d4a646c13e63cc8d6d1ea49d4f6c7307aec3eecc3a2aa72bfaa7809da6c5f6",
+      "notes": "Widoczny postep zapisu OTA sterownika: bajty, etapy zapisu, weryfikacji i aktywacji slotu.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.3-fast-ota-timing",
       "target": "sterownik",
