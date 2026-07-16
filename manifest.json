@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-15T08:20:41Z",
+  "generatedAt": "2026-07-16T05:28:53Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.2-fast-ota-timing",
+      "target": "sterownik",
+      "version": "2.3.2",
+      "publishedAt": "2026-07-16",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.2/ster.kfw",
+      "size": 1403071,
+      "sha256": "573e71afe75e1958b3db8864ed51a51edf484d37709fe6488346228a8dfae767",
+      "notes": "Optymalizuje OTA pomiarowego v2: zegar serwisowy 500 kHz i kontrolowana przerwa na ponowne uzbrojenie DMA po ACK. Normalna telemetria SPI pozostaje bez zmian.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-pomiarowy-3.2.1-fast-ota-receiver",
       "target": "pomiarowy",
