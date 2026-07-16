@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-16T05:28:53Z",
+  "generatedAt": "2026-07-16T05:34:19Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.3-fast-ota-timing",
+      "target": "sterownik",
+      "version": "2.3.3",
+      "publishedAt": "2026-07-16",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.3/ster.kfw",
+      "size": 1403087,
+      "sha256": "5630e71c388ff60aa4f4cea8580a90c833b98f317585f56fe6af577db9c9308e",
+      "notes": "Optymalizuje OTA pomiarowego v2: 500 kHz, przerwa na uzbrojenie DMA po ACK oraz dluzsze oczekiwanie na pierwsze kasowanie nieaktywnego slotu przez esp_ota_begin.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.2-fast-ota-timing",
       "target": "sterownik",
