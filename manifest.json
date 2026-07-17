@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-17T06:50:34Z",
+  "generatedAt": "2026-07-17T07:13:28Z",
   "packages": [
+    {
+      "id": "srp1-konsolka-2.2.1-emergency-usb",
+      "target": "konsolka",
+      "version": "2.2.1",
+      "publishedAt": "2026-07-17",
+      "fileName": "konsolka.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.2.1/konsolka.kfw",
+      "size": 404259,
+      "sha256": "4e00ebd17180339c2b197e6bb8c98c467d956e4ea1c9fba454d3b7279215a47a",
+      "notes": "Pierwsza paczka konsolki z identyfikacja firmware i metryka UART dla sterownika.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "konsolka",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.7-auto-publish",
       "target": "sterownik",
