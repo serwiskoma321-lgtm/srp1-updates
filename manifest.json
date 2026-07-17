@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-17T05:50:30Z",
+  "generatedAt": "2026-07-17T06:50:34Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.7-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.7",
+      "publishedAt": "2026-07-17",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.7/ster.kfw",
+      "size": 1413290,
+      "sha256": "586411840d8fc1425e4eb2850d8c38eb0dcf2bc8926a61c7abb4afd84906a185",
+      "notes": "Dodaje odczyt tozsamosci konsolki przez UART: firmware, MAC, hardware, flash, PSRAM oraz sloty OTA; sterownik przechowuje metryke w RAM i przekazuje ja do aplikacji.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.6-auto-publish",
       "target": "sterownik",

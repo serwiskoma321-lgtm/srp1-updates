@@ -257,8 +257,12 @@ function Update-Manifest {
 
   $manifest = [IO.File]::ReadAllText($ManifestPath)
   $manifest = $manifest -replace "`r`n", "`n"
-  if ($manifest.Contains('"version": "' + $Version + '"')) {
-    Stop-Publish "Manifest already contains version $Version"
+  $parsedBefore = $manifest | ConvertFrom-Json
+  $duplicate = @($parsedBefore.packages | Where-Object {
+    $_.target -eq $Target -and $_.version -eq $Version
+  })
+  if ($duplicate.Count -gt 0) {
+    Stop-Publish "Manifest already contains target/version $Target/$Version"
   }
 
   $manifest = [regex]::Replace(
@@ -280,8 +284,8 @@ function Update-Manifest {
   [IO.File]::WriteAllText($ManifestPath, $manifest, $utf8NoBom)
 
   $parsed = Get-Content -Raw -LiteralPath $ManifestPath | ConvertFrom-Json
-  if ($parsed.packages[0].version -ne $Version) {
-    Stop-Publish "Manifest top package is not $Version after update"
+  if ($parsed.packages[0].target -ne $Target -or $parsed.packages[0].version -ne $Version) {
+    Stop-Publish "Manifest top package is not $Target/$Version after update"
   }
 }
 
