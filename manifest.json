@@ -1,8 +1,63 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-18T08:22:17Z",
+  "generatedAt": "2026-07-18T10:09:32Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.14-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.14",
+      "publishedAt": "2026-07-18",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.14/ster.kfw",
+      "size": 1420879,
+      "sha256": "6e951ef8a5404fbf3822c78269e42f1960c330b85fdaa0ec6c24d5c87b9dc728",
+      "notes": "Test zwyklej OTA po przywroceniu stabilnego startu AP bez deinitializacji BLE.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.3.13-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.13",
+      "publishedAt": "2026-07-18",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.13/ster.kfw",
+      "size": 1420896,
+      "sha256": "976a0331b9d6f1c343f733d41d4332ee905be212f51bd72795789ec2cb4ba393",
+      "notes": "Przywraca sprawdzony start AP z aktywnym BLE; usuwa regresje deinit BLE przed Wi-Fi.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.12-auto-publish",
       "target": "sterownik",
