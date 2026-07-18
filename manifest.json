@@ -1,8 +1,63 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-18T10:09:32Z",
+  "generatedAt": "2026-07-18T10:45:02Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.16-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.16",
+      "publishedAt": "2026-07-18",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.16/ster.kfw",
+      "size": 1421007,
+      "sha256": "4612a0c82a6ccaef988d5c60813fb0a95bdad306fd14f8bf71ba454a67823a2a",
+      "notes": "Test zwyklej OTA z niskopamieciowym zapisem blokow do katalogu targetu na SD.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.3.15-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.15",
+      "publishedAt": "2026-07-18",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.15/ster.kfw",
+      "size": 1421024,
+      "sha256": "d15ce52e5a7fa87332dd516a6fef1dc584504ab460a7366670c0b1e731d6609c",
+      "notes": "Pomost USB: niskopamieciowy zapis SD, plik otwierany tylko na czas pojedynczego bloku HTTP.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.14-auto-publish",
       "target": "sterownik",
