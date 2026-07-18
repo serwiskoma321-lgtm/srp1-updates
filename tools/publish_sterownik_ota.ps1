@@ -14,13 +14,12 @@ param(
 
   [string]$Product = "SRP-1",
   [string]$Target = "sterownik",
-  [string]$Vin = "s3/n16r8///1/1/1/1/1//",
-  [string]$Mac = "84:FC:E6:6A:BE:8C",
+  [string]$Vin = "s3/n16r8/1/2607/1/1/1/1/1//",
+  [string]$Mac = "",
   [string[]]$CompatVin = @(
-    "s3/n16r8///1/1/1/1/1//",
-    "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+    "s3/n16r8/1/2607/1/1/1/1/1//"
   ),
-  [string[]]$CompatMac = @("84:FC:E6:6A:BE:8C"),
+  [string[]]$CompatMac = @(),
   [string]$Notes = "",
   [string]$PackageId = "",
   [string]$FileName = "",
@@ -303,6 +302,10 @@ if (-not (Test-Path -LiteralPath $PublicKeyPath)) {
 }
 if ($EncryptPayload -and -not (Test-Path -LiteralPath $CipherKeyPath)) {
   Stop-Publish "Cipher key not found: $CipherKeyPath"
+}
+if ($EmergencyUsb -and
+    ([string]::IsNullOrWhiteSpace($Mac) -or @($CompatMac).Count -eq 0)) {
+  Stop-Publish "Emergency USB requires explicit -Mac and -CompatMac values"
 }
 
 if ([string]::IsNullOrWhiteSpace($BuildPath)) {

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-18T07:19:08Z",
+  "generatedAt": "2026-07-18T08:06:02Z",
   "packages": [
     {
       "id": "srp1-sterownik-2.3.10-auto-publish",
@@ -10,9 +10,9 @@
       "publishedAt": "2026-07-18",
       "fileName": "ster.kfw",
       "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.10/ster.kfw",
-      "size": 1424187,
-      "sha256": "e55944a39909e50375994580e3fc7e92d5df44b037b78b7c63523c5d9cfaeec6",
-      "notes": "Stabilizuje upload na SD: dedykowany tryb Wi-Fi zwalnia stos BLE, zatrzymuje normalna prace i restartuje sterownik po zakonczeniu sesji.",
+      "size": 1424175,
+      "sha256": "4da0254c4c128fa65991a2b4032c24cf2be3bcf9006040b8332745e50cb730ca",
+      "notes": "Stabilizuje upload na SD; zwykla aktualizacja przypisana do VIN i numeru seryjnego, bez wymaganego MAC.",
       "api": {
         "app": 1,
         "sterConsole": 1,
@@ -23,11 +23,10 @@
         "product": "SRP-1",
         "target": "sterownik",
         "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+          "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
         "mac": [
-          "84:FC:E6:6A:BE:8C"
+
         ]
       }
     },
