@@ -1,8 +1,64 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-17T07:13:28Z",
+  "generatedAt": "2026-07-18T06:00:59Z",
   "packages": [
+    {
+      "id": "srp1-konsolka-2.2.2-emergency-usb",
+      "target": "konsolka",
+      "version": "2.2.2",
+      "publishedAt": "2026-07-18",
+      "fileName": "konsolka.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.2.2/konsolka.kfw",
+      "size": 407091,
+      "sha256": "352e0913f9374bc109360b268342500309f56a0233635e6755375504b94918ac",
+      "notes": "Dodaje serwisowy test UART 460800 bit/s, bloki 512 B, CRC32 i automatyczny powrot do normalnej pracy.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "konsolka",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.3.8-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.8",
+      "publishedAt": "2026-07-18",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.8/ster.kfw",
+      "size": 1420122,
+      "sha256": "86ef86a65c4fcaa6a9a958e3436d22440055c5f068c84e434ee6a5c77f84d7f0",
+      "notes": "Dodaje bezpieczny test transportu OTA konsolki przez UART 460800 bit/s, bloki 512 B, CRC32 i retry.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-konsolka-2.2.1-emergency-usb",
       "target": "konsolka",

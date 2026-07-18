@@ -3,7 +3,7 @@ param(
   [Parameter(Mandatory = $true)]
   [string]$Mac,
 
-  [string]$Version = "2.2.1",
+  [string]$Version = "2.2.2",
   [string]$SketchPath = "C:\Users\SRynkiewicz\Documents\Arduino\Moje apki\Konsolka\Konsola_v2_2",
   [string]$RepoPath = (Split-Path -Parent $PSScriptRoot)
 )
@@ -31,7 +31,7 @@ $fqbn = "esp32:esp32:esp32s3:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=default,
   -Mac $normalizedMac `
   -CompatVin @("*") `
   -CompatMac @($normalizedMac) `
-  -Notes "Pierwsza paczka konsolki z identyfikacja firmware i metryka UART dla sterownika." `
+  -Notes "Dodaje serwisowy test UART 460800 bit/s, bloki 512 B, CRC32 i automatyczny powrot do normalnej pracy." `
   -PackageId "srp1-konsolka-$Version-emergency-usb" `
   -FileName "konsolka.kfw" `
   -EncryptPayload `
