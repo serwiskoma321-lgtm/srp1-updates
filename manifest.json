@@ -1,8 +1,65 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-18T06:00:59Z",
+  "generatedAt": "2026-07-18T07:19:08Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.10-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.10",
+      "publishedAt": "2026-07-18",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.10/ster.kfw",
+      "size": 1424187,
+      "sha256": "e55944a39909e50375994580e3fc7e92d5df44b037b78b7c63523c5d9cfaeec6",
+      "notes": "Stabilizuje upload na SD: dedykowany tryb Wi-Fi zwalnia stos BLE, zatrzymuje normalna prace i restartuje sterownik po zakonczeniu sesji.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.3.9-emergency-usb",
+      "target": "sterownik",
+      "version": "2.3.9",
+      "publishedAt": "2026-07-18",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.9/ster.kfw",
+      "size": 1424186,
+      "sha256": "6f837d9aa8c70f1ee4f136463650c880ae0a941a59b438422049565717fa2ded",
+      "notes": "Tryb serwisowy OTA zwalnia BLE przed transferem Wi-Fi i restartuje sterownik po zakonczeniu sesji; paczka pomostowa USB.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8///1/1/1/1/1//",
+          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-konsolka-2.2.2-emergency-usb",
       "target": "konsolka",
