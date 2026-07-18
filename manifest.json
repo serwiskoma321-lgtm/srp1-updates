@@ -1,8 +1,63 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-18T08:06:02Z",
+  "generatedAt": "2026-07-18T08:22:17Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.12-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.12",
+      "publishedAt": "2026-07-18",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.12/ster.kfw",
+      "size": 1424591,
+      "sha256": "5efc92bcaf474d4c4eb4f1c7965b78dbacb6dd4c956443e3bdf7c27f952de7ad",
+      "notes": "Uruchamia Wi-Fi dopiero po zwolnieniu BLE; zwykla aktualizacja po dokladnym VIN, bez wymaganego MAC.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.3.11-emergency-usb",
+      "target": "sterownik",
+      "version": "2.3.11",
+      "publishedAt": "2026-07-18",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.11/ster.kfw",
+      "size": 1424608,
+      "sha256": "faac95a96bfb6d0216bcc1c387568ca2730faba4b91415c3f6b3aebe9ff02652",
+      "notes": "Pomost USB: zwalnia BLE przed uruchomieniem Wi-Fi, aby nie wylaczac aktywnego AP.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.10-auto-publish",
       "target": "sterownik",
