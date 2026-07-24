@@ -1,8 +1,63 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-18T10:45:02Z",
+  "generatedAt": "2026-07-24T05:20:35Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.18-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.18",
+      "publishedAt": "2026-07-24",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.18/ster.kfw",
+      "size": 1422063,
+      "sha256": "524d25836980fc32a8c1dee06898521266ad332cfab7f616e56103f00fb050c4",
+      "notes": "Test OTA: bez ponownego skanowania katalogów w upload_begin, krótka blokada SD i diagnostyka resetu w RTC.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.3.17-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.17",
+      "publishedAt": "2026-07-24",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.17/ster.kfw",
+      "size": 1422080,
+      "sha256": "536df952948a6de0ceeed2115af458d38245b269724c9e5aebc6c46fbe84a34f",
+      "notes": "Pomost USB: odchudzony upload_begin, krótka blokada SD i diagnostyka restartu OTA w RTC.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.16-auto-publish",
       "target": "sterownik",
