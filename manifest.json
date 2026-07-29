@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-29T10:19:30Z",
+  "generatedAt": "2026-07-29T11:22:38Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.21-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.21",
+      "publishedAt": "2026-07-29",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.21/ster.kfw",
+      "size": 1434639,
+      "sha256": "6d399979abf175c0c2981673ca269c049e277ac880fc04aa427b4ef673d7a86d",
+      "notes": "Wznawianie przerwanego zapisu OTA na SD i jawne katalogi przy kasowaniu firmware.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.20-auto-publish",
       "target": "sterownik",
