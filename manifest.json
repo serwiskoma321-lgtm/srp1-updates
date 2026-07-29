@@ -1,8 +1,90 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-24T05:20:35Z",
+  "generatedAt": "2026-07-29T06:21:31Z",
   "packages": [
+    {
+      "id": "srp1-konsolka-2.2.4",
+      "target": "konsolka",
+      "version": "2.2.4",
+      "publishedAt": "2026-07-29",
+      "fileName": "konsolka.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.2.4/konsolka.kfw",
+      "size": 412499,
+      "sha256": "536b7d7a4907e0eadf584814627765722260bbe57bfe39011dd98cd31c2a7d13",
+      "notes": "Pierwsza pelna aktualizacja konsolki przez sterownik po UART: KFW2, CRC32, nieaktywny slot i kontrolowany restart.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "konsolka",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
+    {
+      "id": "srp1-konsolka-2.2.3-emergency-usb",
+      "target": "konsolka",
+      "version": "2.2.3",
+      "publishedAt": "2026-07-29",
+      "fileName": "konsolka.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.2.3/konsolka.kfw",
+      "size": 412499,
+      "sha256": "6b0d9b2e9ba38f9e3dfae8126c7744acadc7a19c735b0796bfff9543b1054b16",
+      "notes": "Dodaje serwisowy test UART 460800 bit/s, bloki 512 B, CRC32 i automatyczny powrot do normalnej pracy.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "konsolka",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.3.19-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.19",
+      "publishedAt": "2026-07-29",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.19/ster.kfw",
+      "size": 1434255,
+      "sha256": "75748e99e9081e438cd7aa0d9bd07909672ce7bce44407438689f3e6a144b816",
+      "notes": "Dodaje bezpieczna aktualizacje konsolki przez sterownik po UART: KFW2, CRC32, zapis do nieaktywnego slotu, postep i restart.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.18-auto-publish",
       "target": "sterownik",
