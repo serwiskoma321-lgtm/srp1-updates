@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-29T06:21:31Z",
+  "generatedAt": "2026-07-29T10:19:30Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.20-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.20",
+      "publishedAt": "2026-07-29",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.20/ster.kfw",
+      "size": 1434223,
+      "sha256": "2a1f90ba59efa5299af24c27fae54b27342b59e4f05c211428d6e2fac6bf5030",
+      "notes": "Naprawia koncowa weryfikacje aktualizacji konsolki: wersja KFW pozostaje podpisana i sprawdzana przez sterownik, bez blednego porownania z hashem Arduino w deskryptorze obrazu.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-konsolka-2.2.4",
       "target": "konsolka",
