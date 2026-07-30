@@ -67,6 +67,42 @@ try {
   Assert-True ($afterUpdate.packages[1].status -eq "disabled") "Source package was not disabled"
   Assert-True (Test-Path -LiteralPath (Join-Path $tempRoot ($update.url.Split("/main/")[1] -replace '/', '\'))) "Update KFW file missing"
 
+  $hardwareChangeRejected = $false
+  try {
+    & (Join-Path $PSScriptRoot "repack_firmware_policy.ps1") `
+      -SourceId $source.id `
+      -Mode update `
+      -VinJson '["s3/n4r2/1/2607/1/1/1/1/1//"]' `
+      -MacJson '[]' `
+      -RequestId "test-hardware-change" `
+      -Actor "local-test" `
+      -ManifestPath $tempManifest `
+      -PrivateKeyPath $PrivateKeyPath | Out-Null
+  } catch {
+    $hardwareChangeRejected = $_.Exception.Message.Contains(
+      "Only serial number and production date may change"
+    )
+  }
+  Assert-True $hardwareChangeRejected "Immutable hardware VIN was changed"
+
+  $rangeRejected = $false
+  try {
+    & (Join-Path $PSScriptRoot "repack_firmware_policy.ps1") `
+      -SourceId $source.id `
+      -Mode update `
+      -VinJson '["s3/n16r8/5-20/2607/1/1/1/1/1//"]' `
+      -MacJson '[]' `
+      -RequestId "test-range-before-parser-support" `
+      -Actor "local-test" `
+      -ManifestPath $tempManifest `
+      -PrivateKeyPath $PrivateKeyPath | Out-Null
+  } catch {
+    $rangeRejected = $_.Exception.Message.Contains(
+      "Ranges and exclusions are not supported yet"
+    )
+  }
+  Assert-True $rangeRejected "Unsupported VIN range was accepted"
+
   & (Join-Path $PSScriptRoot "repack_firmware_policy.ps1") `
     -SourceId $source.id `
     -Mode emergency `

@@ -169,6 +169,103 @@ function Normalize-Mac {
   return (($hex -split '(.{2})' | Where-Object { $_ }) -join ':')
 }
 
+function Get-VinTechnicalProfileKey {
+  param([string]$Rule)
+  $trimmed = $Rule.Trim()
+  if ($trimmed.Length -eq 0 -or $trimmed -eq "*") {
+    Stop-Policy "Source package has no immutable technical VIN profile"
+  }
+
+  $segments = [System.Collections.ArrayList]::new()
+  foreach ($segment in $trimmed.Split(
+      [char[]]@('/'),
+      [System.StringSplitOptions]::None
+    )) {
+    [void]$segments.Add($segment.Trim())
+  }
+  while ($segments.Count -lt 10) {
+    [void]$segments.Add("")
+  }
+  if ([string]::IsNullOrWhiteSpace([string]$segments[0]) -or
+      [string]$segments[0] -eq "*" -or
+      [string]::IsNullOrWhiteSpace([string]$segments[1]) -or
+      [string]$segments[1] -eq "*") {
+    Stop-Policy "VIN model and memory must be immutable"
+  }
+
+  $segments[2] = ""
+  $segments[3] = ""
+  return [string]::Join("/", [string[]]$segments.ToArray([string]))
+}
+
+function Assert-VinRolloutSyntax {
+  param([string]$Rule)
+  $segments = [System.Collections.ArrayList]::new()
+  foreach ($segment in $Rule.Trim().Split(
+      [char[]]@('/'),
+      [System.StringSplitOptions]::None
+    )) {
+    [void]$segments.Add($segment.Trim())
+  }
+  while ($segments.Count -lt 10) {
+    [void]$segments.Add("")
+  }
+
+  foreach ($serialNumber in ([string]$segments[2]).Split(';')) {
+    $value = $serialNumber.Trim()
+    if ($value.Length -gt 0 -and $value -ne "*" -and
+        $value -notmatch '^\d{1,9}$') {
+      Stop-Policy (
+        "VIN serial number must be exact. Ranges and exclusions are not " +
+        "supported yet"
+      )
+    }
+  }
+
+  foreach ($productionDate in ([string]$segments[3]).Split(';')) {
+    $value = $productionDate.Trim()
+    if ($value.Length -eq 0 -or $value -eq "*") {
+      continue
+    }
+    if ($value -notmatch '^(?:\d{4}|\d{6})$') {
+      Stop-Policy (
+        "VIN production date must use RRMM or RRRRMM. Ranges and " +
+        "exclusions are not supported yet"
+      )
+    }
+    $month = [int]$value.Substring($value.Length - 2)
+    if ($month -lt 1 -or $month -gt 12) {
+      Stop-Policy "VIN production month must be between 01 and 12"
+    }
+  }
+}
+
+function Assert-VinRolloutOnlyChange {
+  param(
+    [string]$SourceRules,
+    [string[]]$RequestedRules
+  )
+  $sourceProfiles = [System.Collections.Generic.HashSet[string]]::new(
+    [System.StringComparer]::OrdinalIgnoreCase
+  )
+  foreach ($sourceRule in $SourceRules.Split(
+      [char[]]@('|'),
+      [System.StringSplitOptions]::None
+    )) {
+    [void]$sourceProfiles.Add((Get-VinTechnicalProfileKey -Rule $sourceRule))
+  }
+  foreach ($requestedRule in $RequestedRules) {
+    Assert-VinRolloutSyntax -Rule $requestedRule
+    $requestedProfile = Get-VinTechnicalProfileKey -Rule $requestedRule
+    if (-not $sourceProfiles.Contains($requestedProfile)) {
+      Stop-Policy (
+        "Requested VIN changes immutable hardware compatibility. " +
+        "Only serial number and production date may change"
+      )
+    }
+  }
+}
+
 function Find-HeaderEnd {
   param([byte[]]$Bytes)
   for ($i = 0; $i -lt $Bytes.Length - 1; $i++) {
@@ -367,6 +464,11 @@ try {
       Stop-Policy "Source KFW2 signature is invalid"
     }
 
+    if ($Mode -eq "update") {
+      Assert-VinRolloutOnlyChange `
+        -SourceRules $kfw.Header["vin"] `
+        -RequestedRules $vinRules
+    }
     $signedVin = $vinRules -join "|"
     $signedMac = $macRules -join "|"
     $newSignedText = New-SignedText -Header $kfw.Header -Vin $signedVin -Mac $signedMac

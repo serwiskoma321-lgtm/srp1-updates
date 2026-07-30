@@ -35,6 +35,29 @@ commit this value or pass it as a workflow input.
 - A request ID is an idempotency key. Repeating it does not create another
   package.
 
+For a normal `update`, the source package defines the immutable technical
+compatibility profile:
+
+1. processor model,
+2. memory variant,
+3. measurement-module compatibility,
+4. console compatibility,
+5. SD compatibility,
+6. RTC compatibility,
+7. RES compatibility,
+8. base hardware generation.
+
+The administrator may change only the serial-number and production-date
+segments of a VIN rule. The workflow derives every source technical profile
+from the signed KFW header and rejects any requested VIN rule that changes a
+technical segment. This server-side check is required even though the Android
+editor also displays technical compatibility as read-only.
+
+The current policy grammar accepts exact serial numbers and exact production
+dates. Ranges and exclusions are deliberately rejected until the same
+structured grammar is implemented and tested in the Android app, workflow,
+controller package verifier, and firmware matcher.
+
 The administrator app will trigger this workflow through a GitHub App user
 token with only `Actions: write` permission.
 
