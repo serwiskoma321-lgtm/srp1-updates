@@ -26,7 +26,12 @@ on:
         default: '[]'
         type: string
       notes:
-        description: Audit note
+        description: Package description
+        required: false
+        default: ''
+        type: string
+      audit_note:
+        description: Reason recorded in the policy audit trail
         required: false
         default: ''
         type: string
@@ -70,6 +75,7 @@ jobs:
           VIN_JSON: ${{ inputs.vin_json }}
           MAC_JSON: ${{ inputs.mac_json }}
           POLICY_NOTES: ${{ inputs.notes }}
+          POLICY_AUDIT_NOTE: ${{ inputs.audit_note }}
           REQUEST_ID: ${{ inputs.request_id }}
           DISABLE_SOURCE: ${{ inputs.disable_source }}
           REQUEST_ACTOR: ${{ github.actor }}
@@ -93,6 +99,7 @@ jobs:
               -VinJson $env:VIN_JSON `
               -MacJson $env:MAC_JSON `
               -Notes $env:POLICY_NOTES `
+              -AuditNote $env:POLICY_AUDIT_NOTE `
               -RequestId $env:REQUEST_ID `
               -Actor $env:REQUEST_ACTOR `
               -DisableSource $env:DISABLE_SOURCE `

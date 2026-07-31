@@ -10,6 +10,7 @@ param(
   [string]$VinJson = "[]",
   [string]$MacJson = "[]",
   [string]$Notes = "",
+  [string]$AuditNote = "",
   [string]$RequestId = "",
   [string]$Actor = "",
   [ValidateSet("true", "false")]
@@ -213,31 +214,94 @@ function Assert-VinRolloutSyntax {
 
   foreach ($serialNumber in ([string]$segments[2]).Split(';')) {
     $value = $serialNumber.Trim()
-    if ($value.Length -gt 0 -and $value -ne "*" -and
-        $value -notmatch '^\d{1,9}$') {
-      Stop-Policy (
-        "VIN serial number must be exact. Ranges and exclusions are not " +
-        "supported yet"
-      )
+    if ($value.StartsWith("!")) {
+      $value = $value.Substring(1).Trim()
+    }
+    if ($value.Length -eq 0 -or $value -eq "*") {
+      continue
+    }
+    if ($value -match '^(\d{1,9})-(\d{1,9})$') {
+      if ([int64]$Matches[1] -gt [int64]$Matches[2]) {
+        Stop-Policy "VIN serial range starts after it ends"
+      }
+    } elseif ($value -notmatch '^\d{1,9}$') {
+      Stop-Policy "VIN serial selector has invalid syntax: $value"
     }
   }
 
   foreach ($productionDate in ([string]$segments[3]).Split(';')) {
     $value = $productionDate.Trim()
+    if ($value.StartsWith("!")) {
+      $value = $value.Substring(1).Trim()
+    }
     if ($value.Length -eq 0 -or $value -eq "*") {
       continue
     }
-    if ($value -notmatch '^(?:\d{4}|\d{6})$') {
-      Stop-Policy (
-        "VIN production date must use RRMM or RRRRMM. Ranges and " +
-        "exclusions are not supported yet"
-      )
+    $dateValues = if ($value -match '^(\d{4}|\d{6})-(\d{4}|\d{6})$') {
+      if ($Matches[1].Length -ne $Matches[2].Length) {
+        Stop-Policy "VIN date range must use one consistent format"
+      }
+      if ([int64]$Matches[1] -gt [int64]$Matches[2]) {
+        Stop-Policy "VIN date range starts after it ends"
+      }
+      @($Matches[1], $Matches[2])
+    } elseif ($value -match '^(?:\d{4}|\d{6})$') {
+      @($value)
+    } else {
+      Stop-Policy "VIN production date selector has invalid syntax: $value"
     }
-    $month = [int]$value.Substring($value.Length - 2)
-    if ($month -lt 1 -or $month -gt 12) {
-      Stop-Policy "VIN production month must be between 01 and 12"
+    foreach ($dateValue in $dateValues) {
+      $month = [int]$dateValue.Substring($dateValue.Length - 2)
+      if ($month -lt 1 -or $month -gt 12) {
+        Stop-Policy "VIN production month must be between 01 and 12"
+      }
     }
   }
+}
+
+function Test-VinUsesAdvancedSelectors {
+  param([string[]]$Rules)
+  foreach ($rule in $Rules) {
+    $segments = $rule.Split(
+      [char[]]@('/'),
+      [System.StringSplitOptions]::None
+    )
+    foreach ($index in @(2, 3)) {
+      if ($index -ge $segments.Count) {
+        continue
+      }
+      foreach ($selector in ([string]$segments[$index]).Split(';')) {
+        $value = $selector.Trim()
+        if ($value.StartsWith("!") -or $value.Contains("-")) {
+          return $true
+        }
+      }
+    }
+  }
+  return $false
+}
+
+function Test-FirmwareVersionAtLeast {
+  param(
+    [string]$Value,
+    [int]$Major,
+    [int]$Minor,
+    [int]$Patch
+  )
+  if ($Value -notmatch '^(\d+)\.(\d+)\.(\d+)') {
+    return $false
+  }
+  $current = @([int]$Matches[1], [int]$Matches[2], [int]$Matches[3])
+  $required = @($Major, $Minor, $Patch)
+  for ($index = 0; $index -lt 3; $index++) {
+    if ($current[$index] -gt $required[$index]) {
+      return $true
+    }
+    if ($current[$index] -lt $required[$index]) {
+      return $false
+    }
+  }
+  return $true
 }
 
 function Assert-VinRolloutOnlyChange {
@@ -388,8 +452,8 @@ if ($RequestId.Length -eq 0) {
 if ($RequestId -notmatch '^[A-Za-z0-9._-]{1,80}$') {
   Stop-Policy "RequestId contains forbidden characters"
 }
-if ($Actor.Length -gt 80 -or $Notes.Length -gt 500) {
-  Stop-Policy "Actor or notes value is too long"
+if ($Actor.Length -gt 80 -or $Notes.Length -gt 500 -or $AuditNote.Length -gt 500) {
+  Stop-Policy "Actor, description or audit note is too long"
 }
 
 $vinRules = @(Read-RuleArray -Json $VinJson -Name "VIN")
@@ -432,6 +496,19 @@ if ($sources.Count -ne 1) {
   Stop-Policy "Expected exactly one source package with id $SourceId"
 }
 $source = $sources[0]
+if ($Mode -eq "update" -and
+    [string]$source.target -eq "sterownik" -and
+    (Test-VinUsesAdvancedSelectors -Rules $vinRules) -and
+    -not (Test-FirmwareVersionAtLeast `
+      -Value ([string]$source.version) `
+      -Major 2 `
+      -Minor 3 `
+      -Patch 22)) {
+  Stop-Policy (
+    "Serial/date ranges and exclusions require sterownik firmware 2.3.22 " +
+    "or newer"
+  )
+}
 $repoPath = Split-Path -Parent (Resolve-Path -LiteralPath $ManifestPath)
 $sourceRelativePath = Get-SourceRelativePath -Url $source.url
 $sourcePath = [IO.Path]::GetFullPath((Join-Path $repoPath $sourceRelativePath))
@@ -538,6 +615,7 @@ $newPackage = [ordered]@{
   sourcePackageId = $SourceId
   policyRequestId = $RequestId
   createdBy = $Actor
+  policyAuditNote = $AuditNote.Trim()
   api = $source.api
   compat = [ordered]@{
     product = $source.compat.product

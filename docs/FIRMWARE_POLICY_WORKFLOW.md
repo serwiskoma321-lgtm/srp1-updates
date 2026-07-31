@@ -53,10 +53,42 @@ from the signed KFW header and rejects any requested VIN rule that changes a
 technical segment. This server-side check is required even though the Android
 editor also displays technical compatibility as read-only.
 
-The current policy grammar accepts exact serial numbers and exact production
-dates. Ranges and exclusions are deliberately rejected until the same
-structured grammar is implemented and tested in the Android app, workflow,
-controller package verifier, and firmware matcher.
+The signed VIN policy uses the same selector grammar in the Android app,
+workflow and controller:
+
+- `56` - one exact serial number,
+- `56-650` - an inclusive serial range,
+- `!78` - one excluded serial number,
+- `!80-90` - an excluded inclusive range,
+- `2607-2712` - an inclusive production-month range in `RRMM` form.
+
+Selectors inside one VIN segment are separated with `;`. Positive selectors
+are combined with OR. A matching exclusion always wins. A segment without a
+positive selector means "all except exclusions". Production-date range bounds
+and the device VIN must use the same `RRMM` or `RRRRMM` width.
+
+The first controller firmware that understands ranges and exclusions is
+`2.3.22`. The workflow rejects advanced selectors when repacking an older
+controller payload. Version `2.3.22` itself is published with the legacy exact
+VIN rule so controllers on `2.3.21` can install it first.
+
+The package description and the operation audit note are separate values. The
+description is displayed in the manifest. The audit note records why the
+administrator changed the policy.
+
+## Package deletion
+
+`delete-firmware-package.yml` performs an explicit administrative deletion:
+
+1. validates the exact manifest package ID,
+2. removes the package entry,
+3. deletes the KFW file when no other entry references it,
+4. appends an audit entry to the manifest,
+5. commits both changes together.
+
+The Android app requires a GitHub administrator session, a confirmation dialog
+and local device authentication. Git history remains the recovery and audit
+trail even though the package disappears from the current publication.
 
 The administrator app will trigger this workflow through a GitHub App user
 token with only `Actions: write` permission.

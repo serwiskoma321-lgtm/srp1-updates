@@ -16,7 +16,7 @@ function Assert-True {
 $repoPath = Split-Path -Parent $PSScriptRoot
 $sourceManifest = Get-Content -Raw -LiteralPath (Join-Path $repoPath "manifest.json") | ConvertFrom-Json
 $source = @($sourceManifest.packages | Where-Object {
-    $_.id -eq "srp1-sterownik-2.3.21-auto-publish"
+    $_.id -eq "srp1-sterownik-2.3.22-auto-publish"
   })[0]
 if ($null -eq $source) {
   throw "Test source package not found"
@@ -85,23 +85,30 @@ try {
   }
   Assert-True $hardwareChangeRejected "Immutable hardware VIN was changed"
 
-  $rangeRejected = $false
-  try {
-    & (Join-Path $PSScriptRoot "repack_firmware_policy.ps1") `
-      -SourceId $source.id `
-      -Mode update `
-      -VinJson '["s3/n16r8/5-20/2607/1/1/1/1/1//"]' `
-      -MacJson '[]' `
-      -RequestId "test-range-before-parser-support" `
-      -Actor "local-test" `
-      -ManifestPath $tempManifest `
-      -PrivateKeyPath $PrivateKeyPath | Out-Null
-  } catch {
-    $rangeRejected = $_.Exception.Message.Contains(
-      "Ranges and exclusions are not supported yet"
-    )
-  }
-  Assert-True $rangeRejected "Unsupported VIN range was accepted"
+  & (Join-Path $PSScriptRoot "repack_firmware_policy.ps1") `
+    -SourceId $source.id `
+    -Mode update `
+    -VinJson '["s3/n16r8/5-20;!8/2607-2712/1/1/1/1/1//"]' `
+    -MacJson '[]' `
+    -Notes "Opis paczki testowej" `
+    -AuditNote "Zakres pilotazowy" `
+    -RequestId "test-range-and-exclusion" `
+    -Actor "local-test" `
+    -DisableSource false `
+    -ManifestPath $tempManifest `
+    -PrivateKeyPath $PrivateKeyPath | Out-Null
+
+  $afterRange = Get-Content -Raw -LiteralPath $tempManifest | ConvertFrom-Json
+  $range = $afterRange.packages[0]
+  Assert-True (
+    $range.compat.vin[0] -eq "s3/n16r8/5-20;!8/2607-2712/1/1/1/1/1//"
+  ) "VIN range or exclusion was not written"
+  Assert-True (
+    $range.policyAuditNote -eq "Zakres pilotazowy"
+  ) "Audit note was not written: '$($range.policyAuditNote)'"
+  Assert-True (
+    $range.notes -eq "Opis paczki testowej"
+  ) "Package description was not written"
 
   & (Join-Path $PSScriptRoot "repack_firmware_policy.ps1") `
     -SourceId $source.id `
@@ -117,7 +124,7 @@ try {
 
   $afterEmergency = Get-Content -Raw -LiteralPath $tempManifest | ConvertFrom-Json
   $emergency = $afterEmergency.packages[0]
-  Assert-True ($emergency.policyRevision -eq 3) "Second policy revision should be 3"
+  Assert-True ($emergency.policyRevision -eq 4) "Third policy revision should be 4"
   Assert-True ($emergency.emergencyUsb -eq $true) "Emergency flag missing"
   Assert-True ($emergency.compat.vin[0] -eq "*") "Emergency VIN should be wildcard"
   Assert-True ($emergency.compat.mac.Count -eq 2) "Emergency MAC list should contain two addresses"

@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-29T11:22:38Z",
+  "generatedAt": "2026-07-31T05:21:13Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.3.22-auto-publish",
+      "target": "sterownik",
+      "version": "2.3.22",
+      "publishedAt": "2026-07-31",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.22/ster.kfw",
+      "size": 1435535,
+      "sha256": "8f880505c0763e5a5731d36f366bafbd4f4e25e0b4bae48d7d9ea644dcf77637",
+      "notes": "Obsługa zakresów i wykluczeń numerów seryjnych oraz zakresów dat produkcji w podpisanej polityce VIN.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.21-auto-publish",
       "target": "sterownik",
