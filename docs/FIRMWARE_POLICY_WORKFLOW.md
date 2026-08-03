@@ -9,22 +9,34 @@ The workflow:
 2. Verifies the manifest size and SHA-256.
 3. Verifies the source KFW2 payload hash and ECDSA signature.
 4. Copies the encrypted payload byte for byte.
-5. Creates a new signed header with the requested VIN and MAC rules.
-6. Writes a new immutable KFW path under `policy-N`.
-7. Prepends the new package to the manifest.
-8. Optionally marks the source package as `disabled`.
-9. Commits the package and manifest together.
+5. Reconstructs the requested KFW2 signed text from the source payload and the
+   requested VIN/MAC rules.
+6. Verifies the administrator-phone signature with the committed public key.
+7. Creates a new header containing that verified signature.
+8. Writes a new immutable KFW path under `policy-N`.
+9. Prepends the new package to the manifest.
+10. Optionally marks the source package as `disabled`.
+11. Commits the package and manifest together.
 
-## Required secret
+## Signing key placement
 
-The `firmware-signing` GitHub environment must contain:
+The private ECDSA P-256 firmware key is not stored in this repository and is
+not stored in GitHub Actions. It is imported manually into an authorized KOMA
+administrator phone from a `KOMA_ADMIN_KEY_V1` (`.kadm`) file. Android stores
+the imported key with `flutter_secure_storage`, backed by Android Keystore.
 
-```text
-KOMA_OTA_PRIVATE_KEY_B64
-```
+The key remains available across ordinary APK updates because the production
+application has a stable application ID and signing certificate. It must be
+imported again after application uninstall, application-data removal, or a
+move to another phone. The source `.kadm` file should be removed from the phone
+after import and retained in an offline backup.
 
-It is the base64 content of the 104-byte `ECS2` P-256 private-key blob. Never
-commit this value or pass it as a workflow input.
+GitHub stores only the public `ECS1` key in
+`keys/srp1_ota_p256_public_blob.b64`. The `signature_hex` workflow input is a
+64-byte IEEE P1363 ECDSA signature encoded as 128 hexadecimal characters. It
+is not a private secret and is valid only for the exact product, target,
+version, VIN/MAC policy, payload size, payload hash, and encryption metadata
+included in the signed KFW2 text.
 
 ## Policy rules
 
@@ -119,16 +131,20 @@ The registered application is `KOMA Firmware Admin` with slug
 are `Actions: read and write` and the automatically required
 `Metadata: read-only`.
 
-The phone stores the short-lived user access token in Android Keystore. It
-never receives the firmware signing key. Before dispatching, the app validates
-the policy, shows the full change, and asks Android to authenticate the local
-user with biometrics or the device credential.
+The phone stores the short-lived GitHub user access token and the separately
+imported firmware signing key in protected Android storage. Before dispatching,
+the app validates the policy, verifies the source KFW package, shows the full
+change, asks Android to authenticate the local user with biometrics or the
+device credential, and signs only the resulting KFW2 policy text. The private
+key is never sent to GitHub.
 
 The workflow run name includes the application-generated request ID, allowing
 the phone to find and monitor exactly the run it dispatched.
 
 ## Environment protection
 
-Create an environment named `firmware-signing`. For production, configure a
-required reviewer so that a compromised administrator session cannot use the
-signing key without a second GitHub approval.
+The workflow still uses the `firmware-signing` environment as an audit and
+optional approval boundary, but it no longer needs a private-key secret. A
+required reviewer may be enabled later as an additional organizational control.
+It is not part of the cryptographic trust path: the workflow must always reject
+an absent, malformed, or invalid administrator signature.

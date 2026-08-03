@@ -19,7 +19,10 @@ param(
   [string]$ManifestPath = (Join-Path (Split-Path -Parent $PSScriptRoot) "manifest.json"),
 
   [Parameter(Mandatory = $true)]
-  [string]$PrivateKeyPath,
+  [ValidatePattern("^[0-9A-Fa-f]{128}$")]
+  [string]$SignatureHex,
+
+  [string]$PublicKeyPath = (Join-Path (Split-Path -Parent $PSScriptRoot) "keys/srp1_ota_p256_public_blob.b64"),
 
   [string]$ResultPath = ""
 )
@@ -63,25 +66,23 @@ function Convert-BytesToHex {
   return (($Bytes | ForEach-Object { $_.ToString("x2") }) -join "")
 }
 
-function New-EcdsaFromPrivateBlob {
+function New-EcdsaFromPublicBlob {
   param([string]$Path)
   if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) {
-    Stop-Policy "Private signing key not found"
+    Stop-Policy "Public verification key not found"
   }
   $blob = [Convert]::FromBase64String((Get-Content -Raw -LiteralPath $Path).Trim())
-  if ($blob.Length -ne 104) {
-    Stop-Policy "Unexpected private key blob length"
+  if ($blob.Length -ne 72) {
+    Stop-Policy "Unexpected public key blob length"
   }
-  if ([Text.Encoding]::ASCII.GetString($blob, 0, 4) -ne "ECS2") {
-    Stop-Policy "Unsupported private key blob"
+  if ([Text.Encoding]::ASCII.GetString($blob, 0, 4) -ne "ECS1") {
+    Stop-Policy "Unsupported public key blob"
   }
 
   $x = New-Object byte[] 32
   $y = New-Object byte[] 32
-  $d = New-Object byte[] 32
   [Array]::Copy($blob, 8, $x, 0, 32)
   [Array]::Copy($blob, 40, $y, 0, 32)
-  [Array]::Copy($blob, 72, $d, 0, 32)
 
   $parameters = New-Object System.Security.Cryptography.ECParameters
   $parameters.Curve = [System.Security.Cryptography.ECCurve+NamedCurves]::nistP256
@@ -89,7 +90,6 @@ function New-EcdsaFromPrivateBlob {
   $point.X = $x
   $point.Y = $y
   $parameters.Q = $point
-  $parameters.D = $d
   return [System.Security.Cryptography.ECDsa]::Create($parameters)
 }
 
@@ -107,21 +107,6 @@ function Test-EcdsaSignature {
   }
   $format = [Enum]::Parse($formatType, "IeeeP1363FixedFieldConcatenation")
   return $Ecdsa.VerifyHash($Digest, $Signature, $format)
-}
-
-function New-EcdsaSignature {
-  param(
-    [System.Security.Cryptography.ECDsa]$Ecdsa,
-    [byte[]]$Digest
-  )
-  $formatType = [Type]::GetType(
-    "System.Security.Cryptography.DSASignatureFormat, System.Security.Cryptography.Algorithms"
-  )
-  if ($null -eq $formatType) {
-    return $Ecdsa.SignHash($Digest)
-  }
-  $format = [Enum]::Parse($formatType, "IeeeP1363FixedFieldConcatenation")
-  return $Ecdsa.SignHash($Digest, $format)
 }
 
 function Read-RuleArray {
@@ -530,7 +515,7 @@ if (-not [string]::IsNullOrWhiteSpace($source.sha256) -and
 }
 
 $kfw = Read-Kfw -Path $sourcePath
-$ecdsa = New-EcdsaFromPrivateBlob -Path $PrivateKeyPath
+$ecdsa = New-EcdsaFromPublicBlob -Path $PublicKeyPath
 try {
   $sourceSignedText = New-SignedText -Header $kfw.Header -Vin $kfw.Header["vin"] -Mac $kfw.Header["mac"]
   $sha = [System.Security.Cryptography.SHA256]::Create()
@@ -550,7 +535,10 @@ try {
     $signedMac = $macRules -join "|"
     $newSignedText = New-SignedText -Header $kfw.Header -Vin $signedVin -Mac $signedMac
     $newDigest = $sha.ComputeHash([Text.Encoding]::UTF8.GetBytes($newSignedText))
-    $newSignature = New-EcdsaSignature -Ecdsa $ecdsa -Digest $newDigest
+    $newSignature = Convert-HexToBytes -Hex $SignatureHex
+    if (-not (Test-EcdsaSignature -Ecdsa $ecdsa -Digest $newDigest -Signature $newSignature)) {
+      Stop-Policy "Administrator policy signature is invalid"
+    }
   } finally {
     $sha.Dispose()
   }

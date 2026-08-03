@@ -13,6 +13,74 @@ function Assert-True {
   }
 }
 
+function New-TestEcdsa {
+  param([string]$Path)
+  $blob = [Convert]::FromBase64String((Get-Content -Raw -LiteralPath $Path).Trim())
+  $parameters = New-Object System.Security.Cryptography.ECParameters
+  $parameters.Curve = [System.Security.Cryptography.ECCurve+NamedCurves]::nistP256
+  $point = New-Object System.Security.Cryptography.ECPoint
+  $point.X = [byte[]]$blob[8..39]
+  $point.Y = [byte[]]$blob[40..71]
+  $parameters.Q = $point
+  $parameters.D = [byte[]]$blob[72..103]
+  return [System.Security.Cryptography.ECDsa]::Create($parameters)
+}
+
+function Get-TestPolicySignature {
+  param(
+    [string]$SourcePath,
+    [string]$Vin,
+    [string]$Mac
+  )
+  $bytes = [IO.File]::ReadAllBytes($SourcePath)
+  $headerEnd = -1
+  for ($i = 0; $i -lt $bytes.Length - 1; $i++) {
+    if ($bytes[$i] -eq 10 -and $bytes[$i + 1] -eq 10) {
+      $headerEnd = $i
+      break
+    }
+  }
+  if ($headerEnd -le 0) {
+    throw "Test source is not KFW2"
+  }
+  $header = @{}
+  $headerText = [Text.Encoding]::ASCII.GetString($bytes, 0, $headerEnd)
+  foreach ($line in @($headerText -split "`n") | Select-Object -Skip 1) {
+    $separator = $line.IndexOf("=")
+    if ($separator -gt 0) {
+      $header[$line.Substring(0, $separator).Trim().ToLowerInvariant()] = `
+        $line.Substring($separator + 1).Trim()
+    }
+  }
+  $signedText = "KFW2`nproduct=$($header['product'])`ntarget=$($header['target'])" +
+    "`nversion=$($header['version'])`nvin=$Vin`nmac=$Mac" +
+    "`npayload_size=$($header['payload_size'])" +
+    "`npayload_sha256=$($header['payload_sha256'])"
+  foreach ($optional in @("payload_enc", "payload_iv", "payload_plain_sha256")) {
+    if ($header.ContainsKey($optional)) {
+      $signedText += "`n$optional=$($header[$optional])"
+    }
+  }
+  $sha = [Security.Cryptography.SHA256]::Create()
+  $ecdsa = New-TestEcdsa -Path $PrivateKeyPath
+  try {
+    $digest = $sha.ComputeHash([Text.Encoding]::UTF8.GetBytes($signedText))
+    $formatType = [Type]::GetType(
+      "System.Security.Cryptography.DSASignatureFormat, System.Security.Cryptography.Algorithms"
+    )
+    if ($null -eq $formatType) {
+      $signature = $ecdsa.SignHash($digest)
+    } else {
+      $format = [Enum]::Parse($formatType, "IeeeP1363FixedFieldConcatenation")
+      $signature = $ecdsa.SignHash($digest, $format)
+    }
+    return (($signature | ForEach-Object { $_.ToString("x2") }) -join "")
+  } finally {
+    $ecdsa.Dispose()
+    $sha.Dispose()
+  }
+}
+
 $repoPath = Split-Path -Parent $PSScriptRoot
 $sourceManifest = Get-Content -Raw -LiteralPath (Join-Path $repoPath "manifest.json") | ConvertFrom-Json
 $source = @($sourceManifest.packages | Where-Object {
@@ -47,6 +115,12 @@ try {
     (New-Object Text.UTF8Encoding($false))
   )
 
+  $updateVin = "s3/n16r8/*/2607/1/1/1/1/1//"
+  $updateSignature = Get-TestPolicySignature `
+    -SourcePath $tempSource `
+    -Vin $updateVin `
+    -Mac ""
+
   & (Join-Path $PSScriptRoot "repack_firmware_policy.ps1") `
     -SourceId $source.id `
     -Mode update `
@@ -55,7 +129,7 @@ try {
     -RequestId "test-update" `
     -Actor "local-test" `
     -ManifestPath $tempManifest `
-    -PrivateKeyPath $PrivateKeyPath `
+    -SignatureHex $updateSignature `
     -ResultPath $resultPath | Out-Null
 
   $afterUpdate = Get-Content -Raw -LiteralPath $tempManifest | ConvertFrom-Json
@@ -77,13 +151,19 @@ try {
       -RequestId "test-hardware-change" `
       -Actor "local-test" `
       -ManifestPath $tempManifest `
-      -PrivateKeyPath $PrivateKeyPath | Out-Null
+      -SignatureHex ("00" * 64) | Out-Null
   } catch {
     $hardwareChangeRejected = $_.Exception.Message.Contains(
       "Only serial number and production date may change"
     )
   }
   Assert-True $hardwareChangeRejected "Immutable hardware VIN was changed"
+
+  $rangeVin = "s3/n16r8/5-20;!8/2607-2712/1/1/1/1/1//"
+  $rangeSignature = Get-TestPolicySignature `
+    -SourcePath $tempSource `
+    -Vin $rangeVin `
+    -Mac ""
 
   & (Join-Path $PSScriptRoot "repack_firmware_policy.ps1") `
     -SourceId $source.id `
@@ -96,7 +176,7 @@ try {
     -Actor "local-test" `
     -DisableSource false `
     -ManifestPath $tempManifest `
-    -PrivateKeyPath $PrivateKeyPath | Out-Null
+    -SignatureHex $rangeSignature | Out-Null
 
   $afterRange = Get-Content -Raw -LiteralPath $tempManifest | ConvertFrom-Json
   $range = $afterRange.packages[0]
@@ -110,6 +190,34 @@ try {
     $range.notes -eq "Opis paczki testowej"
   ) "Package description was not written"
 
+  $tamperedSignature = $rangeSignature.Substring(0, 127) + $(
+    if ($rangeSignature.EndsWith("0")) { "1" } else { "0" }
+  )
+  $tamperedSignatureRejected = $false
+  try {
+    & (Join-Path $PSScriptRoot "repack_firmware_policy.ps1") `
+      -SourceId $source.id `
+      -Mode update `
+      -VinJson '["s3/n16r8/5-20;!8/2607-2712/1/1/1/1/1//"]' `
+      -MacJson '[]' `
+      -RequestId "test-tampered-signature" `
+      -Actor "local-test" `
+      -DisableSource false `
+      -ManifestPath $tempManifest `
+      -SignatureHex $tamperedSignature | Out-Null
+  } catch {
+    $tamperedSignatureRejected = $_.Exception.Message.Contains(
+      "Administrator policy signature is invalid"
+    )
+  }
+  Assert-True $tamperedSignatureRejected "Tampered administrator signature was accepted"
+
+  $emergencyMac = "84:FC:E6:6A:BE:8C|E4:B3:23:F7:E8:B8"
+  $emergencySignature = Get-TestPolicySignature `
+    -SourcePath $tempSource `
+    -Vin "*" `
+    -Mac $emergencyMac
+
   & (Join-Path $PSScriptRoot "repack_firmware_policy.ps1") `
     -SourceId $source.id `
     -Mode emergency `
@@ -119,7 +227,7 @@ try {
     -Actor "local-test" `
     -DisableSource false `
     -ManifestPath $tempManifest `
-    -PrivateKeyPath $PrivateKeyPath `
+    -SignatureHex $emergencySignature `
     -ResultPath $resultPath | Out-Null
 
   $afterEmergency = Get-Content -Raw -LiteralPath $tempManifest | ConvertFrom-Json
@@ -139,7 +247,7 @@ try {
       -MacJson '[]' `
       -RequestId "test-invalid" `
       -ManifestPath $tempManifest `
-      -PrivateKeyPath $PrivateKeyPath | Out-Null
+      -SignatureHex ("00" * 64) | Out-Null
   } catch {
     $failedAsExpected = $_.Exception.Message.Contains(
       "Emergency mode requires at least one exact MAC address"
