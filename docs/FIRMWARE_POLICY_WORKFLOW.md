@@ -96,18 +96,28 @@ token with only `Actions: write` permission.
 ## Administrator app
 
 The Android administrator flow uses GitHub Device Flow. The public GitHub App
-client ID is supplied when Flutter is built:
+client ID is compiled into the standard application build:
 
 ```powershell
 flutter build apk --release `
-  --dart-define=KOMA_GITHUB_CLIENT_ID=Iv1.REPLACE_WITH_CLIENT_ID
+  --dart-define=KOMA_GITHUB_CLIENT_ID=Iv23li5Gv1vZGTitDXfT
 ```
+
+The current application also uses this ID as its safe default. The
+`KOMA_GITHUB_CLIENT_ID` define remains available as an explicit override for a
+separate development or service GitHub App. A Client ID is public configuration,
+not a signing secret.
 
 The GitHub App must:
 
 1. Enable Device Flow.
 2. Have repository `Actions: read and write` permission.
 3. Be installed only on `serwiskoma321-lgtm/srp1-updates`.
+
+The registered application is `KOMA Firmware Admin` with slug
+`koma-firmware-admin`. Webhooks are disabled. Its only repository permissions
+are `Actions: read and write` and the automatically required
+`Metadata: read-only`.
 
 The phone stores the short-lived user access token in Android Keystore. It
 never receives the firmware signing key. Before dispatching, the app validates
