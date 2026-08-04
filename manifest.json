@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-04T06:11:47Z",
+  "generatedAt": "2026-08-04T06:50:00Z",
   "packages": [
     {
       "id": "srp1-sterownik-2.3.22-auto-publish",
@@ -1712,34 +1712,20 @@
           "84:FC:E6:6A:BE:8C"
         ]
       }
-    },
-    {
-      "id": "srp1-sterownik-2.1.0-dev18",
-      "target": "sterownik",
-      "version": "2.1.0-dev18",
-      "publishedAt": "2026-07-02",
-      "fileName": "ster.bin",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev18/ster.bin",
-      "size": 1335968,
-      "sha256": "336e5176f43281c631305455c64a59a6b8a2348db9ea37742dfb267d92694a25",
-      "notes": "Testowa paczka OTA po dev17. Ten sam stabilniejszy odbior OTA, nowy numer wersji do sprawdzenia aktualizacji z telefonu.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": "s3/n16r8///P1/K1/SD1/RTC1/RS1",
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
     }
   ],
   "audit": [
+    {
+      "action": "delete-package",
+      "packageId": "srp1-sterownik-2.1.0-dev18",
+      "version": "2.1.0-dev18",
+      "target": "sterownik",
+      "requestId": "app-1785826173934467-b9e441e-srp1-sterownik-2.1.0-dev18",
+      "actor": "serwiskoma321-lgtm",
+      "note": "stara",
+      "timestamp": "2026-08-04T06:50:00Z",
+      "fileDeleted": true
+    },
     {
       "action": "delete-package",
       "packageId": "srp1-sterownik-2.1.0-dev17",
