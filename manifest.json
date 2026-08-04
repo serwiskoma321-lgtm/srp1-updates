@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-07-31T05:21:13Z",
+  "generatedAt": "2026-08-04T06:11:47Z",
   "packages": [
     {
       "id": "srp1-sterownik-2.3.22-auto-publish",
@@ -25,9 +25,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -52,9 +50,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -79,9 +75,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -161,9 +155,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -188,9 +180,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -243,9 +233,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -298,9 +286,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -353,9 +339,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -408,9 +392,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -1755,31 +1737,19 @@
           "84:FC:E6:6A:BE:8C"
         ]
       }
-    },
+    }
+  ],
+  "audit": [
     {
-      "id": "srp1-sterownik-2.1.0-dev17",
-      "target": "sterownik",
+      "action": "delete-package",
+      "packageId": "srp1-sterownik-2.1.0-dev17",
       "version": "2.1.0-dev17",
-      "publishedAt": "2026-07-02",
-      "fileName": "ster.bin",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.1.0-dev17/ster.bin",
-      "size": 1335968,
-      "sha256": "8f74f8937d8081eba54c4df596e6146d97a80efda5b209e5248767b0085cdb15",
-      "notes": "Wolniejszy i stabilniejszy odbior pliku OTA na SD: mniejszy bufor Wi-Fi, dluzsze timeouty i lagodniejsze tempo zapisu.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": "s3/n16r8///P1/K1/SD1/RTC1/RS1",
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
+      "target": "sterownik",
+      "requestId": "app-1785823879807943-4bced02e-srp1-sterownik-2.1.0-dev17",
+      "actor": "serwiskoma321-lgtm",
+      "note": "stary plik",
+      "timestamp": "2026-08-04T06:11:47Z",
+      "fileDeleted": true
     }
   ]
 }
