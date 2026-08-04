@@ -67,6 +67,17 @@ try {
   $replay = Get-Content -Raw -LiteralPath $resultPath | ConvertFrom-Json
   Assert-True ($replay.idempotent -eq $true) "Replay was not idempotent"
 
+  & (Join-Path $PSScriptRoot "delete_firmware_package.ps1") `
+    -PackageId $source.id `
+    -RequestId "test-delete-new-request" `
+    -ManifestPath $tempManifest `
+    -ResultPath $resultPath | Out-Null
+  $alreadyAbsent = Get-Content -Raw -LiteralPath $resultPath | ConvertFrom-Json
+  Assert-True ($alreadyAbsent.idempotent -eq $true) `
+    "Already absent package was not idempotent"
+  Assert-True ($alreadyAbsent.fileDeleted -eq $false) `
+    "Already absent package reported a deleted file"
+
   Write-Host "Firmware package deletion tests passed."
 } finally {
   Remove-Item -LiteralPath $tempRoot -Recurse -Force -ErrorAction SilentlyContinue

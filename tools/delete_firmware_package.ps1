@@ -85,7 +85,26 @@ if ($existingRequest.Count -gt 0) {
 }
 
 $matches = @($manifest.packages | Where-Object { $_.id -eq $PackageId })
-if ($matches.Count -ne 1) {
+if ($matches.Count -eq 0) {
+  $result = [ordered]@{
+    ok = $true
+    idempotent = $true
+    requestId = $RequestId
+    packageId = $PackageId
+    fileDeleted = $false
+  }
+  $resultJson = $result | ConvertTo-Json -Depth 5
+  if ($ResultPath.Length -gt 0) {
+    [IO.File]::WriteAllText(
+      $ResultPath,
+      $resultJson,
+      (New-Object Text.UTF8Encoding($false))
+    )
+  }
+  Write-Output $resultJson
+  exit 0
+}
+if ($matches.Count -gt 1) {
   Stop-Delete "Expected exactly one package with id $PackageId"
 }
 $package = $matches[0]
