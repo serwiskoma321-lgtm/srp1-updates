@@ -3,7 +3,7 @@ param(
   [Parameter(Mandatory = $true)]
   [string]$Version,
 
-  [string]$SketchPath = "C:\Users\SRynkiewicz\Documents\Arduino\Moje apki\Konsolka\Ster_v2_3",
+  [string]$SketchPath = "C:\Users\SRynkiewicz\Documents\Arduino\Moje apki\Konsolka\Ster_v2_4",
   [string]$RepoPath = (Split-Path -Parent $PSScriptRoot),
   [string]$ArduinoCliPath = "C:\Program Files\Arduino IDE\resources\app\lib\backend\resources\arduino-cli.exe",
   [string[]]$Libraries = @(
@@ -24,9 +24,9 @@ param(
   [string]$PackageId = "",
   [string]$FileName = "",
 
-  [string]$PrivateKeyPath = "C:\Users\SRynkiewicz\.koma\ota-signing\srp1_ota_p256_private_blob.b64",
-  [string]$PublicKeyPath = "C:\Users\SRynkiewicz\.koma\ota-signing\srp1_ota_p256_public_blob.b64",
-  [string]$CipherKeyPath = "C:\Users\SRynkiewicz\.koma\ota-signing\srp1_ota_aes256_key.b64",
+  [string]$PrivateKeyPath = "C:\Users\SRynkiewicz\OneDrive\Dokumenty\Sztuczna $([char]0x015B)winia\secrets\ota-signing\srp1_ota_p256_private_blob.b64",
+  [string]$PublicKeyPath = "C:\Users\SRynkiewicz\OneDrive\Dokumenty\Sztuczna $([char]0x015B)winia\secrets\ota-signing\srp1_ota_p256_public_blob.b64",
+  [string]$CipherKeyPath = "C:\Users\SRynkiewicz\OneDrive\Dokumenty\Sztuczna $([char]0x015B)winia\secrets\ota-signing\srp1_ota_aes256_key.b64",
   [string[]]$RejectPayloadVersions = @("2.2.8", "2.2.11"),
   [string]$BuildPath = "",
   [switch]$EncryptPayload,

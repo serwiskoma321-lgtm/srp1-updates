@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-  [string]$PrivateKeyPath = "C:\Users\SRynkiewicz\.koma\ota-signing\srp1_ota_p256_private_blob.b64"
+  [string]$PrivateKeyPath = "C:\Users\SRynkiewicz\OneDrive\Dokumenty\Sztuczna $([char]0x015B)winia\secrets\ota-signing\srp1_ota_p256_private_blob.b64"
 )
 
 Set-StrictMode -Version Latest

@@ -3,8 +3,8 @@ param(
   [Parameter(Mandatory = $true)]
   [string]$Mac,
 
-  [string]$Version = "2.2.2",
-  [string]$SketchPath = "C:\Users\SRynkiewicz\Documents\Arduino\Moje apki\Konsolka\Konsola_v2_2",
+  [string]$Version = "2.3.0",
+  [string]$SketchPath = "C:\Users\SRynkiewicz\Documents\Arduino\Moje apki\Konsolka\Konsola_v2_3",
   [string]$RepoPath = (Split-Path -Parent $PSScriptRoot)
 )
 
