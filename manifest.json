@@ -1,8 +1,62 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-04T08:05:30Z",
+  "generatedAt": "2026-08-05T11:52:53Z",
   "packages": [
+    {
+      "id": "srp1-konsolka-2.3.1-profile-srp1",
+      "target": "konsolka",
+      "version": "2.3.1",
+      "publishedAt": "2026-08-05",
+      "fileName": "konsolka.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.3.1/konsolka.kfw",
+      "size": 403235,
+      "sha256": "187836afd33bdbb6be1a7755cf32c7f85a02e3e36d1c5cc56bfeabceab478771",
+      "notes": "Profil SRP-1 konsolki: pozycja Testy i katalog testow sa wylaczone compile-time; rejestracja, reset fabryczny, telemetria, UART i OTA pozostaja aktywne.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "konsolka",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.4.3-profile-srp1",
+      "target": "sterownik",
+      "version": "2.4.3",
+      "publishedAt": "2026-08-05",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.3/ster.kfw",
+      "size": 1407550,
+      "sha256": "0991ac3521b0f95bb2c51c6f35125b1ff6f6f7c23248c2b4a96c37e523433477",
+      "notes": "Pierwszy profil produktu SRP-1: modul testowy PCF x4 i katalog testow sa wylaczone compile-time, podstawowy UART pozostaje zgodny, RTC/INA/PZEM/SD/BLE/Wi-Fi bez zmian.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.3.22-auto-publish",
       "target": "sterownik",
