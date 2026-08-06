@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-06T08:24:59Z",
+  "generatedAt": "2026-08-06T09:42:55Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.5-kreg-sd-selftest",
+      "target": "sterownik",
+      "version": "2.4.5",
+      "publishedAt": "2026-08-06",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.5/ster.kfw",
+      "size": 1412062,
+      "sha256": "bfa3138b248e1fb12a243fa2a7c12d8394021d56b6fd529cabf64bd145b6fdbe",
+      "notes": "KREG v1: izolowany test zapisu i odczytu jednego bloku na SD. Tworzy 236-bajtowy /PigRejData/KREG_SELFTEST_V1.kreg, weryfikuje naglowki, CRC i trzy probki; aktywny zapis PigRej.csv pozostaje bez zmian.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.4-kreg-format-v1",
       "target": "sterownik",
