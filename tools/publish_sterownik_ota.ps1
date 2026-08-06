@@ -29,6 +29,7 @@ param(
   [string]$CipherKeyPath = "C:\Users\SRynkiewicz\OneDrive\Dokumenty\Sztuczna $([char]0x015B)winia\secrets\ota-signing\srp1_ota_aes256_key.b64",
   [string[]]$RejectPayloadVersions = @("2.2.8", "2.2.11"),
   [string]$BuildPath = "",
+  [string]$ExistingBinPath = "",
   [switch]$EncryptPayload,
   [switch]$EmergencyUsb,
   [switch]$NoManifestUpdate
@@ -308,32 +309,47 @@ if ($EmergencyUsb -and
   Stop-Publish "Emergency USB requires explicit -Mac and -CompatMac values"
 }
 
-if ([string]::IsNullOrWhiteSpace($BuildPath)) {
-  $safeVersion = $Version -replace '[^A-Za-z0-9_.-]', '_'
-  $BuildPath = Join-Path $env:TEMP ("koma_ota_build_{0}_{1}_{2}" -f $Target, $safeVersion, (Get-Date -Format "yyyyMMdd_HHmmss"))
-}
-New-Item -ItemType Directory -Force -Path $BuildPath | Out-Null
+$binPath = ""
+$buildSummary = ""
+if (-not [string]::IsNullOrWhiteSpace($ExistingBinPath)) {
+  if (-not (Test-Path -LiteralPath $ExistingBinPath -PathType Leaf)) {
+    Stop-Publish "Existing firmware .bin not found: $ExistingBinPath"
+  }
+  $binPath = (Resolve-Path -LiteralPath $ExistingBinPath).Path
+  if ([IO.Path]::GetExtension($binPath) -ne ".bin") {
+    Stop-Publish "Existing firmware must be a .bin file: $binPath"
+  }
+  $buildSummary = "skipped (existing verified BIN)"
+  Write-Host "== Use existing firmware BIN =="
+} else {
+  if ([string]::IsNullOrWhiteSpace($BuildPath)) {
+    $safeVersion = $Version -replace '[^A-Za-z0-9_.-]', '_'
+    $BuildPath = Join-Path $env:TEMP ("koma_ota_build_{0}_{1}_{2}" -f $Target, $safeVersion, (Get-Date -Format "yyyyMMdd_HHmmss"))
+  }
+  New-Item -ItemType Directory -Force -Path $BuildPath | Out-Null
 
-Write-Host "== Compile fresh build =="
-$compileArgs = @("compile", "--build-path", $BuildPath, "--clean")
-foreach ($lib in $Libraries) {
-  $compileArgs += @("--libraries", $lib)
-}
-$compileArgs += @("--fqbn", $Fqbn, $SketchPath)
-& $ArduinoCliPath @compileArgs
-if ($LASTEXITCODE -ne 0) {
-  Stop-Publish "Arduino compile failed with exit code $LASTEXITCODE"
-}
+  Write-Host "== Compile fresh build =="
+  $compileArgs = @("compile", "--build-path", $BuildPath, "--clean")
+  foreach ($lib in $Libraries) {
+    $compileArgs += @("--libraries", $lib)
+  }
+  $compileArgs += @("--fqbn", $Fqbn, $SketchPath)
+  & $ArduinoCliPath @compileArgs
+  if ($LASTEXITCODE -ne 0) {
+    Stop-Publish "Arduino compile failed with exit code $LASTEXITCODE"
+  }
 
-$firmwareBins = @(Get-ChildItem -LiteralPath $BuildPath -File -Filter "*.ino.bin" | Where-Object {
-  $_.Name -notlike "*.bootloader.bin" -and
-  $_.Name -notlike "*.partitions.bin" -and
-  $_.Name -notlike "*.merged.bin"
-})
-if ($firmwareBins.Count -ne 1) {
-  Stop-Publish "Expected one firmware .ino.bin in build path, found $($firmwareBins.Count)"
+  $firmwareBins = @(Get-ChildItem -LiteralPath $BuildPath -File -Filter "*.ino.bin" | Where-Object {
+    $_.Name -notlike "*.bootloader.bin" -and
+    $_.Name -notlike "*.partitions.bin" -and
+    $_.Name -notlike "*.merged.bin"
+  })
+  if ($firmwareBins.Count -ne 1) {
+    Stop-Publish "Expected one firmware .ino.bin in build path, found $($firmwareBins.Count)"
+  }
+  $binPath = $firmwareBins[0].FullName
+  $buildSummary = $BuildPath
 }
-$binPath = $firmwareBins[0].FullName
 $payload = [IO.File]::ReadAllBytes($binPath)
 $payloadText = [Text.Encoding]::ASCII.GetString($payload)
 
@@ -463,7 +479,7 @@ if (-not $NoManifestUpdate) {
 
 Write-Host "== Done =="
 Write-Host "Version: $Version"
-Write-Host "Build:   $BuildPath"
+Write-Host "Build:   $buildSummary"
 Write-Host "Bin:     $binPath"
 Write-Host "KFW:     $outFile"
 Write-Host "Payload: $($payload.Length) bytes, sha256=$payloadSha256"

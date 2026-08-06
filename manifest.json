@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-06T11:01:24Z",
+  "generatedAt": "2026-08-06T19:23:50Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.8-kreg-shadow",
+      "target": "sterownik",
+      "version": "2.4.8",
+      "publishedAt": "2026-08-06",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.8/ster.kfw",
+      "size": 1417998,
+      "sha256": "42f306889974c86b97bd6d9ebd370c29bc58c2206dbb803ad6127cb93432b30e",
+      "notes": "KREG v1 shadow mode: po dotychczasowym zapisie CSV tworzy rownolegly plik KREG z CRC i weryfikacja odczytu. Test sprzetowy: 101 probek zgodnych z CSV, bez utraconych taktow.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.7-kreg-download",
       "target": "sterownik",
