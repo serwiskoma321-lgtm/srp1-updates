@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-05T11:52:53Z",
+  "generatedAt": "2026-08-06T08:24:59Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.4-kreg-format-v1",
+      "target": "sterownik",
+      "version": "2.4.4",
+      "publishedAt": "2026-08-06",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.4/ster.kfw",
+      "size": 1409454,
+      "sha256": "c4be61a045565d1920eaf1823ee58ca312bc4327fa6b39ffa628d9c30bad5468",
+      "notes": "KREG v1: niezalezny koder little-endian, CRC32, rekord EVENT 56 B i test znanego wektora przy starcie. Aktywna rejestracja CSV i cykl 100 ms pozostaja bez zmian.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-konsolka-2.3.1-profile-srp1",
       "target": "konsolka",
