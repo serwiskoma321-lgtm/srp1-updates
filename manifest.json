@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-06T09:42:55Z",
+  "generatedAt": "2026-08-06T10:14:31Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.6-kreg-selftest-fix",
+      "target": "sterownik",
+      "version": "2.4.6",
+      "publishedAt": "2026-08-06",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.6/ster.kfw",
+      "size": 1412062,
+      "sha256": "31a9a53c3bd6fd531768617043801d462fd4788d3d3ed5714dc6ae4f5a3dfb9e",
+      "notes": "KREG v1: poprawka testu naglowka rozszerzonego. Test RAM uzywa rzeczywistego bufora 48 B; test SD z 2.4.5 pozostaje bez zmian i nadal weryfikuje plik 236 B.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.5-kreg-sd-selftest",
       "target": "sterownik",
