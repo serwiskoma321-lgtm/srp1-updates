@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-06T10:14:31Z",
+  "generatedAt": "2026-08-06T11:01:24Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.7-kreg-download",
+      "target": "sterownik",
+      "version": "2.4.7",
+      "publishedAt": "2026-08-06",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.7/ster.kfw",
+      "size": 1415278,
+      "sha256": "a1a6392143a95342e06e86e124d573660f4b2159e1e2401681d3592be0b68fed",
+      "notes": "KREG v1: bezpieczne listowanie i pobieranie plikow z katalogu PigRejData oraz diagnostyczne sterowanie serwerem Wi-Fi. Potwierdzony odczyt rzeczywistego pliku parserem desktopowym.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.6-kreg-selftest-fix",
       "target": "sterownik",
