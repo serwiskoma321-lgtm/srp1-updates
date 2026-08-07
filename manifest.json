@@ -1,8 +1,62 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-07T12:28:10Z",
+  "generatedAt": "2026-08-07T13:04:39Z",
   "packages": [
+    {
+      "id": "srp1-konsolka-2.3.2-recording-settings",
+      "target": "konsolka",
+      "version": "2.3.2",
+      "publishedAt": "2026-08-07",
+      "fileName": "konsolka.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.3.2/konsolka.kfw",
+      "size": 403731,
+      "sha256": "0353966b0edc99566361cb98076024475fde7468fe41e2bcb39ecc2d134619a3",
+      "notes": "Dodaje w menu konsolki zakladke Rejestr z wyborem EVENT 100 ms lub TREND oraz interwalu TREND 1/10/60 s.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "konsolka",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.4.17-auto-publish",
+      "target": "sterownik",
+      "version": "2.4.17",
+      "publishedAt": "2026-08-07",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.17/ster.kfw",
+      "size": 1453679,
+      "sha256": "1e1d07f159bb4891a518f42ff2dc50c75892764eb12281e9f5b188c535419b37",
+      "notes": "Dodaje stale ustawienia trybu rejestracji EVENT/TREND i interwalu 1/10/60 s, obsluge z konsolki i aplikacji oraz rozszerzone informacje KREG dla procedury pobierania.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.16-auto-publish",
       "target": "sterownik",
