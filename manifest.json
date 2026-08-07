@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-07T10:48:35Z",
+  "generatedAt": "2026-08-07T11:24:15Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.13-auto-publish",
+      "target": "sterownik",
+      "version": "2.4.13",
+      "publishedAt": "2026-08-07",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.13/ster.kfw",
+      "size": 1430719,
+      "sha256": "42379eedf04a35f6172b4eea5436a33170ca8914202de3998d88dfb14bcd5d66",
+      "notes": "KREG: odzyskiwanie poprawnych blokow .part po resecie oraz jeden wspolny mutex SD dla wszystkich modulow.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.11-auto-publish",
       "target": "sterownik",
