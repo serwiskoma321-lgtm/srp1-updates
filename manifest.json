@@ -1,8 +1,62 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-07T13:04:39Z",
+  "generatedAt": "2026-08-07T13:52:29Z",
   "packages": [
+    {
+      "id": "srp1-konsolka-2.3.3-service-led",
+      "target": "konsolka",
+      "version": "2.3.3",
+      "publishedAt": "2026-08-07",
+      "fileName": "konsolka.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.3.3/konsolka.kfw",
+      "size": 403747,
+      "sha256": "ca671e5b98e6c0f461658b20c377d71aa7d1895ffe19a12243071dd6ce68ac23",
+      "notes": "Dodaje ciemnoniebieska sygnalizacje trybu serwisowego sterownika dla sterStatusflag=7.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "konsolka",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.4.18-wifi-start-service-status",
+      "target": "sterownik",
+      "version": "2.4.18",
+      "publishedAt": "2026-08-07",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.18/ster.kfw",
+      "size": 1454159,
+      "sha256": "1d3e1c7161090f02640c8813fa14f31326f47c2b7a97899cb2b9d717efd2e78d",
+      "notes": "Naprawia potwierdzenie startu Wi-Fi OTA: skraca odpowiedz BLE do danych polaczenia i dodaje status trybu serwisowego dla konsolki.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-konsolka-2.3.2-recording-settings",
       "target": "konsolka",
