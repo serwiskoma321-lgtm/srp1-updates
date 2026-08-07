@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-07T11:24:15Z",
+  "generatedAt": "2026-08-07T12:02:44Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.15-auto-publish",
+      "target": "sterownik",
+      "version": "2.4.15",
+      "publishedAt": "2026-08-07",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.15/ster.kfw",
+      "size": 1448735,
+      "sha256": "6cc8674e59dd0caaf0fd500299154aa44b61834dc490f64c78e723f32d82edd2",
+      "notes": "Dodaje lekki indeks KREG v2 dla zakonczonych i odzyskanych sesji oraz endpointy pobierania indeksu.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.13-auto-publish",
       "target": "sterownik",
