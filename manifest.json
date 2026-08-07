@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-07T02:21:26Z",
+  "generatedAt": "2026-08-07T10:48:35Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.11-auto-publish",
+      "target": "sterownik",
+      "version": "2.4.11",
+      "publishedAt": "2026-08-07",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.11/ster.kfw",
+      "size": 1424735,
+      "sha256": "9ebc1bd289c68b2067998bbbea0ca9b1a3fcff9ce0fe7677af457f1b27493341",
+      "notes": "Blokowy zapis dlugiej rejestracji recznej KREG: dwa bufory po 100 probek, zapis SD na rdzeniu 0, walidacja CRC i atomowa publikacja pliku.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.9-auto-publish",
       "target": "sterownik",
