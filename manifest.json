@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-06T19:23:50Z",
+  "generatedAt": "2026-08-07T02:21:26Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.9-auto-publish",
+      "target": "sterownik",
+      "version": "2.4.9",
+      "publishedAt": "2026-08-07",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.9/ster.kfw",
+      "size": 1418462,
+      "sha256": "ca15056df6d1de626ad186313968a78a43aec4b2694acd1e7acebc6d37c93450",
+      "notes": "Przyrostowa kompilacja: implementacja KregShadowRecorder przeniesiona do osobnego pliku cpp; bez zmiany formatu KREG.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.8-kreg-shadow",
       "target": "sterownik",
