@@ -1,8 +1,36 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-07T13:52:29Z",
+  "generatedAt": "2026-08-10T05:41:27Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.18-emergency-usb-fc84",
+      "target": "sterownik",
+      "version": "2.4.18",
+      "publishedAt": "2026-08-10",
+      "fileName": "ster_usb.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.18/ster_usb.kfw",
+      "size": 1454176,
+      "sha256": "f7c242595c7cae6a7e9aa7dea9645afa732e89b476ea19eb306a3ab352d79351",
+      "notes": "Awaryjne USB dla sterownika 84:FC:E6:6A:BE:8C. Zawiera poprawke startu Wi-Fi OTA i sygnalizacje trybu serwisowego.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-konsolka-2.3.3-service-led",
       "target": "konsolka",

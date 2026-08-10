@@ -258,11 +258,17 @@ function Update-Manifest {
   $manifest = [IO.File]::ReadAllText($ManifestPath)
   $manifest = $manifest -replace "`r`n", "`n"
   $parsedBefore = $manifest | ConvertFrom-Json
+  $requestedEmergency = [bool]$EmergencyUsb
   $duplicate = @($parsedBefore.packages | Where-Object {
-    $_.target -eq $Target -and $_.version -eq $Version
+    $existingEmergency = $_.PSObject.Properties.Name -contains "emergencyUsb" -and
+      $_.emergencyUsb -eq $true
+    $_.target -eq $Target -and
+      $_.version -eq $Version -and
+      $existingEmergency -eq $requestedEmergency
   })
   if ($duplicate.Count -gt 0) {
-    Stop-Publish "Manifest already contains target/version $Target/$Version"
+    $mode = if ($requestedEmergency) { "emergency" } else { "update" }
+    Stop-Publish "Manifest already contains target/version/mode $Target/$Version/$mode"
   }
 
   $manifest = [regex]::Replace(
