@@ -1,13 +1,69 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-10T06:05:07Z",
+  "generatedAt": "2026-08-10T07:17:46Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.22-emergency-usb-fc84",
+      "target": "sterownik",
+      "version": "2.4.22",
+      "publishedAt": "2026-08-10",
+      "fileName": "ster_usb.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.22/ster_usb.kfw",
+      "size": 1457221,
+      "sha256": "356552d96b92a11f338d798ae6a100ef4f290c9bdf4e428d5f6ed341869fc192",
+      "notes": "Awaryjne USB dla sterownika 84:FC:E6:6A:BE:8C. Zawiera stabilna obsluge wspolnej pracy BLE i Wi-Fi OTA.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.4.22-wifi-memory-fix",
+      "target": "sterownik",
+      "version": "2.4.22",
+      "publishedAt": "2026-08-10",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.22/ster.kfw",
+      "size": 1457231,
+      "sha256": "9b421cd28515a78e8e5630e8361de3fa122ed2fb92c011c5bc5c1a64aa7ef7b4",
+      "notes": "Naprawa stabilnosci BLE i Wi-Fi OTA: bufory rejestracji sa zwalniane tylko na czas trybu serwisowego i odtwarzane po jego zakonczeniu. BLE pozostaje aktywne.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.19-emergency-usb-fc84",
       "target": "sterownik",
       "version": "2.4.19",
       "publishedAt": "2026-08-10",
+      "status": "disabled",
       "fileName": "ster_usb.kfw",
       "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.19/ster_usb.kfw",
       "size": 1458016,
@@ -36,6 +92,7 @@
       "target": "sterownik",
       "version": "2.4.19",
       "publishedAt": "2026-08-10",
+      "status": "disabled",
       "fileName": "ster.kfw",
       "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.19/ster.kfw",
       "size": 1457999,
