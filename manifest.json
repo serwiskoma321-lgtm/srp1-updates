@@ -4,6 +4,60 @@
   "generatedAt": "2026-08-10T07:17:46Z",
   "packages": [
     {
+        "id":  "srp1-konsolka-2.3.4-phone-link-led",
+        "target":  "konsolka",
+        "version":  "2.3.4",
+        "publishedAt":  "2026-08-10",
+        "fileName":  "konsolka.kfw",
+        "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.3.4/konsolka.kfw",
+        "size":  403715,
+        "sha256":  "8fb8806f2f0a468bd08efaca2a85dcaf3bbf40c5cd000cab336e3673a203cdd3",
+        "notes":  "Rozroznia stan rejestracji kolorem pomaranczowym i pokazuje lacznosc telefonu na czwartej diodzie: BLE zielony, Wi-Fi ciemnoniebieski.",
+        "api":  {
+                    "app":  1,
+                    "sterConsole":  1,
+                    "sterMeasure":  1,
+                    "otaPackage":  1
+                },
+        "compat":  {
+                       "product":  "SRP-1",
+                       "target":  "konsolka",
+                       "vin":  [
+                                   "*"
+                               ],
+                       "mac":  [
+                                   "30:30:F9:03:97:94"
+                               ]
+                   }
+    },
+    {
+        "id":  "srp1-sterownik-2.4.23-phone-link-led",
+        "target":  "sterownik",
+        "version":  "2.4.23",
+        "publishedAt":  "2026-08-10",
+        "fileName":  "ster.kfw",
+        "url":  "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.23/ster.kfw",
+        "size":  1457375,
+        "sha256":  "3f6434dccdce68d825043fd522cf738b32c7ce727fc4014ccc4498dfcc26c9ea",
+        "notes":  "Naprawia ekran pobierania rejestru po stronie aplikacji oraz przekazuje konsolce stan telefonu: BLE zielony, Wi-Fi ciemnoniebieski; rejestracja ma odrebny status pomaranczowy.",
+        "api":  {
+                    "app":  1,
+                    "sterConsole":  1,
+                    "sterMeasure":  1,
+                    "otaPackage":  1
+                },
+        "compat":  {
+                       "product":  "SRP-1",
+                       "target":  "sterownik",
+                       "vin":  [
+                                   "s3/n16r8/1/2607/1/1/1/1/1//"
+                               ],
+                       "mac":  [
+    
+                               ]
+                   }
+    },
+    {
       "id": "srp1-sterownik-2.4.22-emergency-usb-fc84",
       "target": "sterownik",
       "version": "2.4.22",
