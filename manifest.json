@@ -1,8 +1,63 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-10T05:41:27Z",
+  "generatedAt": "2026-08-10T06:05:07Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.19-emergency-usb-fc84",
+      "target": "sterownik",
+      "version": "2.4.19",
+      "publishedAt": "2026-08-10",
+      "fileName": "ster_usb.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.19/ster_usb.kfw",
+      "size": 1458016,
+      "sha256": "fb5a453c9ee35c70ab8d5e1e9894ce1e6a3eca82d47f9b029e3777c080828732",
+      "notes": "Awaryjne USB dla sterownika 84:FC:E6:6A:BE:8C. Stabilizuje przekazanie radia BLE do Wi-Fi OTA i automatyczny powrot BLE po zakonczeniu AP.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.4.19-wifi-ble-handoff",
+      "target": "sterownik",
+      "version": "2.4.19",
+      "publishedAt": "2026-08-10",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.19/ster.kfw",
+      "size": 1457999,
+      "sha256": "db957a0e129764aef4dc3fae148b0e96c37b6a3699f0907aee21bb3182f21796",
+      "notes": "Stabilizuje polaczenie z punktem Wi-Fi OTA: po odpowiedzi startowej czasowo zatrzymuje BLE, oddaje radio Wi-Fi i automatycznie przywraca BLE po zakonczeniu AP. Dodaje diagnostyke liczby klientow AP.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.18-emergency-usb-fc84",
       "target": "sterownik",
