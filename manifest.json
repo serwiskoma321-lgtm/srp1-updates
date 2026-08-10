@@ -1,8 +1,62 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-10T12:49:34Z",
+  "generatedAt": "2026-08-10T13:07:33Z",
   "packages": [
+    {
+      "id": "srp1-konsolka-2.3.5-nrr",
+      "target": "konsolka",
+      "version": "2.3.5",
+      "publishedAt": "2026-08-10",
+      "fileName": "konsolka.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.3.5/konsolka.kfw",
+      "size": 404147,
+      "sha256": "ac4085a97e90621aa4e74517a5218d7592df8ab94baf793a9086f9aeb05b42ab",
+      "notes": "Dodaje osobny numer recznej rejestracji NrR, jego edycje w menu oraz widok Nr: A i R na ekranie glownym.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "konsolka",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.4.24-kreg2-nrr-rise",
+      "target": "sterownik",
+      "version": "2.4.24",
+      "publishedAt": "2026-08-10",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.24/ster.kfw",
+      "size": 1460639,
+      "sha256": "b166597ef2a3963f7858ed3132b45053f379f39dd178f48f0b299437af773d75",
+      "notes": "Dodaje osobny licznik recznych rejestracji NrR, indeks KREG2 zgodny wstecz oraz blok surowych danych narostu w pliku KREG.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-konsolka-2.3.4-phone-link-led",
       "target": "konsolka",
