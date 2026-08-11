@@ -1,8 +1,62 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-10T13:07:33Z",
+  "generatedAt": "2026-08-11T13:23:34Z",
   "packages": [
+    {
+      "id": "srp1-konsolka-2.3.6-registry-menu",
+      "target": "konsolka",
+      "version": "2.3.6",
+      "publishedAt": "2026-08-11",
+      "fileName": "konsolka.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.3.6/konsolka.kfw",
+      "size": 404131,
+      "sha256": "5cf41c83f811ef6bc7e65e5d5eb4fc0bd9387aa52d750f91d139e3b99b7396bf",
+      "notes": "Porzadkuje wszystkie parametry rejestracji w jednej zakladce: liczniki NrG i NrR, tryb, interwal, detekcja, auto zapis SD, narost, czas po zaniku i dzielnik narostu.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "konsolka",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.4.25-registry-archive",
+      "target": "sterownik",
+      "version": "2.4.25",
+      "publishedAt": "2026-08-11",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.25/ster.kfw",
+      "size": 1473903,
+      "sha256": "13f513810cd8969a612843c900f1b655f791e800c5bba365a465cc6b54480428",
+      "notes": "Rozdziela ustawienie automatycznego zapisu od aktywnej sesji, dodaje nazwane archiwa rejestrow na SD oraz ich pobieranie i usuwanie przez Wi-Fi.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-konsolka-2.3.5-nrr",
       "target": "konsolka",
