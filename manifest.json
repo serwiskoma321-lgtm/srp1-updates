@@ -1,8 +1,63 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-12T08:05:21Z",
+  "generatedAt": "2026-08-12T08:31:26Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.29-emergency-usb",
+      "target": "sterownik",
+      "version": "2.4.29",
+      "publishedAt": "2026-08-12",
+      "fileName": "sterownik_2.4.29_emergency_usb.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.29/sterownik_2.4.29_emergency_usb.kfw",
+      "size": 1477590,
+      "sha256": "a2826cebe57bff8a076507a32f9623ed9686783eac7804c279706fae13313b50",
+      "notes": "Awaryjna paczka USB 2.4.29 dla sterownika MAC 84:FC:E6:6A:BE:8C.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.4.29-auto-publish",
+      "target": "sterownik",
+      "version": "2.4.29",
+      "publishedAt": "2026-08-12",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.29/ster.kfw",
+      "size": 1477599,
+      "sha256": "ce8e69d560602f00e6f1c5d6870fbdabd9342cb4699adab421ca593410259e10",
+      "notes": "Stabilne pobieranie indeksu i plikow rejestru: wspolna blokada SD, wznawianie indeksu oraz bezpieczne zachowanie trasy Wi-Fi telefonu.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.28-emergency-usb",
       "target": "sterownik",
