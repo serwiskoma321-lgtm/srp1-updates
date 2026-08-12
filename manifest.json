@@ -1,8 +1,63 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-12T07:18:22Z",
+  "generatedAt": "2026-08-12T08:05:21Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.28-emergency-usb",
+      "target": "sterownik",
+      "version": "2.4.28",
+      "publishedAt": "2026-08-12",
+      "fileName": "sterownik_2.4.28_emergency_usb.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.28/sterownik_2.4.28_emergency_usb.kfw",
+      "size": 1477030,
+      "sha256": "b649f3e614128d7de28ed28d88474b6a1972a07c3042826662db619d2a0e60c6",
+      "notes": "Awaryjna paczka USB 2.4.28 dla sterownika MAC 84:FC:E6:6A:BE:8C.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.4.28-auto-publish",
+      "target": "sterownik",
+      "version": "2.4.28",
+      "publishedAt": "2026-08-12",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.28/ster.kfw",
+      "size": 1477039,
+      "sha256": "0297a4bf2c37dd4bb932a5704a767b5bd8a961c50ed5f2ab6e332ff2f7bb4890",
+      "notes": "Wznawianie pobierania rejestru od ostatniego bajtu; stabilniejsze, nieblokujace wysylanie duzych plikow KREG przez Wi-Fi.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.27-auto-publish",
       "target": "sterownik",
