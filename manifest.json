@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-12T06:23:58Z",
+  "generatedAt": "2026-08-12T07:18:22Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.27-auto-publish",
+      "target": "sterownik",
+      "version": "2.4.27",
+      "publishedAt": "2026-08-12",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.27/ster.kfw",
+      "size": 1476655,
+      "sha256": "5e29f8609427cfc95421bccc452bf5415c97a9a0c3723c5f9a7f7e19cad67cdb",
+      "notes": "Reset licznikow po archiwizacji lub czyszczeniu, responsywna finalizacja rejestru i stabilniejszy transfer Wi-Fi.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.26-auto-rise-finalize",
       "target": "sterownik",
