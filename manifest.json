@@ -1,8 +1,63 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-12T09:23:55Z",
+  "generatedAt": "2026-08-12T10:31:28Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.32-emergency-usb",
+      "target": "sterownik",
+      "version": "2.4.32",
+      "publishedAt": "2026-08-12",
+      "fileName": "sterownik_2.4.32_emergency_usb.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.32/sterownik_2.4.32_emergency_usb.kfw",
+      "size": 1478518,
+      "sha256": "240f2b0ede0304e22499a8937904798ca69f20e6f9d7b38ec9e6801ec861bef0",
+      "notes": "Awaryjna paczka USB 2.4.32 dla sterownika MAC 84:FC:E6:6A:BE:8C; poprawiony serwer HTTP rejestru.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.4.32-auto-publish",
+      "target": "sterownik",
+      "version": "2.4.32",
+      "publishedAt": "2026-08-12",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.32/ster.kfw",
+      "size": 1478527,
+      "sha256": "5796775d1f59876c3f3440a92ea08fa729d1c50c7a00a90a2fa77d1e09933da7",
+      "notes": "Naprawa serwera HTTP rejestru: kontrolowany zapis przez NetworkClient bez blednego availableForWrite; zweryfikowane odpowiedzi indeksu, listy sesji i archiwow.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.30-emergency-usb",
       "target": "sterownik",
@@ -13,6 +68,8 @@
       "size": 1477200,
       "sha256": "ee8e43f55d7f5b71b0946f70674541dd9855330834f92d8131c9c4a98073300a",
       "notes": "Awaryjna paczka USB 2.4.30 dla sterownika MAC 84:FC:E6:6A:BE:8C; naprawa odpowiedzi HTTP rejestru.",
+      "status": "disabled",
+      "supersededBy": "srp1-sterownik-2.4.32-emergency-usb",
       "emergencyUsb": true,
       "api": {
         "app": 1,
@@ -41,6 +98,8 @@
       "size": 1477183,
       "sha256": "3f8e010134350b3ea6e8285919a8ad712c83bc547022eab20e4fdd7f311cfcd7",
       "notes": "Naprawa odpowiedzi HTTP rejestru: naglowek jest wysylany natychmiast; zachowano blokade SD, wznawianie indeksu i dodano log zadania HTTP.",
+      "status": "disabled",
+      "supersededBy": "srp1-sterownik-2.4.32-auto-publish",
       "api": {
         "app": 1,
         "sterConsole": 1,
