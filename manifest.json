@@ -1,8 +1,35 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-11T13:23:34Z",
+  "generatedAt": "2026-08-12T06:23:58Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.26-auto-rise-finalize",
+      "target": "sterownik",
+      "version": "2.4.26",
+      "publishedAt": "2026-08-12",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.26/ster.kfw",
+      "size": 1475311,
+      "sha256": "b9e92e1744bdf148d4065283f55a16066008957dcbe022a102360dc8dcecd57a",
+      "notes": "Naprawa automatycznej rejestracji z narostem: poprawne domkniecie transferu narostu, ograniczone ponowienia i asynchroniczna finalizacja CSV/KREG bez blokowania cyklu 100 ms oraz BLE.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-konsolka-2.3.6-registry-menu",
       "target": "konsolka",
