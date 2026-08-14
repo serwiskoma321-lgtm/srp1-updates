@@ -1,8 +1,63 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-12T10:31:28Z",
+  "generatedAt": "2026-08-14T07:13:24Z",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.4.56-emergency-usb-fc84",
+      "target": "sterownik",
+      "version": "2.4.56",
+      "publishedAt": "2026-08-14",
+      "fileName": "ster_usb.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.56/ster_usb.kfw",
+      "size": 1480464,
+      "sha256": "300b662cc00d573656410ef1b3dc3457611bc86cfc788798d9da8307120c1087",
+      "notes": "Awaryjna paczka USB sterownika 2.4.56 dla MAC 84:FC:E6:6A:BE:8C.",
+      "emergencyUsb": true,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.4.56-registry-stop-identity",
+      "target": "sterownik",
+      "version": "2.4.56",
+      "publishedAt": "2026-08-14",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.4.56/ster.kfw",
+      "size": 1480447,
+      "sha256": "5a0c87691d7d92d3c123b99c2daffdd3d4ce3fe0342fefa836be4660a2591c42",
+      "notes": "Pewne zakonczenie trybu serwisowego rejestru przez HTTP oraz identyfikacja MAC serwera OTA i rejestru.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": [
+
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.32-emergency-usb",
       "target": "sterownik",
