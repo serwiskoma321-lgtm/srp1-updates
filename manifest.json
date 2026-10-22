@@ -1,8 +1,96 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-10-22T10:40:50.420814+00:00",
+  "generatedAt": "2026-10-22T11:08:17.477163+00:00",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.5.2-migration",
+      "target": "sterownik",
+      "version": "2.5.2",
+      "publishedAt": "2026-10-22",
+      "fileName": "ster_migration.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.5.2/ster_migration.kfw",
+      "size": 1490894,
+      "sha256": "8f02583a4e9aa226db13a9af6d9ff8d9af3f3e1382e6db0f5917f934af5f1cce",
+      "notes": "Aktualizacja przejściowa: trwały VIN urządzenia SRP1-N i oddzielny profil sprzętowy. Dla sterowników ze starszym programem.",
+      "emergencyUsb": false,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": []
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.5.2-identity",
+      "target": "sterownik",
+      "version": "2.5.2",
+      "publishedAt": "2026-10-22",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.5.2/ster.kfw",
+      "size": 1490944,
+      "sha256": "9420ca1d8d63ba0f6cd7cff49d18c264b0f85088cba5df41cc2992bd1a76d933",
+      "notes": "Obsługa VIN SRP1-N w NVS. Zgodność sprzętu, numery urządzeń i daty produkcji są osobnymi podpisanymi regułami.",
+      "emergencyUsb": false,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [],
+        "hardware": "esp32s3-n16r8",
+        "boardRevision": "dev",
+        "unitSerials": "*",
+        "productionDates": "*"
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.5.2-usb",
+      "target": "sterownik",
+      "version": "2.5.2",
+      "publishedAt": "2026-10-22",
+      "fileName": "ster_usb.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.5.2/ster_usb.kfw",
+      "size": 1490903,
+      "sha256": "2c0f3345eb02bd0a9ab4677374a838141f85ef29af902ee3db2a13096ac7762f",
+      "notes": "Serwis USB: program z trwałą obsługą VIN. Zapis nie kasuje przestrzeni tożsamości NVS.",
+      "emergencyUsb": true,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C",
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.5.1-migration",
       "target": "sterownik",
