@@ -9,6 +9,8 @@ param(
 
   [string]$VinJson = "[]",
   [string]$MacJson = "[]",
+  [string]$UnitSerials = "*",
+  [string]$ProductionDates = "*",
   [string]$Notes = "",
   [string]$AuditNote = "",
   [string]$RequestId = "",
@@ -399,6 +401,9 @@ function New-SignedText {
   if ($Header.Contains("payload_plain_sha256")) {
     $text += "`npayload_plain_sha256=$($Header['payload_plain_sha256'])"
   }
+  foreach ($field in @('hardware', 'board_revision', 'unit_serials', 'production_dates')) {
+    if ($Header.Contains($field)) { $text += "`n$field=$($Header[$field])" }
+  }
   return $text
 }
 
@@ -526,7 +531,17 @@ try {
       Stop-Policy "Source KFW2 signature is invalid"
     }
 
-    if ($Mode -eq "update") {
+    if ($kfw.Header.Contains('hardware')) {
+      if ($source.target -ne 'sterownik' -or $kfw.Header['board_revision'].Length -eq 0) { Stop-Policy 'Invalid modern hardware profile' }
+      if ($UnitSerials.Length -eq 0 -or $ProductionDates.Length -eq 0 -or $UnitSerials.Length -gt 160 -or $ProductionDates.Length -gt 160 -or $UnitSerials -match '[\r\n|/=]' -or $ProductionDates -match '[\r\n|/=]') { Stop-Policy 'Invalid unit policy selectors' }
+      Assert-VinRolloutSyntax -Rule "s3/n16r8/$UnitSerials/$ProductionDates"
+      foreach ($dateSelector in $ProductionDates.Replace('!', '').Split(';')) {
+        foreach ($dateBound in $dateSelector.Split('-')) { if ($dateBound -ne '*' -and $dateBound.Length -ne 4) { Stop-Policy 'Modern production months must use RRMM' } }
+      }
+      if ($Mode -eq 'emergency') { $UnitSerials = '*'; $ProductionDates = '*' }
+      $kfw.Header['unit_serials'] = $UnitSerials
+      $kfw.Header['production_dates'] = $ProductionDates
+    } elseif ($Mode -eq "update") {
       Assert-VinRolloutOnlyChange `
         -SourceRules $kfw.Header["vin"] `
         -RequestedRules $vinRules
@@ -611,6 +626,12 @@ $newPackage = [ordered]@{
     vin = @($vinRules)
     mac = @($macRules)
   }
+}
+if ($kfw.Header.Contains('hardware')) {
+  $newPackage.compat['hardware'] = $kfw.Header['hardware']
+  $newPackage.compat['boardRevision'] = $kfw.Header['board_revision']
+  $newPackage.compat['unitSerials'] = $kfw.Header['unit_serials']
+  $newPackage.compat['productionDates'] = $kfw.Header['production_dates']
 }
 
 if ($DisableSource -eq "true") {

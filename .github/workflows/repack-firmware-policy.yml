@@ -25,6 +25,16 @@ on:
         required: true
         default: '[]'
         type: string
+      unit_serials:
+        description: Device serial selectors for identity-aware firmware
+        required: false
+        default: '*'
+        type: string
+      production_dates:
+        description: Production month selectors for identity-aware firmware
+        required: false
+        default: '*'
+        type: string
       notes:
         description: Package description
         required: false
@@ -78,6 +88,8 @@ jobs:
           POLICY_MODE: ${{ inputs.mode }}
           VIN_JSON: ${{ inputs.vin_json }}
           MAC_JSON: ${{ inputs.mac_json }}
+          UNIT_SERIALS: ${{ inputs.unit_serials }}
+          PRODUCTION_DATES: ${{ inputs.production_dates }}
           POLICY_NOTES: ${{ inputs.notes }}
           POLICY_AUDIT_NOTE: ${{ inputs.audit_note }}
           REQUEST_ID: ${{ inputs.request_id }}
@@ -92,6 +104,8 @@ jobs:
               -Mode $env:POLICY_MODE `
               -VinJson $env:VIN_JSON `
               -MacJson $env:MAC_JSON `
+              -UnitSerials $env:UNIT_SERIALS `
+              -ProductionDates $env:PRODUCTION_DATES `
               -Notes $env:POLICY_NOTES `
               -AuditNote $env:POLICY_AUDIT_NOTE `
               -RequestId $env:REQUEST_ID `

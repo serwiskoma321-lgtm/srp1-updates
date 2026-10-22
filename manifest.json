@@ -1,8 +1,95 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-08-14T07:13:24Z",
+  "generatedAt": "2026-10-22T10:40:50.420814+00:00",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.5.1-migration",
+      "target": "sterownik",
+      "version": "2.5.1",
+      "publishedAt": "2026-10-22",
+      "fileName": "ster_migration.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.5.1/ster_migration.kfw",
+      "size": 1490894,
+      "sha256": "761145b497ac00d82040f0d9211a13d86a655385168520f3113c403680baefe4",
+      "notes": "Aktualizacja przejściowa: trwały VIN urządzenia SRP1-N i oddzielny profil sprzętowy. Dla sterowników ze starszym programem.",
+      "emergencyUsb": false,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "s3/n16r8/1/2607/1/1/1/1/1//"
+        ],
+        "mac": []
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.5.1-identity",
+      "target": "sterownik",
+      "version": "2.5.1",
+      "publishedAt": "2026-10-22",
+      "fileName": "ster.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.5.1/ster.kfw",
+      "size": 1490944,
+      "sha256": "30004d65dfd9d29775ab4dfbf71313e55b3f765b3b548a9f74c2cdec477b82f8",
+      "notes": "Obsługa VIN SRP1-N w NVS. Zgodność sprzętu, numery urządzeń i daty produkcji są osobnymi podpisanymi regułami.",
+      "emergencyUsb": false,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [],
+        "hardware": "esp32s3-n16r8",
+        "boardRevision": "dev",
+        "unitSerials": "*",
+        "productionDates": "*"
+      }
+    },
+    {
+      "id": "srp1-sterownik-2.5.1-usb",
+      "target": "sterownik",
+      "version": "2.5.1",
+      "publishedAt": "2026-10-22",
+      "fileName": "ster_usb.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.5.1/ster_usb.kfw",
+      "size": 1490885,
+      "sha256": "d54a24b47d8e0f205a4046d2cc83002a3a80638bce327ba6eeb785921db291de",
+      "notes": "Serwis USB: program z trwałą obsługą VIN. Zapis nie kasuje przestrzeni tożsamości NVS.",
+      "emergencyUsb": true,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "84:FC:E6:6A:BE:8C"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.4.56-emergency-usb-fc84",
       "target": "sterownik",
@@ -53,9 +140,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -108,9 +193,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -167,9 +250,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -226,9 +307,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -281,9 +360,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -308,9 +385,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -335,9 +410,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -389,9 +462,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
@@ -443,9 +514,7 @@
         "vin": [
           "s3/n16r8/1/2607/1/1/1/1/1//"
         ],
-        "mac": [
-
-        ]
+        "mac": []
       }
     },
     {
