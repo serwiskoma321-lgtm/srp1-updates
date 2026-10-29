@@ -1,8 +1,98 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-10-22T11:08:17.477163+00:00",
+  "generatedAt": "2026-10-29T13:07:19.641174+00:00",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.6.1-current-calibration",
+      "target": "sterownik",
+      "version": "2.6.1",
+      "publishedAt": "2026-10-29",
+      "fileName": "cal_sterownik_2.6.1.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.6.1/cal_sterownik_2.6.1.kfw",
+      "size": 1508789,
+      "sha256": "89e8d1296fdcd0e4a9d209d0eaa3035823ab7e18c6a66fac45bd552b8006de82",
+      "notes": "Kalibracja prądu: skala, zero, wzorzec i osobny reset. Komplet SRP1-2: pomiarowy 3.4.1, konsolka 2.6.1, sterownik 2.6.1, aplikacja 1.6.2. Zapis ustawień pozostaje w sterowniku. Testy oprogramowania zaliczone; próba fizyczna po instalacji do wykonania.",
+      "emergencyUsb": false,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1,
+        "currentCalibration": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
+    {
+      "id": "srp1-pomiarowy-3.4.1-current-calibration",
+      "target": "pomiarowy",
+      "version": "3.4.1",
+      "publishedAt": "2026-10-29",
+      "fileName": "cal_pomiarowy_3.4.1.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/pomiarowy/3.4.1/cal_pomiarowy_3.4.1.kfw",
+      "size": 412468,
+      "sha256": "10fde2405dbc1b7fb3171b42cdabd6dfb0085376718dbbe980395f798f5dee0a",
+      "notes": "Kalibracja prądu: skala, zero, wzorzec i osobny reset. Komplet SRP1-2: pomiarowy 3.4.1, konsolka 2.6.1, sterownik 2.6.1, aplikacja 1.6.2. Zapis ustawień pozostaje w sterowniku. Testy oprogramowania zaliczone; próba fizyczna po instalacji do wykonania.",
+      "emergencyUsb": false,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1,
+        "currentCalibration": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "pomiarowy",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "E4:B3:23:F8:03:C0"
+        ]
+      }
+    },
+    {
+      "id": "srp1-konsolka-2.6.1-current-calibration",
+      "target": "konsolka",
+      "version": "2.6.1",
+      "publishedAt": "2026-10-29",
+      "fileName": "cal_konsolka_2.6.1.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.6.1/cal_konsolka_2.6.1.kfw",
+      "size": 435667,
+      "sha256": "9394344ac5f1ccff276529dfe7aa4d1a6859b19bd2a5fad76da39b07f35fcaf8",
+      "notes": "Kalibracja prądu: skala, zero, wzorzec i osobny reset. Komplet SRP1-2: pomiarowy 3.4.1, konsolka 2.6.1, sterownik 2.6.1, aplikacja 1.6.2. Zapis ustawień pozostaje w sterowniku. Testy oprogramowania zaliczone; próba fizyczna po instalacji do wykonania.",
+      "emergencyUsb": false,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 1,
+        "currentCalibration": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "konsolka",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "F4:12:FA:CE:82:38"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.5.2-migration",
       "target": "sterownik",
