@@ -19,7 +19,7 @@
         "app": 1,
         "sterConsole": 1,
         "sterMeasure": 1,
-        "otaPackage": 1,
+        "otaPackage": 2,
         "currentCalibration": 1
       },
       "compat": {
@@ -49,7 +49,7 @@
         "app": 1,
         "sterConsole": 1,
         "sterMeasure": 1,
-        "otaPackage": 1,
+        "otaPackage": 2,
         "currentCalibration": 1
       },
       "compat": {
@@ -79,7 +79,7 @@
         "app": 1,
         "sterConsole": 1,
         "sterMeasure": 1,
-        "otaPackage": 1,
+        "otaPackage": 2,
         "currentCalibration": 1
       },
       "compat": {
