@@ -1,8 +1,39 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-10-30T06:00:00.896565+00:00",
+  "generatedAt": "2026-10-30T11:23:31.550189+00:00",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.6.5-service-status",
+      "target": "sterownik",
+      "version": "2.6.5",
+      "publishedAt": "2026-10-30",
+      "fileName": "cal_sterownik_2.6.5.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.6.5/cal_sterownik_2.6.5.kfw",
+      "size": 1511269,
+      "sha256": "821a81597b2e25e32536de0f58f8cd35d1151dc60ba2b8ea670b4ec500eacf5d",
+      "emergencyUsb": false,
+      "status": "active",
+      "notes": "Szybsze Wi-Fi i sygnalizacja serwisu/RGB konsolki przy zmianie stanu. Zachowuje poprawkę kolejnych automatycznych rejestracji, kalibrację i wybór LCD. Aktualizacja tylko sterownika; konsolka2.6.2 i obecny pomiarowy bez zmian.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2,
+        "currentCalibration": 1,
+        "consoleLcd": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.6.2-lcd-runtime",
       "target": "sterownik",
@@ -14,7 +45,7 @@
       "sha256": "3c24c84065f9e4486781d7a951b90006bd2cb5245edbf1bc470ae95d49ce25fc",
       "notes": "Wybór LCD: PINY (domyślnie), I2C lub Auto. Jedna paczka konsolki dla obu rodzajów LCD; parametr w KOMA 1.6.3 i menu konsolki. Wymaga konsolki i sterownika 2.6.2. Kalibracja prądu zachowana; pomiarowy pozostaje 3.4.1. Fizyczna próba po instalacji do wykonania.",
       "emergencyUsb": false,
-      "status": "active",
+      "status": "superseded",
       "api": {
         "app": 1,
         "sterConsole": 1,
