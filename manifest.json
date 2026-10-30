@@ -1,8 +1,39 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-10-30T11:23:31.550189+00:00",
+  "generatedAt": "2026-10-30T13:34:30.065516+00:00",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.6.6-upload-test",
+      "target": "sterownik",
+      "version": "2.6.6-upload-test",
+      "publishedAt": "2026-10-30",
+      "fileName": "cal_sterownik_2.6.6-upload-test.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.6.6-upload-test/cal_sterownik_2.6.6-upload-test.kfw",
+      "size": 1512833,
+      "sha256": "be54d87adeab957a2e05c509e3cd58bf95a5ebba9d5055d04f3b80d8f86b6c74",
+      "emergencyUsb": false,
+      "status": "active",
+      "notes": "Wariant do testu szybszego wysyłania na SD. Pełny efekt wymaga APK KOMA1.6.4-upload-test z tego samego wydania. Zachowane wznawianie i trwały zapis przed ACK. Zawiera czerwoną drugą diodę podczas narostu/końcowego zapisu. Tylko sterownik SRP1-2; bez nowej konsolki/pomiarowego. Prędkość na sprzęcie do porównania przez użytkownika.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2,
+        "currentCalibration": 1,
+        "consoleLcd": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.6.5-service-status",
       "target": "sterownik",
