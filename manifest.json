@@ -1,8 +1,41 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-10-30T13:34:30.065516+00:00",
+  "generatedAt": "2026-11-02T14:30:12.397475+00:00",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.6.7",
+      "target": "sterownik",
+      "version": "2.6.7",
+      "publishedAt": "2026-11-02",
+      "fileName": "cal_sterownik_2.6.7.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.6.7/cal_sterownik_2.6.7.kfw",
+      "size": 1514629,
+      "sha256": "151bc6a748f5eb2b2b6791f3dbf7dc91690b67ee98f8116c299a6efb6dc89d2f",
+      "emergencyUsb": false,
+      "status": "active",
+      "notes": "Poprawny czas narostu dla dwóch kanałów ADC; parametry próbkowania i wersja czasu w każdym rejestrze. Zrzut ustawień na początku sesji, blokada zmian próbkowania do końca zapisu. Automatyczne ustawienie całej daty/czasu z KOMA 1.6.5. Zachowuje szybkie Wi-Fi oraz sygnalizację RGB. Tylko sterownik SRP1-2; konsolka i pomiarowy bez aktualizacji.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2,
+        "currentCalibration": 1,
+        "consoleLcd": 1,
+        "riseTiming": 1,
+        "clockSet": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.6.6-upload-test",
       "target": "sterownik",
