@@ -1,8 +1,103 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-11-02T14:30:12.397475+00:00",
+  "generatedAt": "2026-11-03T09:52:54.958330+00:00",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.6.8",
+      "target": "sterownik",
+      "version": "2.6.8",
+      "publishedAt": "2026-11-03",
+      "fileName": "cal_sterownik_2.6.8.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.6.8/cal_sterownik_2.6.8.kfw",
+      "size": 1518549,
+      "sha256": "d677567c45f153fb28e363b0b08cc5bfb86dc1781320561e85913d589fd40cb9",
+      "emergencyUsb": false,
+      "status": "active",
+      "notes": "Domykanie sesji i diagnostyka. Zestaw do testów: sterownik 2.6.8 + pomiarowy 3.4.3; wgraj najpierw sterownik, następnie pomiarowy. Trzy próby transferu, numery bloków, potwierdzenie końca; limit oczekiwania 30 s i jawne oznaczenie braku narostu. Sterownik sprawdza zapis/odczyt SD, zachowuje RAM przy błędzie, ogranicza próby do trzech. Aplikacja i konsolka bez aktualizacji. Testy kodu zaliczone; próby fizyczne wykona użytkownik.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2,
+        "currentCalibration": 1,
+        "consoleLcd": 1,
+        "riseTiming": 1,
+        "clockSet": 1,
+        "sessionCompletion": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
+    {
+      "id": "srp1-pomiarowy-3.4.3",
+      "target": "pomiarowy",
+      "version": "3.4.3",
+      "publishedAt": "2026-11-03",
+      "fileName": "cal_pomiarowy_3.4.3.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/pomiarowy/3.4.3/cal_pomiarowy_3.4.3.kfw",
+      "size": 409812,
+      "sha256": "8ad2cff828148fa769b9c8e0dc214452305db3639875756e7ca9e2c04ac55e42",
+      "notes": "Domykanie sesji i diagnostyka. Zestaw do testów: sterownik 2.6.8 + pomiarowy 3.4.3; wgraj najpierw sterownik, następnie pomiarowy. Trzy próby transferu, numery bloków, potwierdzenie końca; limit oczekiwania 30 s i jawne oznaczenie braku narostu. Sterownik sprawdza zapis/odczyt SD, zachowuje RAM przy błędzie, ogranicza próby do trzech. Aplikacja i konsolka bez aktualizacji. Testy kodu zaliczone; próby fizyczne wykona użytkownik.",
+      "emergencyUsb": false,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2,
+        "currentCalibration": 1,
+        "sessionCompletion": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "pomiarowy",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "E4:B3:23:F8:03:C0"
+        ]
+      }
+    },
+    {
+      "id": "srp1-pomiarowy-3.4.2",
+      "target": "pomiarowy",
+      "version": "3.4.2",
+      "publishedAt": "2026-11-03",
+      "fileName": "cal_pomiarowy_3.4.2.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/pomiarowy/3.4.2/cal_pomiarowy_3.4.2.kfw",
+      "size": 409012,
+      "sha256": "82e60cb07f5b8509ee924f0e27fc5a643f46ad35a37ceacf48b88bc02d387983",
+      "notes": "Poprzednia wersja pomiarowego z diagnostyką USB, udostępniona do powrotu po teście domykania sesji. Nie zawiera nowych poprawek protokołu.",
+      "emergencyUsb": false,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2,
+        "currentCalibration": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "pomiarowy",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "E4:B3:23:F8:03:C0"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.6.7",
       "target": "sterownik",
