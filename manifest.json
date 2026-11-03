@@ -1,8 +1,39 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-11-03T11:19:24.934800+00:00",
+  "generatedAt": "2026-11-03T13:40:22.807412+00:00",
   "packages": [
+    {
+      "id": "srp1-pomiarowy-3.4.4",
+      "target": "pomiarowy",
+      "version": "3.4.4",
+      "publishedAt": "2026-11-03",
+      "fileName": "cal_pomiarowy_3.4.4.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/pomiarowy/3.4.4/cal_pomiarowy_3.4.4.kfw",
+      "size": 410452,
+      "sha256": "76bee7c2c0fdee39c3dd48ef56efbd8db0f38a2fa36d67d3a0fff1407e5b7725",
+      "notes": "Bezpieczeństwo narostu: zerowanie liczników przy każdym nowym pomiarze, ograniczenie zapisu do pojemności bufora, koniec również bez przekroczenia progu narostu. SPI nie zwalnia aktywnej transakcji po timeout. Diagnostyka CAPTURE_BEGIN/RISE_CLIPPED/SPI_DELAY i powód restartu. Tylko pomiarowy; sterownik pozostaje2.6.9, konsolka2.6.2 i KOMA1.6.5+116 bez zmian. Testy kodu wykonane; testy na sprzęcie przeprowadza użytkownik.",
+      "emergencyUsb": false,
+      "status": "active",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2,
+        "currentCalibration": 1,
+        "sessionCompletion": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "pomiarowy",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "E4:B3:23:F8:03:C0"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.6.9",
       "target": "sterownik",
