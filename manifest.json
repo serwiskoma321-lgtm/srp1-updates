@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-11-05T08:41:49.582831+00:00",
+  "generatedAt": "2026-11-10T11:13:05Z",
   "packages": [
     {
       "id": "srp1-sterownik-2.6.11",
@@ -1831,272 +1831,6 @@
       }
     },
     {
-      "id": "srp1-sterownik-2.3.18-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.18",
-      "publishedAt": "2026-07-24",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.18/ster.kfw",
-      "size": 1422063,
-      "sha256": "524d25836980fc32a8c1dee06898521266ad332cfab7f616e56103f00fb050c4",
-      "notes": "Test OTA: bez ponownego skanowania katalogów w upload_begin, krótka blokada SD i diagnostyka resetu w RTC.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": []
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.17-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.17",
-      "publishedAt": "2026-07-24",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.17/ster.kfw",
-      "size": 1422080,
-      "sha256": "536df952948a6de0ceeed2115af458d38245b269724c9e5aebc6c46fbe84a34f",
-      "notes": "Pomost USB: odchudzony upload_begin, krótka blokada SD i diagnostyka restartu OTA w RTC.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.16-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.16",
-      "publishedAt": "2026-07-18",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.16/ster.kfw",
-      "size": 1421007,
-      "sha256": "4612a0c82a6ccaef988d5c60813fb0a95bdad306fd14f8bf71ba454a67823a2a",
-      "notes": "Test zwyklej OTA z niskopamieciowym zapisem blokow do katalogu targetu na SD.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": []
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.15-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.15",
-      "publishedAt": "2026-07-18",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.15/ster.kfw",
-      "size": 1421024,
-      "sha256": "d15ce52e5a7fa87332dd516a6fef1dc584504ab460a7366670c0b1e731d6609c",
-      "notes": "Pomost USB: niskopamieciowy zapis SD, plik otwierany tylko na czas pojedynczego bloku HTTP.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.14-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.14",
-      "publishedAt": "2026-07-18",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.14/ster.kfw",
-      "size": 1420879,
-      "sha256": "6e951ef8a5404fbf3822c78269e42f1960c330b85fdaa0ec6c24d5c87b9dc728",
-      "notes": "Test zwyklej OTA po przywroceniu stabilnego startu AP bez deinitializacji BLE.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": []
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.13-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.13",
-      "publishedAt": "2026-07-18",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.13/ster.kfw",
-      "size": 1420896,
-      "sha256": "976a0331b9d6f1c343f733d41d4332ee905be212f51bd72795789ec2cb4ba393",
-      "notes": "Przywraca sprawdzony start AP z aktywnym BLE; usuwa regresje deinit BLE przed Wi-Fi.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.12-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.12",
-      "publishedAt": "2026-07-18",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.12/ster.kfw",
-      "size": 1424591,
-      "sha256": "5efc92bcaf474d4c4eb4f1c7965b78dbacb6dd4c956443e3bdf7c27f952de7ad",
-      "notes": "Uruchamia Wi-Fi dopiero po zwolnieniu BLE; zwykla aktualizacja po dokladnym VIN, bez wymaganego MAC.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": []
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.11-emergency-usb",
-      "target": "sterownik",
-      "version": "2.3.11",
-      "publishedAt": "2026-07-18",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.11/ster.kfw",
-      "size": 1424608,
-      "sha256": "faac95a96bfb6d0216bcc1c387568ca2730faba4b91415c3f6b3aebe9ff02652",
-      "notes": "Pomost USB: zwalnia BLE przed uruchomieniem Wi-Fi, aby nie wylaczac aktywnego AP.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.10-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.10",
-      "publishedAt": "2026-07-18",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.10/ster.kfw",
-      "size": 1424175,
-      "sha256": "4da0254c4c128fa65991a2b4032c24cf2be3bcf9006040b8332745e50cb730ca",
-      "notes": "Stabilizuje upload na SD; zwykla aktualizacja przypisana do VIN i numeru seryjnego, bez wymaganego MAC.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": []
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.9-emergency-usb",
-      "target": "sterownik",
-      "version": "2.3.9",
-      "publishedAt": "2026-07-18",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.9/ster.kfw",
-      "size": 1424186,
-      "sha256": "6f837d9aa8c70f1ee4f136463650c880ae0a941a59b438422049565717fa2ded",
-      "notes": "Tryb serwisowy OTA zwalnia BLE przed transferem Wi-Fi i restartuje sterownik po zakonczeniu sesji; paczka pomostowa USB.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
       "id": "srp1-konsolka-2.2.2-emergency-usb",
       "target": "konsolka",
       "version": "2.2.2",
@@ -2121,34 +1855,6 @@
         ],
         "mac": [
           "30:30:F9:03:97:94"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.8-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.8",
-      "publishedAt": "2026-07-18",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.8/ster.kfw",
-      "size": 1420122,
-      "sha256": "86ef86a65c4fcaa6a9a958e3436d22440055c5f068c84e434ee6a5c77f84d7f0",
-      "notes": "Dodaje bezpieczny test transportu OTA konsolki przez UART 460800 bit/s, bloki 512 B, CRC32 i retry.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
         ]
       }
     },
@@ -2181,174 +1887,6 @@
       }
     },
     {
-      "id": "srp1-sterownik-2.3.7-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.7",
-      "publishedAt": "2026-07-17",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.7/ster.kfw",
-      "size": 1413290,
-      "sha256": "586411840d8fc1425e4eb2850d8c38eb0dcf2bc8926a61c7abb4afd84906a185",
-      "notes": "Dodaje odczyt tozsamosci konsolki przez UART: firmware, MAC, hardware, flash, PSRAM oraz sloty OTA; sterownik przechowuje metryke w RAM i przekazuje ja do aplikacji.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.6-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.6",
-      "publishedAt": "2026-07-17",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.6/ster.kfw",
-      "size": 1410858,
-      "sha256": "d0c49f78c6a20cc762b50cb53ce0c6e89284c5e3321547514fc29b3815071d05",
-      "notes": "Rozdziela firmware na katalogi SD /OTA/sterownik, /OTA/pomiarowy i /OTA/konsolka; automatycznie migruje starsze pliki i zwraca listy właściwe dla aktualizowanego procesora.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.5-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.5",
-      "publishedAt": "2026-07-16",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.5/ster.kfw",
-      "size": 1403370,
-      "sha256": "ca6b35a3e3fe979dbc15d2d6275cd90fda481cfb4e881f56106b8123690e4fbf",
-      "notes": "Stabilny upload na SD przy wielu plikach OTA: jeden otwarty plik tymczasowy, mniej operacji FAT i kompaktowy start Wi-Fi.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.4-auto-publish",
-      "target": "sterownik",
-      "version": "2.3.4",
-      "publishedAt": "2026-07-16",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.4/ster.kfw",
-      "size": 1403114,
-      "sha256": "17d4a646c13e63cc8d6d1ea49d4f6c7307aec3eecc3a2aa72bfaa7809da6c5f6",
-      "notes": "Widoczny postep zapisu OTA sterownika: bajty, etapy zapisu, weryfikacji i aktywacji slotu.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.3-fast-ota-timing",
-      "target": "sterownik",
-      "version": "2.3.3",
-      "publishedAt": "2026-07-16",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.3/ster.kfw",
-      "size": 1403087,
-      "sha256": "5630e71c388ff60aa4f4cea8580a90c833b98f317585f56fe6af577db9c9308e",
-      "notes": "Optymalizuje OTA pomiarowego v2: 500 kHz, przerwa na uzbrojenie DMA po ACK oraz dluzsze oczekiwanie na pierwsze kasowanie nieaktywnego slotu przez esp_ota_begin.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.2-fast-ota-timing",
-      "target": "sterownik",
-      "version": "2.3.2",
-      "publishedAt": "2026-07-16",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.2/ster.kfw",
-      "size": 1403071,
-      "sha256": "573e71afe75e1958b3db8864ed51a51edf484d37709fe6488346228a8dfae767",
-      "notes": "Optymalizuje OTA pomiarowego v2: zegar serwisowy 500 kHz i kontrolowana przerwa na ponowne uzbrojenie DMA po ACK. Normalna telemetria SPI pozostaje bez zmian.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
       "id": "srp1-pomiarowy-3.2.1-fast-ota-receiver",
       "target": "pomiarowy",
       "version": "3.2.1",
@@ -2373,34 +1911,6 @@
         ],
         "mac": [
           "E4:B3:23:F7:E8:B8"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.3.1-fast-measure-ota",
-      "target": "sterownik",
-      "version": "2.3.1",
-      "publishedAt": "2026-07-15",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.3.1/ster.kfw",
-      "size": 1403071,
-      "sha256": "a1fb56677f723ac3f00178a6a3abae413ba04101c19cb7d805d3cd1cebd43d93",
-      "notes": "Dodaje negocjowany szybki protokol OTA pomiarowego v2: bloki 512 B, CRC32, potwierdzanie offsetu, pomiar czasu i automatyczny fallback do protokolu v1.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
         ]
       }
     },
@@ -2433,34 +1943,6 @@
       }
     },
     {
-      "id": "srp1-sterownik-2.2.33-measure-ota-recovery",
-      "target": "sterownik",
-      "version": "2.2.33",
-      "publishedAt": "2026-07-14",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.33/ster.kfw",
-      "size": 1394880,
-      "sha256": "008d9143f849f476f2948532112274c054d6342512b97c399b7a5d9479d79249",
-      "notes": "Dodaje odczyt offsetu odbiornika i bezpieczne wznawianie OTA pomiarowego po uszkodzonej odpowiedzi SPI. Zgodny wstecznie z pomiarowym 3.1.3.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
       "id": "srp1-pomiarowy-3.1.3-spi-ota-test",
       "target": "pomiarowy",
       "version": "3.1.3",
@@ -2485,151 +1967,6 @@
         ],
         "mac": [
           "E4:B3:23:F7:E8:B8"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.32-auto-publish",
-      "target": "sterownik",
-      "version": "2.2.32",
-      "publishedAt": "2026-07-14",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.32/ster.kfw",
-      "size": 1392011,
-      "sha256": "43317cf2f424e934b4aa0331bde1504e1eeb544583bc72b32075a4d6914e9125",
-      "notes": "Oczekiwanie na esp_ota_end pomiarowego i brak ABORT po dostarczeniu komendy END.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.31-auto-publish",
-      "target": "sterownik",
-      "version": "2.2.31",
-      "publishedAt": "2026-07-13",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.31/ster.kfw",
-      "size": 1391403,
-      "sha256": "29c04bc81d2073f5e99a25aa56982597a1d67c5f1daf5f66daac0349337c42de",
-      "notes": "Obsluga zapisu flash co 1 KB i ponawianie ramki gdy pomiarowy nie uzbroil jeszcze SPI slave.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.30-auto-publish",
-      "target": "sterownik",
-      "version": "2.2.30",
-      "publishedAt": "2026-07-13",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.30/ster.kfw",
-      "size": 1391179,
-      "sha256": "0c2a666afd55e1d53a6c39d50b1877be5847cbf70626e20005f241493054636f",
-      "notes": "Stabilny BEGIN SPI, 100 kHz i potwierdzone wyjscie ze stanu serwisowego pomiarowego.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.29-auto-publish",
-      "target": "sterownik",
-      "version": "2.2.29",
-      "publishedAt": "2026-07-13",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.29/ster.kfw",
-      "size": 1390459,
-      "sha256": "4752126492461bdaa53570b4347e1d4909add10478a9856f365cac9f719ae6c0",
-      "notes": "Synchronizacja SPI i stan serwisowy podczas aktualizacji procesora pomiarowego.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.28-fix-measure-ota-queue",
-      "target": "sterownik",
-      "version": "2.2.28",
-      "publishedAt": "2026-07-13",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.28/ster.kfw",
-      "size": 1389136,
-      "sha256": "ac89349520f9055282e965e99d22fa5274410c6f2eb26be8e6134af221dcff78",
-      "notes": "Naprawia start aktualizacji pomiarowego po SPI, zachowuje stan READY_ON_SD przy przejsciu do QUEUED oraz raportuje postep bez rownoleglego przegladania karty SD.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8/1/2607/1/1/1/1/1//"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
         ]
       }
     },
@@ -2662,231 +1999,6 @@
       }
     },
     {
-      "id": "srp1-sterownik-2.2.27-measure-ota-spi-bridge",
-      "target": "sterownik",
-      "version": "2.2.27",
-      "publishedAt": "2026-07-13",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.27/ster.kfw",
-      "size": 1388843,
-      "sha256": "6c4235ea196c1705afc684a444fdcfa9298ea9d353eb5a74d7ea14870439baea",
-      "notes": "Dodaje pelny most aktualizacji pomiarowego: weryfikacja podpisanej paczki KFW2 na SD, odszyfrowanie AES-CTR, transfer po SPI z CRC i pauza serwisowa sterownika. Po zapisie umozliwia restart pomiarowego i potwierdza uruchomiona wersje.",
-      "emergencyUsb": true,
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.26-ota-chunk-upload",
-      "target": "sterownik",
-      "version": "2.2.26",
-      "publishedAt": "2026-07-10",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.26/ster.kfw",
-      "size": 1382715,
-      "sha256": "1785b5a1b2d025fabf4ad32fd5cbe6fe3b3e590b3d8e68f42c97ea6eb453f5e7",
-      "notes": "Zmienia upload firmware na SD przez Wi-Fi OTA z jednego duzego POST na begin/chunk/finish. Aplikacja 1.1.39 wysyla porcje 16 KB i liczy postep dopiero po potwierdzeniu zapisu przez sterownik.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.25-ota-http-content-length-timeout",
-      "target": "sterownik",
-      "version": "2.2.25",
-      "publishedAt": "2026-07-09",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.25/ster.kfw",
-      "size": 1375131,
-      "sha256": "b100a8ecc3d7c4fdafe6dd1de96822d093e738cf83e48d3580bc725e423c440e",
-      "notes": "Poprawia upload firmware na SD przez Wi-Fi OTA po bledzie SIZE_MISMATCH: aplikacja wysyla jawny contentLength bez chunked transfer, a sterownik czeka dluzej na kolejne dane i raportuje idleMs przy niepelnym pliku.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.24-ota-upload-buffer-drain",
-      "target": "sterownik",
-      "version": "2.2.24",
-      "publishedAt": "2026-07-09",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.24/ster.kfw",
-      "size": 1374923,
-      "sha256": "aeaf53bdf0b62792303df66a2e6245e5bed5d6e89da005e7af191906d9157165",
-      "notes": "Poprawia zapis firmware na SD przez Wi-Fi OTA: serwer czyta pozostale dane z bufora klienta nawet po zamknieciu socketu przez telefon, aby uniknac czesciowego pliku i braku finalnego rename. Aplikacja 1.1.37 dodaje raport TXT procedury OTA i wykonuje jedna jawna probe uploadu zamiast trzech automatycznych powtorek.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.23-ota-wifi-captive-dns",
-      "target": "sterownik",
-      "version": "2.2.23",
-      "publishedAt": "2026-07-09",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.23/ster.kfw",
-      "size": 1374907,
-      "sha256": "1789992ebac56a8b12728519b5ce1e51a5e35b7fd0f14104d3ff7a6617378712",
-      "notes": "Poprawia utrzymywanie polaczenia telefonu z Wi-Fi OTA: dodaje lokalny DNS wildcard w trybie AP oraz odpowiedzi na typowe testy lacznosci Android/iOS/Windows. Aplikacja 1.1.36 sprawdza Wi-Fi przez lekki endpoint /ota/info zamiast /ota/status.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.22-ota-wifi-ap-stability",
-      "target": "sterownik",
-      "version": "2.2.22",
-      "publishedAt": "2026-07-09",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.22/ster.kfw",
-      "size": 1367195,
-      "sha256": "19598b635a742b258e7fe679c4fbcf6c85cb89b7d120b5d23969c2f77f4984a1",
-      "notes": "Poprawia stabilnosc sieci Wi-Fi OTA: przed startem AP czyści poprzedni softAP, dodaje krotka pauze i zwieksza limit klientow AP z 1 do 4, zeby Android nie zrywal polaczenia podczas przelaczania sieci.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.21-compact-ota-ble",
-      "target": "sterownik",
-      "version": "2.2.21",
-      "publishedAt": "2026-07-09",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.21/ster.kfw",
-      "size": 1367163,
-      "sha256": "bc065d6d373c6f3abf062a20dcd19e618a1e079b551c5a503853daf37b1e1bce",
-      "notes": "Zmniejsza odpowiedzi BLE dla OTA_SELECT, OTA_VERIFY i OTA_APPLY, aby nie wysylac pelnej listy plikow SD podczas krytycznych etapow aktualizacji. Aplikacja 1.1.35 nie wymusza juz automatycznej weryfikacji po wyborze pliku sterownika.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.20-measure-ota-package-verify",
-      "target": "sterownik",
-      "version": "2.2.20",
-      "publishedAt": "2026-07-09",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.20/ster.kfw",
-      "size": 1366411,
-      "sha256": "acf0f3a2bf83ea1235d5105656d205000638213f2a79ac4c4a94a46eddf11d7d",
-      "notes": "Dodaje pierwszy etap aktualizacji pomiarowego przez sterownik: APP:MEAS_OTA_INFO/SELECT/VERIFY wybiera paczke z SD sterownika i weryfikuje KFW2 dla target=pomiarowy, MAC pomiarowego po SPI, podpis oraz SHA payloadu. Nie wykonuje jeszcze transferu chunkami do pomiarowego.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
       "id": "srp1-pomiarowy-3.1.1-ota-diagnostics-usb-test",
       "target": "pomiarowy",
       "version": "3.1.1",
@@ -2913,346 +2025,201 @@
         ]
       },
       "emergencyUsb": true
-    },
-    {
-      "id": "srp1-sterownik-2.2.19-pomiarowy-ota-diagnostics",
-      "target": "sterownik",
-      "version": "2.2.19",
-      "publishedAt": "2026-07-09",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.19/ster.kfw",
-      "size": 1362427,
-      "sha256": "4ecbfe040deb5eaa637e7381c7b51f151393f4b19cb7ca7aecdc36030a902b77",
-      "notes": "Dodaje przekazywanie przez sterownik rozszerzonej diagnostyki OTA procesora pomiarowego: wersje slotow, wolny slot, maksymalny rozmiar obrazu i status gotowosci update.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      },
-      "emergencyUsb": true
-    },
-    {
-      "id": "srp1-sterownik-2.2.18-remove-ble-rescue",
-      "target": "sterownik",
-      "version": "2.2.18",
-      "publishedAt": "2026-07-08",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.18/ster.kfw",
-      "size": 1361595,
-      "sha256": "ef5030ee3b21d0198c627ecc217d908b06046756652b02721e5a2f7887e14f6e",
-      "notes": "Usunieto posredni tryb ratunkowy przez BLE: aplikacja i sterownik zostawiaja dwie sciezki aktualizacji, normalne OTA oraz awaryjne USB przez ROM bootloader. Partycja rescue pozostaje tylko rezerwowym miejscem w tabeli partycji.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.17-emergency-usb",
-      "target": "sterownik",
-      "version": "2.2.17",
-      "publishedAt": "2026-07-08",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.17/ster.kfw",
-      "size": 1363627,
-      "sha256": "4ced89015de1bdffa247482fe002888e5a8e91fea3be81159361d21d82479b53",
-      "notes": "Paczka testowa awaryjnego wgrywania USB po poprawce parsera MD5 w aplikacji 1.1.26. Firmware podbity z 2.2.16 do 2.2.17, zeby latwo potwierdzic udany flash.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.14-encrypted-kfw",
-      "target": "sterownik",
-      "version": "2.2.14",
-      "publishedAt": "2026-07-06",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.14/ster.kfw",
-      "size": 1360843,
-      "sha256": "f5587956f169c25e4fa1ea3af41506fb5154ff5c056ed43deb38671436e4ed55",
-      "notes": "Pierwsza szyfrowana paczka KFW2 dla sterownika. Payload jest AES-CTR, a firmware 2.2.14 dodaje weryfikacje SHA-256 odszyfrowanego payloadu podczas sprawdzania paczki.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.13-publish-pipeline",
-      "target": "sterownik",
-      "version": "2.2.13",
-      "publishedAt": "2026-07-06",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.13/ster.kfw",
-      "size": 1358741,
-      "sha256": "d5ff02bb90632070c1ce7f4fee9feb761a7a7b9681fb94b35671885469902866",
-      "notes": "Wersja testowa pipeline publikacji OTA: paczka zostala zbudowana przez tools/publish_sterownik_ota.ps1 ze swiezego builda, z kontrola wersji payloadu przed podpisem.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.12-slot-version-report",
-      "target": "sterownik",
-      "version": "2.2.12",
-      "publishedAt": "2026-07-06",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.12/ster.kfw",
-      "size": 1358741,
-      "sha256": "4facb5a32c3f1d319e17b4c5733cb314030d06e74643a96b7aa34ec87b6841ff",
-      "notes": "Publikacja z wymuszona kontrola wersji payloadu: paczka jest budowana ze swiezej binarki, ktora zawiera firmwareVersion 2.2.12. Dodaje raportowanie wersji aktywnego, boot i nastepnego slotu OTA.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.10-ota-service-pause",
-      "target": "sterownik",
-      "version": "2.2.10",
-      "publishedAt": "2026-07-06",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.10/ster.kfw",
-      "size": 1355317,
-      "sha256": "4a711efa02e9877e393b92a7019ccf2b8e953b08a2398484f608d4a7ddbe9f76",
-      "notes": "Dodaje pauze serwisowa podczas zapisu firmware z SD do partycji OTA: CPU1 wstrzymuje pomiary, SPI, PZEM, INA, rejestr SD i live telemetrie; pozostaje BLE/status OTA/reboot. Dodaje pola otaApplyRunning i otaServiceMode do OTA_INFO.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.9-async-ota-apply",
-      "target": "sterownik",
-      "version": "2.2.9",
-      "publishedAt": "2026-07-03",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.9/ster.kfw",
-      "size": 1355316,
-      "sha256": "d3d7c9e024ff806744824690cbd45bb64b5919c67a39661fb5f3f99158a52c1e",
-      "notes": "Naprawia etap Zastosuj: zapis firmware z SD do partycji OTA startuje jako osobne zadanie, a komenda BLE/HTTP wraca od razu ze statusem QUEUED/RUNNING. Wi-Fi zostaje tylko do uploadu pliku na SD; apply moze byc monitorowany przez OTA_INFO.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.8-kfw2-aes-apply-fix",
-      "target": "sterownik",
-      "version": "2.2.8",
-      "publishedAt": "2026-07-03",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.8/ster.kfw",
-      "size": 1355346,
-      "sha256": "83debd7075449f2087963fc980da06967dcedb972d751ce9b403b27074f4802b",
-      "notes": "Wersja naprawcza po tescie 2.2.7: usuwa dodatkowy pelny przebieg odszyfrowania przed OTA i liczy SHA-256 czystego firmware w trakcie zapisu. Paczka przejsciowo nie jest szyfrowana, zeby dalo sie ja pewnie wgrac z 2.2.6/2.2.7.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.6-kfw2-aes-ready",
-      "target": "sterownik",
-      "version": "2.2.6",
-      "publishedAt": "2026-07-03",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.6/ster.kfw",
-      "size": 1355618,
-      "sha256": "60973891ce595e6696a2ca803aebca9360f7f89f4c3b17969de3e3ba5013c765",
-      "notes": "Wersja przejsciowa: nadal podpisana paczka KFW2 bez szyfrowania payloadu, ale sterownik dodaje obsluge odszyfrowywania przyszlych paczek payload_enc=aes-ctr.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.5-kfw2-signed",
-      "target": "sterownik",
-      "version": "2.2.5",
-      "publishedAt": "2026-07-03",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.5/ster.kfw",
-      "size": 1350098,
-      "sha256": "56ee12ea44e4e46b6ed4a37d719edc07df53c6efd6989ee90c837fa47115110f",
-      "notes": "Test lancucha podpisu po aktualizacji do 2.2.4: paczka KFW2 podpisana ECDSA P-256, bez zmian funkcjonalnych poza numerem wersji.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
-    },
-    {
-      "id": "srp1-sterownik-2.2.4-kfw2-signed",
-      "target": "sterownik",
-      "version": "2.2.4",
-      "publishedAt": "2026-07-03",
-      "fileName": "ster.kfw",
-      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.2.4/ster.kfw",
-      "size": 1350098,
-      "sha256": "ede08b708963ce5f05d79888005b680bd1604861c1578beac3f581a09d18ef2c",
-      "notes": "Wprowadza podpis ECDSA P-256 paczek KFW2 po stronie sterownika. Ta paczka jest podpisana, a od wersji 2.2.4 sterownik odrzuca przyszle paczki bez prawidlowego podpisu.",
-      "api": {
-        "app": 1,
-        "sterConsole": 1,
-        "sterMeasure": 1,
-        "otaPackage": 1
-      },
-      "compat": {
-        "product": "SRP-1",
-        "target": "sterownik",
-        "vin": [
-          "s3/n16r8///1/1/1/1/1//",
-          "s3/n16r8///P1/K1/SD1/RTC1/RS1"
-        ],
-        "mac": [
-          "84:FC:E6:6A:BE:8C"
-        ]
-      }
     }
   ],
   "audit": [
+    {
+      "action": "delete-packages",
+      "packageIds": [
+        "srp1-sterownik-2.3.18-auto-publish",
+        "srp1-sterownik-2.3.17-auto-publish",
+        "srp1-sterownik-2.3.16-auto-publish",
+        "srp1-sterownik-2.3.15-auto-publish",
+        "srp1-sterownik-2.3.14-auto-publish",
+        "srp1-sterownik-2.3.13-auto-publish",
+        "srp1-sterownik-2.3.12-auto-publish",
+        "srp1-sterownik-2.3.11-emergency-usb",
+        "srp1-sterownik-2.3.10-auto-publish",
+        "srp1-sterownik-2.3.9-emergency-usb",
+        "srp1-sterownik-2.3.8-auto-publish",
+        "srp1-sterownik-2.3.7-auto-publish",
+        "srp1-sterownik-2.3.6-auto-publish",
+        "srp1-sterownik-2.3.5-auto-publish",
+        "srp1-sterownik-2.3.4-auto-publish",
+        "srp1-sterownik-2.3.3-fast-ota-timing",
+        "srp1-sterownik-2.3.2-fast-ota-timing",
+        "srp1-sterownik-2.3.1-fast-measure-ota",
+        "srp1-sterownik-2.2.33-measure-ota-recovery",
+        "srp1-sterownik-2.2.32-auto-publish",
+        "srp1-sterownik-2.2.31-auto-publish",
+        "srp1-sterownik-2.2.30-auto-publish",
+        "srp1-sterownik-2.2.29-auto-publish",
+        "srp1-sterownik-2.2.28-fix-measure-ota-queue",
+        "srp1-sterownik-2.2.27-measure-ota-spi-bridge",
+        "srp1-sterownik-2.2.26-ota-chunk-upload",
+        "srp1-sterownik-2.2.25-ota-http-content-length-timeout",
+        "srp1-sterownik-2.2.24-ota-upload-buffer-drain",
+        "srp1-sterownik-2.2.23-ota-wifi-captive-dns",
+        "srp1-sterownik-2.2.22-ota-wifi-ap-stability",
+        "srp1-sterownik-2.2.21-compact-ota-ble",
+        "srp1-sterownik-2.2.20-measure-ota-package-verify",
+        "srp1-sterownik-2.2.19-pomiarowy-ota-diagnostics",
+        "srp1-sterownik-2.2.18-remove-ble-rescue",
+        "srp1-sterownik-2.2.17-emergency-usb",
+        "srp1-sterownik-2.2.14-encrypted-kfw",
+        "srp1-sterownik-2.2.13-publish-pipeline",
+        "srp1-sterownik-2.2.12-slot-version-report",
+        "srp1-sterownik-2.2.10-ota-service-pause",
+        "srp1-sterownik-2.2.9-async-ota-apply",
+        "srp1-sterownik-2.2.8-kfw2-aes-apply-fix",
+        "srp1-sterownik-2.2.6-kfw2-aes-ready",
+        "srp1-sterownik-2.2.5-kfw2-signed",
+        "srp1-sterownik-2.2.4-kfw2-signed"
+      ],
+      "versions": [
+        "2.3.18",
+        "2.3.17",
+        "2.3.16",
+        "2.3.15",
+        "2.3.14",
+        "2.3.13",
+        "2.3.12",
+        "2.3.11",
+        "2.3.10",
+        "2.3.9",
+        "2.3.8",
+        "2.3.7",
+        "2.3.6",
+        "2.3.5",
+        "2.3.4",
+        "2.3.3",
+        "2.3.2",
+        "2.3.1",
+        "2.2.33",
+        "2.2.32",
+        "2.2.31",
+        "2.2.30",
+        "2.2.29",
+        "2.2.28",
+        "2.2.27",
+        "2.2.26",
+        "2.2.25",
+        "2.2.24",
+        "2.2.23",
+        "2.2.22",
+        "2.2.21",
+        "2.2.20",
+        "2.2.19",
+        "2.2.18",
+        "2.2.17",
+        "2.2.14",
+        "2.2.13",
+        "2.2.12",
+        "2.2.10",
+        "2.2.9",
+        "2.2.8",
+        "2.2.6",
+        "2.2.5",
+        "2.2.4"
+      ],
+      "targets": [
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik",
+        "sterownik"
+      ],
+      "requestId": "app-1794309162612770-8eda362-batch-44",
+      "actor": "serwiskoma321-lgtm",
+      "note": "",
+      "timestamp": "2026-11-10T11:13:05Z",
+      "deletedFiles": [
+        "firmware/sterownik/2.3.18/ster.kfw",
+        "firmware/sterownik/2.3.17/ster.kfw",
+        "firmware/sterownik/2.3.16/ster.kfw",
+        "firmware/sterownik/2.3.15/ster.kfw",
+        "firmware/sterownik/2.3.14/ster.kfw",
+        "firmware/sterownik/2.3.13/ster.kfw",
+        "firmware/sterownik/2.3.12/ster.kfw",
+        "firmware/sterownik/2.3.11/ster.kfw",
+        "firmware/sterownik/2.3.10/ster.kfw",
+        "firmware/sterownik/2.3.9/ster.kfw",
+        "firmware/sterownik/2.3.8/ster.kfw",
+        "firmware/sterownik/2.3.7/ster.kfw",
+        "firmware/sterownik/2.3.6/ster.kfw",
+        "firmware/sterownik/2.3.5/ster.kfw",
+        "firmware/sterownik/2.3.4/ster.kfw",
+        "firmware/sterownik/2.3.3/ster.kfw",
+        "firmware/sterownik/2.3.2/ster.kfw",
+        "firmware/sterownik/2.3.1/ster.kfw",
+        "firmware/sterownik/2.2.33/ster.kfw",
+        "firmware/sterownik/2.2.32/ster.kfw",
+        "firmware/sterownik/2.2.31/ster.kfw",
+        "firmware/sterownik/2.2.30/ster.kfw",
+        "firmware/sterownik/2.2.29/ster.kfw",
+        "firmware/sterownik/2.2.28/ster.kfw",
+        "firmware/sterownik/2.2.27/ster.kfw",
+        "firmware/sterownik/2.2.26/ster.kfw",
+        "firmware/sterownik/2.2.25/ster.kfw",
+        "firmware/sterownik/2.2.24/ster.kfw",
+        "firmware/sterownik/2.2.23/ster.kfw",
+        "firmware/sterownik/2.2.22/ster.kfw",
+        "firmware/sterownik/2.2.21/ster.kfw",
+        "firmware/sterownik/2.2.20/ster.kfw",
+        "firmware/sterownik/2.2.19/ster.kfw",
+        "firmware/sterownik/2.2.18/ster.kfw",
+        "firmware/sterownik/2.2.17/ster.kfw",
+        "firmware/sterownik/2.2.14/ster.kfw",
+        "firmware/sterownik/2.2.13/ster.kfw",
+        "firmware/sterownik/2.2.12/ster.kfw",
+        "firmware/sterownik/2.2.10/ster.kfw",
+        "firmware/sterownik/2.2.9/ster.kfw",
+        "firmware/sterownik/2.2.8/ster.kfw",
+        "firmware/sterownik/2.2.6/ster.kfw",
+        "firmware/sterownik/2.2.5/ster.kfw",
+        "firmware/sterownik/2.2.4/ster.kfw"
+      ],
+      "absentPackageIds": []
+    },
     {
       "action": "delete-package",
       "packageId": "srp1-sterownik-2.2.3-kfw2",
