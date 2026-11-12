@@ -1,8 +1,43 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-11-10T11:13:05Z",
+  "generatedAt": "2026-11-12T12:56:17.784532+00:00",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.6.12",
+      "target": "sterownik",
+      "version": "2.6.12",
+      "publishedAt": "2026-11-12",
+      "fileName": "sd_boot_sterownik_2.6.12.kfw",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.6.12/sd_boot_sterownik_2.6.12.kfw",
+      "size": 1524630,
+      "sha256": "f4849bafd239d3b183813b83fff6aa03c0ca80b2d8234daf46cc8bb7450da83a",
+      "emergencyUsb": false,
+      "status": "active",
+      "notes": "Wczesna komunikacja z konsolką i żółta sygnalizacja przygotowania. Osobne zadanie przygotowania SD; sekwencyjny przegląd katalogu bez otwierania każdego pliku. Duże listy JSON wysyłane porcjami, indeks czytany blokami. Rejestracja zablokowana do gotowości karty. Tylko sterownik; zgodny z konsolką2.6.2 i pomiarowym3.4.4. Lokalny RGB bez zmian. Testy kodu zaliczone; czas startu na sprzęcie do sprawdzenia po instalacji.",
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2,
+        "currentCalibration": 1,
+        "consoleLcd": 1,
+        "riseTiming": 1,
+        "clockSet": 1,
+        "sessionCompletion": 1,
+        "otaWorkerMemory": 1
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.6.11",
       "target": "sterownik",
