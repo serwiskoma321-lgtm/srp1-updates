@@ -1,8 +1,95 @@
 {
   "schema": 1,
   "product": "SRP-1",
-  "generatedAt": "2026-11-12T12:56:17.784532+00:00",
+  "generatedAt": "2026-11-27T12:20:04.503687+00:00",
   "packages": [
+    {
+      "id": "srp1-sterownik-2.6.13-service-calibration",
+      "target": "sterownik",
+      "version": "2.6.13",
+      "publishedAt": "2026-11-27",
+      "fileName": "cal_sterownik_2.6.13.kfw",
+      "size": 1548566,
+      "sha256": "d5a456266cfb5f11027455e6d1ccb0a3f4d335a46682fad472cd8c6398b6196e",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/sterownik/2.6.13/cal_sterownik_2.6.13.kfw",
+      "notes": "Zestaw SRP1-2. Kalibracja napięcia i ustawienia dla dodatku Serwis. Wgraj moduł pomiarowy, konsolkę i na końcu sterownik.",
+      "status": "active",
+      "emergencyUsb": false,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "sterownik",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "30:30:F9:03:97:94"
+        ]
+      }
+    },
+    {
+      "id": "srp1-pomiarowy-3.4.5-service-calibration",
+      "target": "pomiarowy",
+      "version": "3.4.5",
+      "publishedAt": "2026-11-27",
+      "fileName": "cal_pomiarowy_3.4.5.kfw",
+      "size": 410836,
+      "sha256": "6614195b05d60d6c88bae89b848dcce39b741f99f83a132630f4777057257c9b",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/pomiarowy/3.4.5/cal_pomiarowy_3.4.5.kfw",
+      "notes": "Zestaw SRP1-2. Kalibracja napięcia i ustawienia dla dodatku Serwis. Wgraj moduł pomiarowy, konsolkę i na końcu sterownik.",
+      "status": "active",
+      "emergencyUsb": false,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "pomiarowy",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "E4:B3:23:F8:03:C0"
+        ]
+      }
+    },
+    {
+      "id": "srp1-konsolka-2.6.3-service-calibration",
+      "target": "konsolka",
+      "version": "2.6.3",
+      "publishedAt": "2026-11-27",
+      "fileName": "cal_konsolka_2.6.3.kfw",
+      "size": 437763,
+      "sha256": "5d3405687c336151b7c81a4289a62141808c23d908dcc74328771ff4af7878b5",
+      "url": "https://raw.githubusercontent.com/serwiskoma321-lgtm/srp1-updates/main/firmware/konsolka/2.6.3/cal_konsolka_2.6.3.kfw",
+      "notes": "Zestaw SRP1-2. Kalibracja napięcia i ustawienia dla dodatku Serwis. Wgraj moduł pomiarowy, konsolkę i na końcu sterownik.",
+      "status": "active",
+      "emergencyUsb": false,
+      "api": {
+        "app": 1,
+        "sterConsole": 1,
+        "sterMeasure": 1,
+        "otaPackage": 2
+      },
+      "compat": {
+        "product": "SRP-1",
+        "target": "konsolka",
+        "vin": [
+          "*"
+        ],
+        "mac": [
+          "F4:12:FA:CE:82:38"
+        ]
+      }
+    },
     {
       "id": "srp1-sterownik-2.6.12",
       "target": "sterownik",
